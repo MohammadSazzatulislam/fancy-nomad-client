@@ -1,7 +1,7 @@
 import React from "react";
 
 const BookingCard = ({ news }) => {
-  const { img, name } = news;
+  const { name, img } = news;
   return (
     <div>
       <img className="w-full h-fit" src={img} alt="Women" />

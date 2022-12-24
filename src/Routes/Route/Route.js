@@ -1,9 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
-import Blog from "../../Component/Blog/Blog";
-import Contact from "../../Component/Contact/Contact";
-import Destination from "../../Component/Destination/Destination";
-import News from "../../Component/News/News";
 import Main from "../../Layout/Main/Main";
+import Blog from "../../Pages/Blog/Blog";
+import Contact from "../../Pages/Contact/Contact";
+import Destination from "../../Pages/Destination/Destination";
+import Home from "../../Pages/Home/Home";
 import ErrorPage from "../../Shared/ErrorPage/ErrorPage";
 import LogIn from "../../Shared/LogIn/LogIn";
 import SignUp from "../../Shared/SignUp/SignUp";
@@ -16,8 +16,7 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        loader: async () => fetch("http://localhost:5000/newsCard"),
-        element: <News></News>,
+        element: <Home></Home>,
       },
       {
         path: "/destination",

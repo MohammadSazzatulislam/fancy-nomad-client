@@ -1,17 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import "./Carousel.css";
 import { EffectCoverflow, Pagination } from "swiper";
-import BookingCard from "../BookingCard";
-import { useLoaderData } from "react-router-dom";
+import BookingCard from "../BookingCard/BookingCard";
+import { useState } from "react";
 
 const Carousel = () => {
-  const newsCards = useLoaderData();
+  const [newsCards, setNewsCards] = useState([]);
 
-  console.log(newsCards);
+  useEffect(() => {
+    fetch("http://localhost:5000/newsCard")
+      .then((res) => res.json())
+      .then((data) => setNewsCards(data));
+  }, []);
 
   return (
     <>

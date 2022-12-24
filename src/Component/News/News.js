@@ -1,5 +1,5 @@
 import React from "react";
-import Carousel from "./Carousel/Carousel";
+import Carousel from "../Carousel/Carousel";
 import bgvideo from "../../video/v.mp4";
 
 const News = () => {
@@ -13,10 +13,9 @@ const News = () => {
           loop
           muted
         ></video>
-
-        <div className="w-full h-screen bg-black opacity-30 absolute top-0 left-0" />
-        <div className="absolute lg:top-8 md:top-3 top-0 lg:px-7 md:px-10 px-4 py-4">
-          <p className="lg:text-6xl md:text-4xl text-3xl font-semibold leading-8 text-white">
+        <div className="w-full h-screen bg-black opacity-20 absolute top-0 left-0" />
+        <div className="absolute lg:top-8 md:top-3 top-0 lg:px-5 md:px-5 px-5 py-5">
+          <p className="lg:text-6xl md:text-4xl text-3xl font-semibold uppercase leading-8 text-white">
             COX'S BUZZER
           </p>
           <p className=" text-md  leading-5 text-white w-full lg:max-w-lg md:max-w-md mt-3 ">
