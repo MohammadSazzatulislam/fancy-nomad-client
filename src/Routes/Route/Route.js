@@ -16,29 +16,29 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        loader: async () => fetch("https://travel-your-own-country-server.vercel.app/newsCard"),
+        loader: async () => fetch("http://localhost:5000/newsCard"),
         element: <News></News>,
-        },
-        {
-            path: '/destination',
-            element: <Destination></Destination>,
-        },
-        {
-            path: '/blog',
-            element: <Blog></Blog>,
-        },
-        {
-            path: '/contact',
-            element: <Contact></Contact>,
-        },
-        {
-            path: '/signup',
-            element: <SignUp></SignUp>,
-        },
-        {
-            path: '/login',
-            element: <LogIn></LogIn>,
-        },
+      },
+      {
+        path: "/destination",
+        element: <Destination></Destination>,
+      },
+      {
+        path: "/blog",
+        element: <Blog></Blog>,
+      },
+      {
+        path: "/contact",
+        element: <Contact></Contact>,
+      },
+      {
+        path: "/signup",
+        element: <SignUp></SignUp>,
+      },
+      {
+        path: "/login",
+        element: <LogIn></LogIn>,
+      },
     ],
   },
 ]);

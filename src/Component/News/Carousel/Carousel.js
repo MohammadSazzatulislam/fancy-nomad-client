@@ -31,8 +31,8 @@ const Carousel = () => {
         modules={[EffectCoverflow, Pagination]}
         className="mySwiper h-fit "
       >
-        {newsCards.map((news) => (
-          <SwiperSlide>
+        {newsCards.map((news, i) => (
+          <SwiperSlide key={i}>
             <BookingCard key={news.id} news={news}></BookingCard>
           </SwiperSlide>
         ))}
