@@ -1,8 +1,10 @@
 import React from "react";
+import ParticleBacground from "../ParticleBacground/ParticleBacground";
 
 const Nature = () => {
   return (
     <div className="my-28 px-5">
+      <ParticleBacground></ParticleBacground>
       <div className=" text-center flex justify-center items-center flex-col">
         <h1 className="lg:text-6xl  md:text-4xl text-3xl font-semibold uppercase leading-8 ">
           LET'S ENJOY THE WONDERS OF THE NATURE TOGETHER!
