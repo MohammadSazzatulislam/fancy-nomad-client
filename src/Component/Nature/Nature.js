@@ -32,18 +32,20 @@ const Nature = () => {
           className="text-md mt-3 text-center"
         >
           At our travel agency we offer a variety of tours and destinations to
-          all kinds of travelers.Here is what you can get at Travel Guide, <br /> regardless of
-          your traveling needs and desires.
+          all kinds of travelers.Here is what you can get at Travel Guide,{" "}
+          <br /> regardless of your traveling needs and desires.
         </p>
       </div>
       <div className="mt-28 flex flex-wrap gap-5 justify-center items-center">
         {/* <!--Card 1--> */}
         <div className="w-full lg:w-96 md:w-80 border  rounded overflow-hidden shadow-lg">
-          <img
-            className="w-full"
-            src="https://images.unsplash.com/photo-1590603740183-980e7f6920eb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Y294cyUyMGJhemFyfGVufDB8fDB8fA%3D%3D&w=1000&q=80"
-            alt="Mountain"
-          />
+          <div className="hover:scale-110 ease-linear overflow-hidden duration-500">
+            <img
+              className="w-full overflow-hidden "
+              src="https://images.unsplash.com/photo-1590603740183-980e7f6920eb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Y294cyUyMGJhemFyfGVufDB8fDB8fA%3D%3D&w=1000&q=80"
+              alt="Mountain"
+            />
+          </div>
           <div className="px-6 py-4">
             <p
               data-aos="fade-right"
@@ -92,20 +94,24 @@ const Nature = () => {
               exercitationem praesentium nihil.
             </p>
           </div>
-          <img
-            className="w-full"
-            src="https://images.unsplash.com/photo-1590603740183-980e7f6920eb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Y294cyUyMGJhemFyfGVufDB8fDB8fA%3D%3D&w=1000&q=80"
-            alt="Mountain"
-          />
+          <div className="hover:scale-110 ease-linear overflow-hidden duration-500">
+            <img
+              className="w-full overflow-hidden "
+              src="https://images.unsplash.com/photo-1590603740183-980e7f6920eb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Y294cyUyMGJhemFyfGVufDB8fDB8fA%3D%3D&w=1000&q=80"
+              alt="Mountain"
+            />
+          </div>
         </div>
         {/* <!--Card 2--> */}
         {/* <!--Card 3--> */}
         <div className="w-full lg:w-96 md:w-80 border rounded overflow-hidden shadow-lg">
-          <img
-            className="w-full"
-            src="https://images.unsplash.com/photo-1590603740183-980e7f6920eb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Y294cyUyMGJhemFyfGVufDB8fDB8fA%3D%3D&w=1000&q=80"
-            alt="Mountain"
-          />
+          <div className="hover:scale-110 ease-linear overflow-hidden duration-500">
+            <img
+              className="w-full overflow-hidden "
+              src="https://images.unsplash.com/photo-1590603740183-980e7f6920eb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Y294cyUyMGJhemFyfGVufDB8fDB8fA%3D%3D&w=1000&q=80"
+              alt="Mountain"
+            />
+          </div>
           <div className="px-6 py-4">
             <p
               data-aos="fade-right"

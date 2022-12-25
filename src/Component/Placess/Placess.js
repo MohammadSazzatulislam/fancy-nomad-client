@@ -10,10 +10,27 @@ const Placess = () => {
 
   return (
     <div className="py-28 px-5 bg-white">
-      <h1 className="lg:text-5xl text-center  md:text-4xl text-3xl font-bold uppercase leading-8 ">
-        Travel Most Popular Place In <br /> Bangladesh
-      </h1>
+      <div>
+        <h1
+          data-aos="fade-down"
+          data-aos-easing="linear"
+          data-aos-duration="500"
+          className="lg:text-5xl text-center  md:text-4xl text-3xl font-bold uppercase leading-8 "
+        >
+          Travel Most Popular Place In
+        </h1>
+        <h2
+          data-aos="fade-up"
+          data-aos-easing="linear"
+          data-aos-duration="500"
+          className="lg:text-5xl text-center  md:text-4xl text-3xl font-bold uppercase leading-8 "
+        >
+          Bangladesh
+        </h2>
+      </div>
       <div
+        data-aos="fade-up"
+        data-aos-duration="3000"
         style={{ perspective: 2000 }}
         className="flex flex-wrap justify-center items-center gap-5 mt-28"
       >
