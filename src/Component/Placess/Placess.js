@@ -15,7 +15,7 @@ const Placess = () => {
           data-aos="fade-down"
           data-aos-easing="linear"
           data-aos-duration="500"
-          className="lg:text-5xl text-center  md:text-4xl text-3xl font-bold uppercase leading-8 "
+          className="lg:text-5xl text-center textGradient  md:text-4xl text-3xl font-bold uppercase leading-8 "
         >
           Travel Most Popular Place In
         </h1>
@@ -23,7 +23,7 @@ const Placess = () => {
           data-aos="fade-up"
           data-aos-easing="linear"
           data-aos-duration="500"
-          className="lg:text-5xl text-center  md:text-4xl text-3xl font-bold uppercase leading-8 "
+          className="lg:text-5xl text-center textGradient  md:text-4xl text-3xl font-bold uppercase leading-8 "
         >
           Bangladesh
         </h2>
