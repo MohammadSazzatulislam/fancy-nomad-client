@@ -12,7 +12,7 @@ const Carousel = () => {
   const [newsCards, setNewsCards] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/newsCard")
+    fetch("https://fancy-nomad-server.vercel.app/newsCard")
       .then((res) => res.json())
       .then((data) => setNewsCards(data));
   }, []);
