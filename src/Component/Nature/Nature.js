@@ -59,9 +59,9 @@ const Nature = () => {
               >
                 Mountain
               </p>
-              <div class="flex items-center ">
-                <div class="p-5 bg-gray-200 bg-opacity-40 rounded-full"></div>
-                <div class="p-5 bg-gray-200 bg-opacity-30 rounded-full -ml-4"></div>
+              <div className="flex items-center ">
+                <div className="p-5 bg-gray-200 bg-opacity-40 rounded-full"></div>
+                <div className="p-5 bg-gray-200 bg-opacity-30 rounded-full -ml-4"></div>
               </div>
             </div>
             <p
@@ -91,9 +91,9 @@ const Nature = () => {
               >
                 Mountain
               </p>
-              <div class="flex items-center ">
-                <div class="p-5 bg-gray-200 bg-opacity-40 rounded-full"></div>
-                <div class="p-5 bg-gray-200 bg-opacity-30 rounded-full -ml-4"></div>
+              <div className="flex items-center ">
+                <div className="p-5 bg-gray-200 bg-opacity-40 rounded-full"></div>
+                <div className="p-5 bg-gray-200 bg-opacity-30 rounded-full -ml-4"></div>
               </div>
             </div>
             <p
@@ -137,9 +137,9 @@ const Nature = () => {
               >
                 Mountain
               </p>
-              <div class="flex items-center ">
-                <div class="p-5 bg-gray-200 bg-opacity-40 rounded-full"></div>
-                <div class="p-5 bg-gray-200 bg-opacity-30 rounded-full -ml-4"></div>
+              <div className="flex items-center ">
+                <div className="p-5 bg-gray-200 bg-opacity-40 rounded-full"></div>
+                <div className="p-5 bg-gray-200 bg-opacity-30 rounded-full -ml-4"></div>
               </div>
             </div>
             <p

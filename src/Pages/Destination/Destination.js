@@ -1,5 +1,6 @@
 import React from "react";
 import PhotoGallery from "../../Component/PhotoGallery/PhotoGallery";
+import TestMonial from "../../Component/Placess/TestMonial";
 import Services from "../../Component/Services/Services";
 import TourPackages from "../../Component/TourPackages/TourPackages";
 
@@ -62,6 +63,7 @@ const Destination = () => {
       <PhotoGallery></PhotoGallery>
       <TourPackages></TourPackages>
       <Services></Services>
+      <TestMonial></TestMonial>
     </div>
   );
 };

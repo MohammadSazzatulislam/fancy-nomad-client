@@ -10,7 +10,7 @@ const Services = () => {
           What We Offer For You
         </h1>
       </div>
-      <div className="pt-28 flex gap-4 justify-center items-center">
+      <div className="pt-28 flex gap-4 flex-wrap justify-center items-center">
         {/* card 1 */}
         <div className="text-center w-full p-10 flex flex-col gap-4 justify-center items-center md:w-72 lg:w-80 shadow-2xl rounded-sm bg-white ">
           <FaDollarSign className="w-16 p-2 h-16 bg-green-700 text-white rounded-full"></FaDollarSign>
