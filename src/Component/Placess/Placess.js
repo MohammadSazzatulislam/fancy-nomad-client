@@ -1,6 +1,40 @@
 import React from "react";
-import { FaLocationArrow } from "react-icons/fa";
+import { FaLocationArrow, FaArrowCircleRight } from "react-icons/fa";
 import { useMotionValue, useTransform, motion } from "framer-motion";
+import { Link } from "react-router-dom";
+
+const placess = [
+  {
+    id: 1,
+    title: "Cox's Buzzer",
+    destination: "Chattogram",
+  },
+  {
+    id: 2,
+    title: "Cox's Buzzer",
+    destination: "Chattogram",
+  },
+  {
+    id: 3,
+    title: "Cox's Buzzer",
+    destination: "Chattogram",
+  },
+  {
+    id: 4,
+    title: "Cox's Buzzer",
+    destination: "Chattogram",
+  },
+  {
+    id: 5,
+    title: "Cox's Buzzer",
+    destination: "Chattogram",
+  },
+  {
+    id: 6,
+    title: "Cox's Buzzer",
+    destination: "Chattogram",
+  },
+];
 
 const Placess = () => {
   const x = useMotionValue(0);
@@ -34,138 +68,34 @@ const Placess = () => {
         style={{ perspective: 2000 }}
         className="flex flex-wrap justify-center items-center gap-5 mt-28"
       >
-        {/* <!--Card 1--> */}
-        <motion.div
-          style={{ x, y, rotateX, rotatey, z: 100 }}
-          drag
-          dragElastic={0.18}
-          dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0 }}
-          whileTap={{ cursor: "grabbing" }}
-          whileHover={{ scaleY: 1.2 }}
-          className="w-full  lg:w-96 cursor-grab md:w-80 border  rounded overflow-hidden shadow-lg"
-        >
-          <img
-            className="w-full"
-            src="https://images.unsplash.com/photo-1590603740183-980e7f6920eb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Y294cyUyMGJhemFyfGVufDB8fDB8fA%3D%3D&w=1000&q=80"
-            alt="Mountain"
-          />
-          <div className="px-6 py-4 flex gap-2 justify-center items-center">
-            <FaLocationArrow className="w-5 h-5"></FaLocationArrow>
-            <p className="font-bold text-xl mb-2">Cox's Buzzer ,</p>
-            <p className="font-bold text-xl mb-2">Chattogram</p>
+        {placess.map((p) => (
+          <div key={p.id}>
+            <motion.div
+              key={p.id}
+              style={{ x, y, rotateX, rotatey, z: 100 }}
+              drag
+              dragElastic={0.18}
+              dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0 }}
+              whileTap={{ cursor: "grabbing" }}
+              whileHover={{ scaleY: 1.2 }}
+              className="w-full  lg:w-96 cursor-grab md:w-80 border  rounded overflow-hidden shadow-lg"
+            >
+              <img
+                className="w-full"
+                src="https://images.unsplash.com/photo-1590603740183-980e7f6920eb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Y294cyUyMGJhemFyfGVufDB8fDB8fA%3D%3D&w=1000&q=80"
+                alt="Mountain"
+              />
+              <div className="px-6 py-4 flex gap-2 justify-center items-center">
+                <FaLocationArrow className="w-5 h-5"></FaLocationArrow>
+                <p className="font-bold text-xl mb-2">{p.title}</p>
+                <p className="font-bold text-xl mb-2">{p.destination}</p>
+                <Link to={`/destination`}>
+                  <FaArrowCircleRight className="w-7 h-7 m-3 cursor-pointer"></FaArrowCircleRight>
+                </Link>
+              </div>
+            </motion.div>
           </div>
-        </motion.div>
-        {/* <!--Card 1--> */}
-        {/* <!--Card 1--> */}
-        <motion.div
-          style={{ x, y, rotateX, rotatey, z: 100 }}
-          drag
-          dragElastic={0.18}
-          dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0 }}
-          whileTap={{ cursor: "grabbing" }}
-          whileHover={{ scaleY: 1.2 }}
-          className="w-full  lg:w-96 cursor-grab md:w-80 border  rounded overflow-hidden shadow-lg"
-        >
-          <img
-            className="w-full"
-            src="https://images.unsplash.com/photo-1590603740183-980e7f6920eb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Y294cyUyMGJhemFyfGVufDB8fDB8fA%3D%3D&w=1000&q=80"
-            alt="Mountain"
-          />
-          <div className="px-6 py-4 flex gap-2 justify-center items-center">
-            <FaLocationArrow className="w-5 h-5"></FaLocationArrow>
-            <p className="font-bold text-xl mb-2">Cox's Buzzer ,</p>
-            <p className="font-bold text-xl mb-2">Chattogram</p>
-          </div>
-        </motion.div>
-        {/* <!--Card 1--> */}
-        {/* <!--Card 1--> */}
-        <motion.div
-          style={{ x, y, rotateX, rotatey, z: 100 }}
-          drag
-          dragElastic={0.18}
-          dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0 }}
-          whileTap={{ cursor: "grabbing" }}
-          whileHover={{ scaleY: 1.2 }}
-          className="w-full  lg:w-96 cursor-grab md:w-80 border  rounded overflow-hidden shadow-lg"
-        >
-          <img
-            className="w-full"
-            src="https://images.unsplash.com/photo-1590603740183-980e7f6920eb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Y294cyUyMGJhemFyfGVufDB8fDB8fA%3D%3D&w=1000&q=80"
-            alt="Mountain"
-          />
-          <div className="px-6 py-4 flex gap-2 justify-center items-center">
-            <FaLocationArrow className="w-5 h-5"></FaLocationArrow>
-            <p className="font-bold text-xl mb-2">Cox's Buzzer ,</p>
-            <p className="font-bold text-xl mb-2">Chattogram</p>
-          </div>
-        </motion.div>
-        {/* <!--Card 1--> */}
-        {/* <!--Card 1--> */}
-        <motion.div
-          style={{ x, y, rotateX, rotatey, z: 100 }}
-          drag
-          dragElastic={0.18}
-          dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0 }}
-          whileTap={{ cursor: "grabbing" }}
-          whileHover={{ scaleY: 1.2 }}
-          className="w-full  lg:w-96 cursor-grab md:w-80 border  rounded overflow-hidden shadow-lg"
-        >
-          <img
-            className="w-full"
-            src="https://images.unsplash.com/photo-1590603740183-980e7f6920eb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Y294cyUyMGJhemFyfGVufDB8fDB8fA%3D%3D&w=1000&q=80"
-            alt="Mountain"
-          />
-          <div className="px-6 py-4 flex gap-2 justify-center items-center">
-            <FaLocationArrow className="w-5 h-5"></FaLocationArrow>
-            <p className="font-bold text-xl mb-2">Cox's Buzzer ,</p>
-            <p className="font-bold text-xl mb-2">Chattogram</p>
-          </div>
-        </motion.div>
-        {/* <!--Card 1--> */}
-        {/* <!--Card 1--> */}
-        <motion.div
-          style={{ x, y, rotateX, rotatey, z: 100 }}
-          drag
-          dragElastic={0.18}
-          dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0 }}
-          whileTap={{ cursor: "grabbing" }}
-          whileHover={{ scaleY: 1.2 }}
-          className="w-full  lg:w-96 cursor-grab md:w-80 border  rounded overflow-hidden shadow-lg"
-        >
-          <img
-            className="w-full"
-            src="https://images.unsplash.com/photo-1590603740183-980e7f6920eb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Y294cyUyMGJhemFyfGVufDB8fDB8fA%3D%3D&w=1000&q=80"
-            alt="Mountain"
-          />
-          <div className="px-6 py-4 flex gap-2 justify-center items-center">
-            <FaLocationArrow className="w-5 h-5"></FaLocationArrow>
-            <p className="font-bold text-xl mb-2">Cox's Buzzer ,</p>
-            <p className="font-bold text-xl mb-2">Chattogram</p>
-          </div>
-        </motion.div>
-        {/* <!--Card 1--> */}
-        {/* <!--Card 1--> */}
-        <motion.div
-          style={{ x, y, rotateX, rotatey, z: 100 }}
-          drag
-          dragElastic={0.18}
-          dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0 }}
-          whileTap={{ cursor: "grabbing" }}
-          whileHover={{ scaleY: 1.2 }}
-          className="w-full  lg:w-96 cursor-grab md:w-80 border  rounded overflow-hidden shadow-lg"
-        >
-          <img
-            className="w-full"
-            src="https://images.unsplash.com/photo-1590603740183-980e7f6920eb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Y294cyUyMGJhemFyfGVufDB8fDB8fA%3D%3D&w=1000&q=80"
-            alt="Mountain"
-          />
-          <div className="px-6 py-4 flex gap-2 justify-center items-center">
-            <FaLocationArrow className="w-5 h-5"></FaLocationArrow>
-            <p className="font-bold text-xl mb-2">Cox's Buzzer ,</p>
-            <p className="font-bold text-xl mb-2">Chattogram</p>
-          </div>
-        </motion.div>
-        {/* <!--Card 1--> */}
+        ))}
       </div>
     </div>
   );
