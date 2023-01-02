@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site" : "fancy-nomad",
     "public": "build",
     "ignore": [
       "firebase.json",

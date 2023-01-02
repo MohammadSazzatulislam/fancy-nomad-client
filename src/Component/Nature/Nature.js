@@ -5,7 +5,9 @@ import "./Nature.css";
 const Nature = () => {
   return (
     <div className="my-28 px-5 ">
-      <ParticleBacground></ParticleBacground>
+      <div className="container mx-auto" >
+        <ParticleBacground></ParticleBacground>
+      </div>
       <div className=" text-center flex justify-center items-center flex-col">
         <div className="lg:text-6xl  md:text-4xl text-3xl font-semibold uppercase leading-8 ">
           <h1

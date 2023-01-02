@@ -4,16 +4,15 @@ import bgvideo from "../../video/v.mp4";
 
 const News = () => {
   return (
-    <div className=" relative inset-0 mx-auto w-full h-screen   ">
+    <div className=" relative  mx-auto w-full h-screen ">
       <div className="relative">
         <video
-          className="w-full h-screen object-cover "
+          className="w-full h-screen object-cover overflow-hidden "
           src={bgvideo}
           autoPlay
           loop
           muted
         ></video>
-        <div className="w-full h-screen bg-black opacity-20 absolute top-0 left-0" />
         <div className="absolute lg:top-8 md:top-3 top-0 lg:px-5 md:px-5 px-5 py-5">
           <p className="lg:text-6xl md:text-4xl text-3xl font-semibold uppercase leading-8 text-white">
             COX'S BUZZER

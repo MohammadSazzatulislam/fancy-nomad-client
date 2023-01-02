@@ -6,57 +6,39 @@ import TourPackages from "../../Component/TourPackages/TourPackages";
 
 const Destination = () => {
   return (
-    <div>
-      <div className=" relative inset-0 mx-auto w-full h-screen   ">
-        <div className="relative">
+    <div className="bg-white">
+      <div className="relative flex gradient flex-col-reverse  lg:pt-0 lg:flex-col lg:pb-0">
+        <div className="inset-y-0 top-0 px-5 right-0 z-0 w-full mx-auto md:px-0 lg:pr-0 lg:mb-0 lg:mx-0 lg:w-7/12 lg:max-w-full lg:absolute xl:px-0">
+          <svg
+            className="absolute left-0 hidden h-full text-green-500  transform -translate-x-1/2 lg:block"
+            viewBox="0 0 100 100"
+            fill="currentColor"
+            preserveAspectRatio="none slice"
+          >
+            <path d="M50 0H100L50 100H0L50 0Z" />
+          </svg>
           <img
-            src="https://images.unsplash.com/photo-1623941000186-afafbcfb65e7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8c2VhJTIwYmVhY2h8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
-            className="w-full object-cover lg:h-screen lg:block md:hidden hidden"
+            className="object-cover w-full h-full  rounded shadow-lg lg:rounded-none lg:shadow-none md:h-96 lg:h-full"
+            src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
             alt=""
           />
-          <div className="w-full h-screen bg-black opacity-30 absolute top-0 left-0" />
-          <img
-            src="https://images.unsplash.com/photo-1546453159-9301aca09902?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjJ8fHBhcnJvdHN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
-            className="lg:hidden md:block hidden w-full h-screen"
-            alt=""
-          />
-          <img
-            src="https://images.unsplash.com/photo-1602165080370-11a4a2d18160?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8ODZ8fHdhdGVyZmFsbHN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
-            className="lg:hidden md:hidden block w-full h-screen"
-            alt=""
-          />
-
-          <div className="absolute lg:top-8 md:top-3 top-0 lg:px-7 md:px-10 px-4 py-4">
-            <p className="lg:text-6xl md:text-4xl text-3xl font-semibold leading-8 lg:text-white md:text-teal-300 text-orange-400 ">
-              COX'S BUZZER
+        </div>
+        <div className="relative flex pt-5 flex-col items-start w-full px-5 mx-auto lg:max-w-screen-xl">
+          <div className="mb-16 text-center lg:text-left lg:my-40  lg:max-w-lg lg:pr-5">
+            <p className="inline-block mb-4 text-xs font-semibold tracking-wider text-white uppercase rounded-full bg-teal-accent-400">
+              Brand new
             </p>
-            <p className=" leading-none text-white w-full lg:max-w-lg md:max-w-screen-lg mt-3 ">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Labore
-              facere eaque nemo placeat molestiae laudantium, beatae voluptate
-              necessitatibus quae suscipit.
+            <h2 className="mb-5 font-sans text-3xl font-bold tracking-tight text-white sm:text-4xl sm:leading-none">
+              Everything you
+              <br className="hidden md:block" />
+              can imagine
+              <span className="inline-block text-white">is real</span>
+            </h2>
+            <p className="pr-5 mb-5 text-base text-white md:text-lg">
+              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+              accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+              quae. explicabo.
             </p>
-            <div className="pt-4">
-              <button className=" flex gap-2 justify-center items-center px-3 py-2 bg-blue-600 hover:bg-blue-700 border-none rounded-sm text-white font-semibold">
-                Booking
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="w-6 h-6"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
-                  />
-                </svg>
-              </button>
-            </div>
-          </div>
-          <div className="absolute w-full mx-auto flex items-center  md:bottom-0 lg:right-0 lg:top-0 lg:w-2/4 lg:h-screen h-3/4 md:h-3/4 bottom-0 p-5 ">
-            {/* // there is a from page */}
           </div>
         </div>
       </div>
