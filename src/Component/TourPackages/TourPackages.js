@@ -36,7 +36,7 @@ const TourPackages = () => {
         <div className="relative flex flex-col lg:flex-col md:flex-row  rounded-sm shadow-lg  w-full lg:w-96  border border-green">
           <div className="w-full">
             <img
-              src="https://images.pexels.com/photos/4381392/pexels-photo-4381392.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+              src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/345053324.jpg?k=be9e4c63abaa59ca9dae9284911bfc36f3d23188a0e6e25cdba77d77925e130d&o=&hp=1"
               alt="tailwind logo"
               className="rounded-sm w-full h-72"
             />
@@ -74,19 +74,27 @@ const TourPackages = () => {
                   />
                 </svg>
               </div>
+              <button className="px-3 py-1 bg-orange-600 hover:bg-orange-700  font-semibold rounded-full border-none p-1 text-white ">
+                Details
+              </button>
             </div>
             <h3 className=" font-semibold md:text-3xl text-lg text-white">
-              The Majestic and Wonderful Bahamas
+              Sea Pearl Beach Resort & Spa Cox's Bazar
             </h3>
             <small className=" text-white">
-              The best kept secret of The Bahamas is the country’s sheer size
-              and diversity. With 16 major islands, The Bahamas is an unmatched
-              destination
+              Jaliapalong, Inani, Ukhia, Cox's Bazar - 4750, Chattogram,
+              Bangladesh
             </small>
-            <p className="text-xl font-black text-white">
-              $110
-              <span className="font-normal text-white text-base">/night</span>
-            </p>
+            <div className="flex justify-between items-center ">
+              <div className="flex items-center ">
+                <p className="text-xl font-black text-white">Price : $200</p>
+                <span className="font-normal text-white text-base">/night</span>
+              </div>
+              <button className="bg-blue-500 hover:bg-blue-700 font-semibold text-white px-3 py-1 border-none rounded-full">
+                {" "}
+                Booking
+              </button>
+            </div>
           </div>
         </div>
         {/* card 1 */}
@@ -94,7 +102,7 @@ const TourPackages = () => {
         <div className="relative flex flex-col lg:flex-col md:flex-row  rounded-sm shadow-lg  w-full lg:w-96  border border-green">
           <div className="w-full">
             <img
-              src="https://images.pexels.com/photos/4381392/pexels-photo-4381392.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+              src="https://sayemanresort.com/wp-content/uploads/2019/10/infinitypool-thumb.jpg"
               alt="tailwind logo"
               className="rounded-sm w-full h-72"
             />
@@ -132,19 +140,27 @@ const TourPackages = () => {
                   />
                 </svg>
               </div>
+              <button className="px-3 py-1 bg-orange-600 hover:bg-orange-700  font-semibold rounded-full border-none p-1 text-white ">
+                Details
+              </button>
             </div>
             <h3 className=" font-semibold md:text-3xl text-lg text-white">
-              The Majestic and Wonderful Bahamas
+              Sayeman Beach Resort Cox's Bazar
             </h3>
             <small className=" text-white">
-              The best kept secret of The Bahamas is the country’s sheer size
-              and diversity. With 16 major islands, The Bahamas is an unmatched
-              destination
+              Sayeman Beach Resort Marine Drive Road, Kolatali Cox's Bazar 4700,
+              chattogram , bangladesh
             </small>
-            <p className="text-xl font-black text-white">
-              $110
-              <span className="font-normal text-white text-base">/night</span>
-            </p>
+            <div className="flex justify-between items-center ">
+              <div className="flex items-center ">
+                <p className="text-xl font-black text-white">Price : $200</p>
+                <span className="font-normal text-white text-base">/night</span>
+              </div>
+              <button className="bg-blue-500 hover:bg-blue-700 font-semibold text-white px-3 py-1 border-none rounded-full">
+                {" "}
+                Booking
+              </button>
+            </div>
           </div>
         </div>
         {/* card 1 */}
@@ -152,7 +168,7 @@ const TourPackages = () => {
         <div className="relative flex flex-col lg:flex-col md:flex-row  rounded-sm shadow-lg  w-full lg:w-96  border border-green">
           <div className="w-full">
             <img
-              src="https://images.pexels.com/photos/4381392/pexels-photo-4381392.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+              src="https://2.bp.blogspot.com/-FEVgLWs1mQI/WXWn9KTrpxI/AAAAAAAAC14/-tqmsEb0C_glOJvJZ4RyYiJGSZKxmuJjACLcBGAs/s1600/a.jpg"
               alt="tailwind logo"
               className="rounded-sm w-full h-72 "
             />
@@ -190,19 +206,26 @@ const TourPackages = () => {
                   />
                 </svg>
               </div>
+              <button className="px-3 py-1 bg-orange-600 hover:bg-orange-700  font-semibold rounded-full border-none p-1 text-white ">
+                Details
+              </button>
             </div>
             <h3 className=" font-semibold md:text-3xl text-lg text-white">
-              The Majestic and Wonderful Bahamas
+              Seagull Hotel Cox's Bazar
             </h3>
             <small className=" text-white">
-              The best kept secret of The Bahamas is the country’s sheer size
-              and diversity. With 16 major islands, The Bahamas is an unmatched
-              destination
+              Soghundha Point, Hotel Motel Zone, Cox's Bazar 4700, chattogram ,
+              bangladesh
             </small>
-            <p className="text-xl font-black text-white">
-              $110
-              <span className="font-normal text-white text-base">/night</span>
-            </p>
+            <div className="flex justify-between items-center ">
+              <div className="flex items-center ">
+                <p className="text-xl font-black text-white">Price : $200</p>
+                <span className="font-normal text-white text-base">/night</span>
+              </div>
+              <button className="bg-blue-500 hover:bg-blue-700 font-semibold text-white px-3 py-1 border-none rounded-full">
+                Booking
+              </button>
+            </div>
           </div>
         </div>
         {/* card 1 */}
