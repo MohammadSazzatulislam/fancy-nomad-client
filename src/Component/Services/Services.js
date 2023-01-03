@@ -5,8 +5,22 @@ const Services = () => {
   return (
     <div className="pb-28 px-5">
       <div>
-        <h1 className="text-xl font-semibold textGradient">Services</h1>
-        <h1 className="lg:text-5xl textGradient  md:text-4xl text-3xl font-bold uppercase leading-8">
+        <h1
+          data-aos="fade-right"
+          data-aos-offset="300"
+          data-aos-easing="ease-in-sine"
+          data-aos-duration="500"
+          className="text-xl font-semibold textGradient"
+        >
+          Services
+        </h1>
+        <h1
+          data-aos="fade-left"
+          data-aos-offset="300"
+          data-aos-easing="ease-in-sine"
+          data-aos-duration="500"
+          className="lg:text-5xl textGradient  md:text-4xl text-3xl font-bold uppercase leading-8"
+        >
           What We Offer For You
         </h1>
       </div>

@@ -36,7 +36,7 @@ const Nature = () => {
           className="text-md mt-3 text-center text-white "
         >
           At our travel agency we offer a variety of tours and destinations to
-          all kinds of travelers.Here is what you can get at Travel Guide,{" "}
+          all kinds of travelers.Here is what you can get at Travel Guide,
           <br /> regardless of your traveling needs and desires.
         </p>
       </div>

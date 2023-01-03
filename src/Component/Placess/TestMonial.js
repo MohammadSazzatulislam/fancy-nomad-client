@@ -12,13 +12,34 @@ const TestMonial = () => {
   return (
     <div className="px-5 pb-28">
       <div className="text-center">
-        <h1 className="text-xl mb-2 font-semibold textGradient">Testimonials </h1>
-        <h1 className="lg:text-5xl text-center textGradient  md:text-4xl text-3xl font-bold uppercase leading-8">
-          What Our Happy Customers <br /> Say About Us
+        <h1
+          data-aos="fade-zoom-in"
+          data-aos-easing="ease-in-back"
+          data-aos-delay="500"
+          data-aos-offset="0"
+          className="text-xl mb-2 font-semibold textGradient"
+        >
+          Testimonials
         </h1>
+        <h1
+          data-aos="fade-down"
+          data-aos-easing="linear"
+          data-aos-duration="500"
+          className="lg:text-5xl text-center textGradient  md:text-4xl text-3xl font-bold uppercase leading-8"
+        >
+          What Our Happy Customers
+        </h1>
+        <h2
+          data-aos="fade-up"
+          data-aos-easing="linear"
+          data-aos-duration="500"
+          className="lg:text-5xl text-center textGradient  md:text-4xl text-3xl font-bold uppercase leading-8"
+        >
+          Say About Us
+        </h2>
       </div>
 
-      <div className="pt-28" >
+      <div className="pt-28">
         <div className="mx-auto  h-[300px] flex justify-center">
           <div className=" w-full h-[300px] ">
             {/* Carousel for Small-Sized Screen */}

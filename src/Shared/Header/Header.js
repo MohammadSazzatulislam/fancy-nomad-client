@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { UserAuthContext } from "../../Context/AuthContext/AuthContext";
+import './Header.css';
 
 const Header = () => {
   const { user, userSignOut } = useContext(UserAuthContext);
@@ -17,7 +18,9 @@ const Header = () => {
           <div>
             <div className="flex items-center justify-between py-3 md:py-5 md:block">
               <Link to="/">
-                <h2 className="text-2xl font-bold text-white">Fancy nomad</h2>
+                <h2 className="text-2xl bounce-in-top  font-bold text-white">
+                  Fancy nomad
+                </h2>
               </Link>
               <div className="md:hidden flex items-center gap-2">
                 <Link
