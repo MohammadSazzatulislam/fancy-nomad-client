@@ -6,7 +6,9 @@ const PhotoGallery = () => {
     <div
       style={{
         backgroundImage:
-          "url('https://i.pinimg.com/originals/11/0b/4d/110b4d5488eb1b683a2024918d7668ce.jpg')", backgroundRepeat: 'no-repeat', backgroundSize: 'cover'
+          "url('https://i.pinimg.com/originals/11/0b/4d/110b4d5488eb1b683a2024918d7668ce.jpg')",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
       }}
     >
       <div className="pt-28 text-center">
@@ -40,35 +42,35 @@ const PhotoGallery = () => {
         <div className="grid  grid-cols-4 grid-rows-4 grid-flow-col gap-2">
           <div className="w-full row-span-2 geeks">
             <img
-              src="https://images.unsplash.com/photo-1432457990754-c8b5f21448de?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80"
+              src="https://c0.wallpaperflare.com/preview/263/479/659/boat-bangladesh-saint-martin-island-golden-hour.jpg"
               alt=""
               className="inset-0 h-full w-full object-cover object-center rounded  "
             />
           </div>
           <div className="w-full col-span-2 row-span-2 geeks">
             <img
-              src="https://images.unsplash.com/photo-1586921829167-409624a3734a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+              src="http://photos.tourtoday.com.bd/wp-content/uploads/2017/02/saint-martin-04.jpg"
               alt=""
               className="inset-0 h-full w-full object-cover object-center rounded  "
             />
           </div>
           <div className="w-full geeks ">
             <img
-              src="https://images.unsplash.com/photo-1489981424607-45c58daf0581?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+              src="https://images.unsplash.com/photo-1587302525159-2363f54affd4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y294JTIwYmF6YXIlMjBzZWElMjBiZWFjaHxlbnwwfHwwfHw%3D&w=1000&q=80"
               alt=""
               className="inset-0 h-full w-full object-cover object-center rounded  "
             />
           </div>
           <div className="w-full geeks">
             <img
-              src="https://images.unsplash.com/photo-1489981424607-45c58daf0581?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+              src="https://c0.wallpaperflare.com/preview/721/1021/133/sunset-sea-beach-cox-s-bazar-beach-sunset.jpg"
               alt=""
               className="inset-0 h-full w-full object-cover object-center rounded  "
             />
           </div>
           <div className="w-full col-span-2 row-span-2 geeks">
             <img
-              src="https://images.unsplash.com/photo-1586921829167-409624a3734a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+              src="https://wallpapers.com/images/hd/bangladesh-cox-bazar-city-wqmxyq0k5qwmpa25.jpg"
               alt=""
               className="inset-0 h-full w-full object-cover object-center rounded  "
             />
@@ -76,21 +78,21 @@ const PhotoGallery = () => {
 
           <div className="w-full col-span-2 geeks">
             <img
-              src="https://images.unsplash.com/photo-1534531173927-aeb928d54385?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+              src="https://bdwallpapergallery.files.wordpress.com/2012/04/beauty-of-coxbazar.jpg"
               alt=""
               className="inset-0 h-full w-full object-cover object-center rounded  "
             />
           </div>
           <div className="w-full geeks">
             <img
-              src="https://images.unsplash.com/photo-1489981424607-45c58daf0581?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+              src="https://wallpapercave.com/wp/wp10812268.jpg"
               alt=""
               className="inset-0 h-full w-full object-cover object-center rounded  "
             />
           </div>
           <div className="w-full geeks">
             <img
-              src="https://images.unsplash.com/photo-1489981424607-45c58daf0581?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+              src="https://i.pinimg.com/originals/18/9a/28/189a28c6932795435581a77158970aa1.jpg"
               alt=""
               className="inset-0 h-full w-full object-cover object-center rounded  "
             />

@@ -41,9 +41,9 @@ const TourPackages = () => {
               className="rounded-sm w-full h-72"
             />
           </div>
-          <div className="w-full p-4">
+          <div className="w-full p-4 glass">
             <div className="flex justify-between p-1 item-center">
-              <p className="text-gray-500 font-medium hidden md:block">
+              <p className="text-white font-medium hidden md:block">
                 Vacations
               </p>
               <div className="flex items-center">
@@ -55,11 +55,9 @@ const TourPackages = () => {
                 >
                   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                 </svg>
-                <p className="text-gray-600 font-bold text-sm ml-1">
+                <p className="text-white font-bold text-sm ml-1">
                   4.96
-                  <span className="text-gray-500 font-normal">
-                    (76 reviews)
-                  </span>
+                  <span className="text-white font-normal">(76 reviews)</span>
                 </p>
               </div>
               <div className="">
@@ -77,19 +75,17 @@ const TourPackages = () => {
                 </svg>
               </div>
             </div>
-            <h3 className=" font-semibold md:text-3xl text-lg">
+            <h3 className=" font-semibold md:text-3xl text-lg text-white">
               The Majestic and Wonderful Bahamas
             </h3>
-            <small className="">
+            <small className=" text-white">
               The best kept secret of The Bahamas is the country’s sheer size
               and diversity. With 16 major islands, The Bahamas is an unmatched
               destination
             </small>
-            <p className="text-xl font-black text-gray-800">
+            <p className="text-xl font-black text-white">
               $110
-              <span className="font-normal text-gray-600 text-base">
-                /night
-              </span>
+              <span className="font-normal text-white text-base">/night</span>
             </p>
           </div>
         </div>
@@ -103,9 +99,9 @@ const TourPackages = () => {
               className="rounded-sm w-full h-72"
             />
           </div>
-          <div className="w-full p-4">
+          <div className="w-full p-4 glass">
             <div className="flex justify-between p-1 item-center">
-              <p className="text-gray-500 font-medium hidden md:block">
+              <p className="text-white font-medium hidden md:block">
                 Vacations
               </p>
               <div className="flex items-center">
@@ -117,11 +113,9 @@ const TourPackages = () => {
                 >
                   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                 </svg>
-                <p className="text-gray-600 font-bold text-sm ml-1">
+                <p className="text-white font-bold text-sm ml-1">
                   4.96
-                  <span className="text-gray-500 font-normal">
-                    (76 reviews)
-                  </span>
+                  <span className="text-white font-normal">(76 reviews)</span>
                 </p>
               </div>
               <div className="">
@@ -139,19 +133,17 @@ const TourPackages = () => {
                 </svg>
               </div>
             </div>
-            <h3 className=" font-semibold md:text-3xl text-lg">
+            <h3 className=" font-semibold md:text-3xl text-lg text-white">
               The Majestic and Wonderful Bahamas
             </h3>
-            <small className="">
+            <small className=" text-white">
               The best kept secret of The Bahamas is the country’s sheer size
               and diversity. With 16 major islands, The Bahamas is an unmatched
               destination
             </small>
-            <p className="text-xl font-black text-gray-800">
+            <p className="text-xl font-black text-white">
               $110
-              <span className="font-normal text-gray-600 text-base">
-                /night
-              </span>
+              <span className="font-normal text-white text-base">/night</span>
             </p>
           </div>
         </div>
@@ -162,12 +154,12 @@ const TourPackages = () => {
             <img
               src="https://images.pexels.com/photos/4381392/pexels-photo-4381392.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
               alt="tailwind logo"
-              className="rounded-sm w-full h-72"
+              className="rounded-sm w-full h-72 "
             />
           </div>
-          <div className="w-full p-4">
+          <div className="w-full p-4 glass">
             <div className="flex justify-between p-1 item-center">
-              <p className="text-gray-500 font-medium hidden md:block">
+              <p className="text-white font-medium hidden md:block">
                 Vacations
               </p>
               <div className="flex items-center">
@@ -179,11 +171,9 @@ const TourPackages = () => {
                 >
                   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                 </svg>
-                <p className="text-gray-600 font-bold text-sm ml-1">
+                <p className="text-white font-bold text-sm ml-1">
                   4.96
-                  <span className="text-gray-500 font-normal">
-                    (76 reviews)
-                  </span>
+                  <span className="text-white font-normal">(76 reviews)</span>
                 </p>
               </div>
               <div className="">
@@ -201,19 +191,17 @@ const TourPackages = () => {
                 </svg>
               </div>
             </div>
-            <h3 className=" font-semibold md:text-3xl text-lg">
+            <h3 className=" font-semibold md:text-3xl text-lg text-white">
               The Majestic and Wonderful Bahamas
             </h3>
-            <small className="">
+            <small className=" text-white">
               The best kept secret of The Bahamas is the country’s sheer size
               and diversity. With 16 major islands, The Bahamas is an unmatched
               destination
             </small>
-            <p className="text-xl font-black text-gray-800">
+            <p className="text-xl font-black text-white">
               $110
-              <span className="font-normal text-gray-600 text-base">
-                /night
-              </span>
+              <span className="font-normal text-white text-base">/night</span>
             </p>
           </div>
         </div>

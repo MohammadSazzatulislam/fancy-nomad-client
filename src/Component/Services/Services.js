@@ -3,7 +3,15 @@ import { FaDollarSign, FaBed, FaBook, FaHotdog } from "react-icons/fa";
 
 const Services = () => {
   return (
-    <div className="pb-28 px-5">
+    <div
+      style={{
+        backgroundImage:
+          "url('https://wallpapers.com/images/hd/moving-light-animated-yr7qspbtdmz9g7ao.jpg')",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+      }}
+      className="pt-28 px-5"
+    >
       <div>
         <h1
           data-aos="fade-right"
@@ -26,7 +34,12 @@ const Services = () => {
       </div>
       <div className="pt-28 flex gap-4 flex-wrap justify-center items-center">
         {/* card 1 */}
-        <div className="text-center w-full p-10 flex flex-col gap-4 justify-center items-center md:w-72 lg:w-80 shadow-2xl rounded-sm bg-white ">
+        <div
+          data-aos="fade-right"
+          data-aos-easing="linear"
+          data-aos-duration="1500"
+          className="text-center  w-full p-10 flex flex-col gap-4 justify-center items-center md:w-72 lg:w-80 shadow-2xl rounded-sm bg-white "
+        >
           <FaDollarSign className="w-16 p-2 h-16 bg-green-700 text-white rounded-full"></FaDollarSign>
           <h1 className="text-xl font-semibold">Lowest Prices</h1>
           <p>
@@ -36,7 +49,12 @@ const Services = () => {
         </div>
         {/* card 1 */}
         {/* card 2 */}
-        <div className="text-center w-full p-10 flex flex-col gap-4 justify-center items-center md:w-72 lg:w-80 shadow-2xl rounded-sm bg-white ">
+        <div
+          data-aos="fade-down"
+          data-aos-easing="linear"
+          data-aos-duration="1500"
+          className="text-center w-full p-10 flex flex-col gap-4 justify-center items-center md:w-72 lg:w-80 shadow-2xl rounded-sm bg-white "
+        >
           <FaBed className="w-16 p-2 h-16 bg-green-700 text-white rounded-full"></FaBed>
           <h1 className="text-xl font-semibold">Delux Room</h1>
           <p>
@@ -46,7 +64,12 @@ const Services = () => {
         </div>
         {/* card 2 */}
         {/* card 3 */}
-        <div className="text-center w-full p-10 flex flex-col gap-4 justify-center items-center md:w-72 lg:w-80 shadow-2xl rounded-sm bg-white ">
+        <div
+          data-aos="fade-left"
+          data-aos-easing="linear"
+          data-aos-duration="1500"
+          className="text-center w-full p-10 flex flex-col gap-4 justify-center items-center md:w-72 lg:w-80 shadow-2xl rounded-sm bg-white "
+        >
           <FaHotdog className="w-16 p-2 h-16 bg-green-700 text-white rounded-full"></FaHotdog>
           <h1 className="text-xl font-semibold">Delicoius Food</h1>
           <p>
@@ -56,7 +79,12 @@ const Services = () => {
         </div>
         {/* card 3 */}
         {/* card 4 */}
-        <div className="text-center w-full p-10 flex flex-col gap-4 justify-center items-center md:w-72 lg:w-80 shadow-2xl rounded-sm bg-white ">
+        <div
+          data-aos="fade-up"
+          data-aos-easing="linear"
+          data-aos-duration="1500"
+          className="text-center w-full p-10 flex flex-col gap-4 justify-center items-center md:w-72 lg:w-80 shadow-2xl rounded-sm bg-white "
+        >
           <FaBook className="w-16 p-2 h-16 bg-green-700 text-white rounded-full"></FaBook>
           <h1 className="text-xl font-semibold">Easy Booking</h1>
           <p>
