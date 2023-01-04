@@ -2,6 +2,7 @@ import React from "react";
 import { FaLocationArrow, FaArrowCircleRight } from "react-icons/fa";
 import { useMotionValue, useTransform, motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import './Placess.css';
 
 const placess = [
   {
@@ -43,7 +44,7 @@ const Placess = () => {
   const rotatey = useTransform(x, [-100, 100], [-30, 30]);
 
   return (
-    <div className="py-28 px-5 bg-white">
+    <div className="py-28 px-5 bg-black">
       <div>
         <h1
           data-aos="fade-down"
@@ -70,17 +71,17 @@ const Placess = () => {
         {placess.map((p) => (
           <div
             key={p.id}
-            className="w-full  lg:w-96 md:w-80 border  rounded overflow-hidden shadow-lg"
+            className="w-full card lg:w-96 md:w-80 border  rounded overflow-hidden shadow-lg"
           >
             <img
               className="w-full"
               src="https://images.unsplash.com/photo-1590603740183-980e7f6920eb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Y294cyUyMGJhemFyfGVufDB8fDB8fA%3D%3D&w=1000&q=80"
               alt="Mountain"
             />
-            <div className="px-6 py-4 flex gap-2 justify-center items-center">
+            <div className="px-2 py-3 gap-1 flex justify-center items-center">
               <FaLocationArrow className="w-5 h-5"></FaLocationArrow>
-              <p className="font-bold text-xl mb-2">{p.title}</p>
-              <p className="font-bold text-xl mb-2">{p.destination}</p>
+              <p className="font-bold text-xl">{p.title}</p>
+              <p className="font-bold text-xl">{p.destination}</p>
               <Link to={`/destination`}>
                 <FaArrowCircleRight className="w-7 h-7 m-3 cursor-pointer"></FaArrowCircleRight>
               </Link>

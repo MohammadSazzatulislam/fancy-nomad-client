@@ -35,10 +35,10 @@ const Services = () => {
       <div className="pt-28 flex gap-4 flex-wrap justify-center items-center">
         {/* card 1 */}
         <div
-          data-aos="fade-right"
+          data-aos="fade-down"
           data-aos-easing="linear"
           data-aos-duration="1500"
-          className="text-center  w-full p-10 flex flex-col gap-4 justify-center items-center md:w-72 lg:w-80 shadow-2xl rounded-sm bg-white "
+          className="text-center your-element  w-full p-10 flex flex-col gap-4 justify-center items-center md:w-72 lg:w-80 shadow-2xl rounded-sm bg-white "
         >
           <FaDollarSign className="w-16 p-2 h-16 bg-green-700 text-white rounded-full"></FaDollarSign>
           <h1 className="text-xl font-semibold">Lowest Prices</h1>
@@ -65,7 +65,7 @@ const Services = () => {
         {/* card 2 */}
         {/* card 3 */}
         <div
-          data-aos="zoom-in"
+          data-aos="fade-down"
           data-aos-easing="linear"
           data-aos-duration="1500"
           className="text-center w-full p-10 flex flex-col gap-4 justify-center items-center md:w-72 lg:w-80 shadow-2xl rounded-sm bg-white "
@@ -80,7 +80,7 @@ const Services = () => {
         {/* card 3 */}
         {/* card 4 */}
         <div
-          data-aos="fade-up"
+          data-aos="fade-down"
           data-aos-easing="linear"
           data-aos-duration="1500"
           className="text-center w-full p-10 flex flex-col gap-4 justify-center items-center md:w-72 lg:w-80 shadow-2xl rounded-sm bg-white "

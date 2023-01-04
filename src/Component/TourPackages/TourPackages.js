@@ -1,7 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+
+
 const TourPackages = () => {
+
+
   return (
     <div
       style={{
@@ -34,7 +38,9 @@ const TourPackages = () => {
       </div>
       <div className="pt-28 flex flex-wrap justify-center items-center gap-4">
         {/* card 1 */}
-        <div className="relative flex flex-col lg:flex-col md:flex-row  rounded-sm shadow-lg  w-full lg:w-96  border border-green">
+        <div
+          className="relative js-tilt flex flex-col lg:flex-col md:flex-row  rounded-sm shadow-lg  w-full lg:w-96  border border-green"
+        >
           <div className="w-full">
             <img
               src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/345053324.jpg?k=be9e4c63abaa59ca9dae9284911bfc36f3d23188a0e6e25cdba77d77925e130d&o=&hp=1"
@@ -235,6 +241,7 @@ const TourPackages = () => {
         </div>
         {/* card 1 */}
       </div>
+     
     </div>
   );
 };

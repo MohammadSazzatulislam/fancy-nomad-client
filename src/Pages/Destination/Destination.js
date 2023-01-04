@@ -1,6 +1,6 @@
 import React from "react";
 import PhotoGallery from "../../Component/PhotoGallery/PhotoGallery";
-import TestMonial from "../../Component/Placess/TestMonial";
+import TestMonial from "../../Component/Testmonial/TestMonial";
 import Services from "../../Component/Services/Services";
 import TourPackages from "../../Component/TourPackages/TourPackages";
 import './Destination.css';
