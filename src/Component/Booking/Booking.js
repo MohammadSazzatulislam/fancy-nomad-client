@@ -1,10 +1,14 @@
 import React from "react";
+import image from '../../images/bookingImg.jpg';
 
 const Booking = () => {
   return (
-    <div className="p-5">
-      <div className="w-full lg:w-[900px] md:w-[800px] mx-auto">
-        <h1 className="text-5xl font-semibold mb-4">Personal Details</h1>
+    <div
+      style={{ backgroundImage: `url(${image})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}
+      className="p-5 bg-gray-200"
+    >
+      <div className="w-full lg:w-[900px] md:w-[800px] mx-auto text-white">
+        <h1 className="text-5xl font-semibold mb-4">Booking Details</h1>
         <form>
           <div className="flex gap-2  justify-center items-center">
             <div className="mb-2 flex-grow ">
@@ -15,7 +19,7 @@ const Booking = () => {
                 First name
               </label>
               <input
-                placeholder="Enter your First Name"
+                placeholder="First Name"
                 required
                 type="text"
                 className=" w-full bg-white focus:outline-none rounded shadow-md p-3"
@@ -31,7 +35,7 @@ const Booking = () => {
                 Last name
               </label>
               <input
-                placeholder="Enter your last Name"
+                placeholder="Last Name"
                 required
                 type="text"
                 className=" w-full focus:outline-none bg-white rounded shadow-md p-3"
@@ -59,7 +63,7 @@ const Booking = () => {
                 E-mail
               </label>
               <input
-                placeholder="Enter Your Email Address"
+                placeholder="Email "
                 required
                 type="email"
                 className=" w-full focus:outline-none bg-white rounded shadow-md p-3"
@@ -73,7 +77,7 @@ const Booking = () => {
               Address
             </label>
             <textarea
-              placeholder="address"
+              placeholder="Address"
               required
               type="text"
               className=" w-full focus:outline-none bg-white rounded shadow-md p-3"
@@ -89,7 +93,7 @@ const Booking = () => {
                 City/Town
               </label>
               <input
-                placeholder="Enter Your City/Town"
+                placeholder="City/Town"
                 required
                 type="text"
                 className=" w-full focus:outline-none bg-white rounded shadow-md p-3"
@@ -105,7 +109,7 @@ const Booking = () => {
                 Postcode/ZIP
               </label>
               <input
-                placeholder="Enter Your  Postcode/ZIP"
+                placeholder="Postcode/ZIP"
                 required
                 type="text"
                 className=" w-full focus:outline-none bg-white rounded shadow-md p-3"
@@ -121,7 +125,7 @@ const Booking = () => {
                 Country
               </label>
               <input
-                placeholder="Enter Your country"
+                placeholder="Country"
                 required
                 type="text"
                 className=" w-full focus:outline-none bg-white rounded shadow-md p-3"
@@ -137,7 +141,7 @@ const Booking = () => {
                 Nationality
               </label>
               <input
-                placeholder="Enter Your nationality"
+                placeholder="Nationality"
                 required
                 type="text"
                 className=" w-full focus:outline-none bg-white rounded shadow-md p-3"
@@ -146,6 +150,89 @@ const Booking = () => {
               />
             </div>
           </div>
+          <div className="flex gap-2 justify-center items-center">
+            <div className="mb-2 flex-grow">
+              <label
+                htmlFor="checkIn"
+                className="inline-block mb-2 font-medium"
+              >
+                Check-In-Date
+              </label>
+              <input
+                placeholder="Check-In-Date"
+                required
+                type="text"
+                className=" w-full focus:outline-none bg-white rounded shadow-md p-3"
+                id="checkIn"
+                name="checkIn"
+              />
+            </div>
+            <div className="mb-2 flex-grow">
+              <label
+                htmlFor="checkOut"
+                className="inline-block mb-2 font-medium"
+              >
+                Check-Out-Date
+              </label>
+              <input
+                placeholder="Check-Out-Date"
+                required
+                type="text"
+                className=" w-full focus:outline-none bg-white rounded shadow-md p-3"
+                id="checkOut"
+                name="checkOut"
+              />
+            </div>
+          </div>
+          <div className="mb-2 flex-grow">
+            <label
+              htmlFor="numberOfRoom"
+              className="inline-block mb-2 font-medium"
+            >
+              Number Of Rooms
+            </label>
+            <input
+              placeholder="Number Of Rooms"
+              required
+              type="number"
+              className=" w-full focus:outline-none bg-white rounded shadow-md p-3"
+              id="numberOfRoom"
+              name="numberOfRoom"
+            />
+          </div>
+          <div className="mb-2 flex-grow">
+            <label
+              htmlFor="numberOfPerson"
+              className="inline-block mb-2 font-medium"
+            >
+              Number Of Person
+            </label>
+            <input
+              placeholder="Number Of Person"
+              required
+              type="number"
+              className=" w-full focus:outline-none bg-white rounded shadow-md p-3"
+              id="numberOfPerson"
+              name="numberOfPerson"
+            />
+          </div>
+          <div className="mb-2 flex-grow">
+            <label
+              htmlFor="numberOfChildren"
+              className="inline-block mb-2 font-medium"
+            >
+              Number Of Children
+            </label>
+            <input
+              placeholder="Number Of Children"
+              required
+              type="number"
+              className=" w-full focus:outline-none bg-white rounded shadow-md p-3"
+              id="numberOfChildren"
+              name="numberOfChildren"
+            />
+          </div>
+
           <div className="mt-4 mb-2 ">
             <button
               type="submit"
