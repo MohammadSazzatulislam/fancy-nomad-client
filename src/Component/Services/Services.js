@@ -65,7 +65,7 @@ const Services = () => {
         {/* card 2 */}
         {/* card 3 */}
         <div
-          data-aos="fade-left"
+          data-aos="zoom-in"
           data-aos-easing="linear"
           data-aos-duration="1500"
           className="text-center w-full p-10 flex flex-col gap-4 justify-center items-center md:w-72 lg:w-80 shadow-2xl rounded-sm bg-white "

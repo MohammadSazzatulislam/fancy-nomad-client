@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const TourPackages = () => {
   return (
@@ -90,10 +91,11 @@ const TourPackages = () => {
                 <p className="text-xl font-black text-white">Price : $200</p>
                 <span className="font-normal text-white text-base">/night</span>
               </div>
-              <button className="bg-blue-500 hover:bg-blue-700 font-semibold text-white px-3 py-1 border-none rounded-full">
-                {" "}
-                Booking
-              </button>
+              <Link to="/booking">
+                <button className="bg-blue-500 hover:bg-blue-700 font-semibold text-white px-3 py-1 border-none rounded-full">
+                  Booking
+                </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -156,10 +158,11 @@ const TourPackages = () => {
                 <p className="text-xl font-black text-white">Price : $200</p>
                 <span className="font-normal text-white text-base">/night</span>
               </div>
-              <button className="bg-blue-500 hover:bg-blue-700 font-semibold text-white px-3 py-1 border-none rounded-full">
-                {" "}
-                Booking
-              </button>
+              <Link to="/booking">
+                <button className="bg-blue-500 hover:bg-blue-700 font-semibold text-white px-3 py-1 border-none rounded-full">
+                  Booking
+                </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -222,9 +225,11 @@ const TourPackages = () => {
                 <p className="text-xl font-black text-white">Price : $200</p>
                 <span className="font-normal text-white text-base">/night</span>
               </div>
-              <button className="bg-blue-500 hover:bg-blue-700 font-semibold text-white px-3 py-1 border-none rounded-full">
-                Booking
-              </button>
+              <Link to="/booking">
+                <button className="bg-blue-500 hover:bg-blue-700 font-semibold text-white px-3 py-1 border-none rounded-full">
+                  Booking
+                </button>
+              </Link>
             </div>
           </div>
         </div>
