@@ -1,238 +1,210 @@
-import React from "react";
-import image from '../../images/bookingImg.jpg';
+import React, { useState } from "react";
+import image from "../../images/bookingImg.jpg";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import "./Booking.css";
 
 const Booking = () => {
+  const [startDate, setStartDate] = useState(new Date());
+  const [endDate, setEndDate] = useState(new Date());
+
   return (
     <div
-      style={{ backgroundImage: `url(${image})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}
+      style={{
+        backgroundImage: `url(${image})`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+      }}
       className="p-5 bg-gray-200"
     >
-      <div className="w-full lg:w-[900px] md:w-[800px] mx-auto text-white">
-        <h1 className="text-5xl font-semibold mb-4">Booking Details</h1>
+      <div className="w-full  mx-auto text-white">
+        <img
+          className="w-full h-72 rounded-sm  "
+          src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/345053324.jpg?k=be9e4c63abaa59ca9dae9284911bfc36f3d23188a0e6e25cdba77d77925e130d&o=&hp=1"
+          alt=""
+        />
+        <h1 className="lg:text-5xl textGradient  md:text-4xl text-3xl font-bold uppercase leading-8 my-4 ">
+          Sea Pearl Beach Resort & Spa Cox's Bazar
+        </h1>
+        <div className="flex items-center mb-5  ">
+          <p className="text-xl font-bold  textGradient">Price : $200</p>
+          <span className="font-semibold  text-base textGradient">/night</span>
+        </div>
         <form>
-          <div className="flex gap-2  justify-center items-center">
-            <div className="mb-2 flex-grow ">
-              <label
-                htmlFor="firstName"
-                className=" mb-2 inline-block font-medium"
-              >
-                First name
-              </label>
+          <div className="flex gap-2 my-7 justify-center items-center">
+            <div className=" flex-grow relative inputBox">
               <input
-                placeholder="First Name"
+                className="bg-transparent text-white border-none outline-none w-full shadow-none px-2 pb-2 leading-3 text-md"
                 required
                 type="text"
-                className=" w-full bg-white focus:outline-none rounded shadow-md p-3"
-                id="firstName"
                 name="firstName"
               />
+              <span className="absolute uppercase pointer-events-none left-0  leading-3 text-gray-400 font-semibold ">
+                First name
+              </span>
+              <i className="absolute left-0 bottom-0 w-full bg-white overflow-hidden h-1"></i>
             </div>
-            <div className="mb-2 flex-grow">
-              <label
-                htmlFor="lastName"
-                className=" mb-2 inline-block font-medium"
-              >
-                Last name
-              </label>
+            <div className="flex-grow relative inputBox">
               <input
-                placeholder="Last Name"
+                className="bg-transparent text-white border-none outline-none w-full shadow-none px-2 pb-2 leading-3 text-md"
                 required
                 type="text"
-                className=" w-full focus:outline-none bg-white rounded shadow-md p-3"
-                id="lastName"
                 name="lastName"
               />
+              <span className="absolute uppercase pointer-events-none left-0  leading-3 text-gray-400 font-semibold ">
+                Last name
+              </span>
+              <i className="absolute left-0 bottom-0 w-full bg-white overflow-hidden h-1"></i>
             </div>
           </div>
-          <div className="flex gap-2 justify-center items-center ">
-            <div className="mb-2 flex-grow ">
-              <label htmlFor="number" className="inline-block mb-2 font-medium">
-                Phone/Mobile Number
-              </label>
+          <div className="flex gap-2 my-7 justify-center items-center ">
+            <div className=" flex-grow relative inputBox">
               <input
-                placeholder="Phone/Mobile Number"
+                className="bg-transparent text-white border-none outline-none w-full shadow-none px-2 pb-2 leading-3 text-md"
                 required
                 type="number"
-                className=" w-full focus:outline-none bg-white rounded shadow-md p-3"
-                id="number"
                 name="number"
               />
+              <span className="absolute uppercase pointer-events-none left-0  leading-3 text-gray-400 font-semibold ">
+                Phone/Mobile Number
+              </span>
+              <i className="absolute left-0 bottom-0 w-full bg-white overflow-hidden h-1"></i>
             </div>
-            <div className="mb-2 flex-grow">
-              <label htmlFor="email" className="inline-block mb-2 font-medium">
-                E-mail
-              </label>
+            <div className=" flex-grow relative inputBox">
               <input
-                placeholder="Email "
+                className="bg-transparent text-white border-none outline-none w-full shadow-none px-2 pb-2 leading-3 text-md"
                 required
                 type="email"
-                className=" w-full focus:outline-none bg-white rounded shadow-md p-3"
-                id="email"
                 name="email"
               />
+              <span className="absolute uppercase pointer-events-none left-0  leading-3 text-gray-400 font-semibold ">
+                Email
+              </span>
+              <i className="absolute left-0 bottom-0 w-full bg-white overflow-hidden h-1"></i>
             </div>
           </div>
-          <div className="mb-2 ">
-            <label htmlFor="address" className="inline-block mb-2 font-medium">
-              Address
-            </label>
+          <div className="my-7 relative inputBox ">
             <textarea
-              placeholder="Address"
               required
               type="text"
-              className=" w-full focus:outline-none bg-white rounded shadow-md p-3"
+              className="bg-transparent text-white border-none outline-none w-full shadow-none px-2 pb-2 leading-3 text-md"
               name="address"
-              id="address"
               cols="10"
               rows="5"
             ></textarea>
+            <span className="absolute uppercase pointer-events-none left-0  leading-3 text-gray-400 font-semibold ">
+              address
+            </span>
+            <i className="absolute left-0 bottom-0 w-full bg-white overflow-hidden h-1"></i>
           </div>
-          <div className="flex justify-center items-center gap-2">
-            <div className="mb-2 flex-grow">
-              <label htmlFor="city" className="inline-block mb-2 font-medium">
-                City/Town
-              </label>
+          <div className="flex my-7 justify-center items-center gap-2">
+            <div className=" flex-grow relative inputBox">
               <input
-                placeholder="City/Town"
+                className="bg-transparent text-white border-none outline-none w-full shadow-none px-2 pb-2 leading-3 text-md"
                 required
                 type="text"
-                className=" w-full focus:outline-none bg-white rounded shadow-md p-3"
-                id="city"
                 name="city"
               />
+              <span className="absolute uppercase pointer-events-none left-0  leading-3 text-gray-400 font-semibold ">
+                city/town
+              </span>
+              <i className="absolute left-0 bottom-0 w-full bg-white overflow-hidden h-1"></i>
             </div>
-            <div className="mb-2 flex-grow">
-              <label
-                htmlFor="postcode"
-                className="inline-block mb-2 font-medium"
-              >
-                Postcode/ZIP
-              </label>
+            <div className=" flex-grow relative inputBox">
               <input
-                placeholder="Postcode/ZIP"
+                className="bg-transparent text-white border-none outline-none w-full shadow-none px-2 pb-2 leading-3 text-md"
                 required
-                type="text"
-                className=" w-full focus:outline-none bg-white rounded shadow-md p-3"
-                id="postcode"
+                type="number"
                 name="postcode"
               />
+              <span className="absolute uppercase pointer-events-none left-0  leading-3 text-gray-400 font-semibold ">
+                Postcode/Zip
+              </span>
+              <i className="absolute left-0 bottom-0 w-full bg-white overflow-hidden h-1"></i>
             </div>
-            <div className="mb-2 flex-grow">
-              <label
-                htmlFor="country"
-                className="inline-block mb-2 font-medium"
-              >
-                Country
-              </label>
+            <div className=" flex-grow relative inputBox">
               <input
-                placeholder="Country"
+                className="bg-transparent text-white border-none outline-none w-full shadow-none px-2 pb-2 leading-3 text-md"
                 required
                 type="text"
-                className=" w-full focus:outline-none bg-white rounded shadow-md p-3"
-                id="country"
                 name="country"
               />
+              <span className="absolute uppercase pointer-events-none left-0  leading-3 text-gray-400 font-semibold ">
+                country
+              </span>
+              <i className="absolute left-0 bottom-0 w-full bg-white overflow-hidden h-1"></i>
             </div>
-            <div className="mb-2 flex-grow">
-              <label
-                htmlFor="nationality"
-                className="inline-block mb-2 font-medium"
-              >
-                Nationality
-              </label>
+            <div className=" flex-grow relative inputBox">
               <input
-                placeholder="Nationality"
+                className="bg-transparent text-white border-none outline-none w-full shadow-none px-2 pb-2 leading-3 text-md"
                 required
                 type="text"
-                className=" w-full focus:outline-none bg-white rounded shadow-md p-3"
-                id="nationality"
                 name="nationality"
               />
+              <span className="absolute uppercase pointer-events-none left-0  leading-3 text-gray-400 font-semibold ">
+                nationality
+              </span>
+              <i className="absolute left-0 bottom-0 w-full bg-white overflow-hidden h-1"></i>
             </div>
           </div>
-          <div className="flex gap-2 justify-center items-center">
-            <div className="mb-2 flex-grow">
-              <label
-                htmlFor="checkIn"
-                className="inline-block mb-2 font-medium"
-              >
-                Check-In-Date
-              </label>
-              <input
-                placeholder="Check-In-Date"
-                required
-                type="text"
-                className=" w-full focus:outline-none bg-white rounded shadow-md p-3"
-                id="checkIn"
+          <div className="flex gap-2 my-7 justify-center items-center">
+            <div className=" flex-grow relative inputBox">
+              <DatePicker
+                placeholderText="Check-in-date"
                 name="checkIn"
+                className="bg-transparent text-white border-none outline-none w-full shadow-none px-2 pb-2 leading-3 uppercase  left-0  font-semibold "
+                selected={startDate}
+                onChange={(date) => setStartDate(date)}
               />
+              <i className="absolute left-0 bottom-0 w-full bg-white overflow-hidden h-1"></i>
             </div>
-            <div className="mb-2 flex-grow">
-              <label
-                htmlFor="checkOut"
-                className="inline-block mb-2 font-medium"
-              >
-                Check-Out-Date
-              </label>
-              <input
-                placeholder="Check-Out-Date"
-                required
-                type="text"
-                className=" w-full focus:outline-none bg-white rounded shadow-md p-3"
-                id="checkOut"
-                name="checkOut"
+            <div className=" flex-grow relative inputBox">
+              <DatePicker
+                placeholderText="Check-in-date"
+                name="checkIn"
+                className="bg-transparent text-white border-none outline-none w-full shadow-none px-2 pb-2 leading-3 uppercase  left-0  font-semibold "
+                selected={endDate}
+                onChange={(date) => setEndDate(date)}
               />
+              <i className="absolute left-0 bottom-0 w-full bg-white overflow-hidden h-1"></i>
             </div>
           </div>
-          <div className="mb-2 flex-grow">
-            <label
-              htmlFor="numberOfRoom"
-              className="inline-block mb-2 font-medium"
-            >
-              Number Of Rooms
-            </label>
+          <div className="my-7 flex-grow relative inputBox">
             <input
-              placeholder="Number Of Rooms"
+              className="bg-transparent text-white border-none outline-none w-full shadow-none px-2 pb-2 leading-3 text-md"
               required
               type="number"
-              className=" w-full focus:outline-none bg-white rounded shadow-md p-3"
-              id="numberOfRoom"
-              name="numberOfRoom"
+              name="rooms"
             />
+            <span className="absolute uppercase pointer-events-none left-0  leading-3 text-gray-400 font-semibold ">
+              Number Of rooms
+            </span>
+            <i className="absolute left-0 bottom-0 w-full bg-white overflow-hidden h-1"></i>
           </div>
-          <div className="mb-2 flex-grow">
-            <label
-              htmlFor="numberOfPerson"
-              className="inline-block mb-2 font-medium"
-            >
-              Number Of Person
-            </label>
+          <div className="my-7 flex-grow relative inputBox">
             <input
-              placeholder="Number Of Person"
+              className="bg-transparent text-white border-none outline-none w-full shadow-none px-2 pb-2 leading-3 text-md"
               required
               type="number"
-              className=" w-full focus:outline-none bg-white rounded shadow-md p-3"
-              id="numberOfPerson"
-              name="numberOfPerson"
+              name="person"
             />
+            <span className="absolute uppercase pointer-events-none left-0  leading-3 text-gray-400 font-semibold ">
+              number of person
+            </span>
+            <i className="absolute left-0 bottom-0 w-full bg-white overflow-hidden h-1"></i>
           </div>
-          <div className="mb-2 flex-grow">
-            <label
-              htmlFor="numberOfChildren"
-              className="inline-block mb-2 font-medium"
-            >
-              Number Of Children
-            </label>
+          <div className="my-7 flex-grow relative inputBox">
             <input
-              placeholder="Number Of Children"
+              className="bg-transparent text-white border-none outline-none w-full shadow-none px-2 pb-2 leading-3 text-md"
               required
               type="number"
-              className=" w-full focus:outline-none bg-white rounded shadow-md p-3"
-              id="numberOfChildren"
-              name="numberOfChildren"
+              name="children"
             />
+            <span className="absolute uppercase pointer-events-none left-0  leading-3 text-gray-400 font-semibold ">
+              Number Of children
+            </span>
+            <i className="absolute left-0 bottom-0 w-full bg-white overflow-hidden h-1"></i>
           </div>
-
           <div className="mt-4 mb-2 ">
             <button
               type="submit"
