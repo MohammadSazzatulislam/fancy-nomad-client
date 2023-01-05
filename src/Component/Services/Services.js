@@ -14,7 +14,7 @@ const Services = () => {
     >
       <div>
         <h1
-          data-aos="fade-right"
+          data-aos="fade-down"
           data-aos-offset="300"
           data-aos-easing="ease-in-sine"
           data-aos-duration="500"
@@ -23,7 +23,7 @@ const Services = () => {
           Services
         </h1>
         <h1
-          data-aos="fade-left"
+          data-aos="fade-up"
           data-aos-offset="300"
           data-aos-easing="ease-in-sine"
           data-aos-duration="500"

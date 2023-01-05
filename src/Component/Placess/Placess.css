@@ -1,19 +1,9 @@
 
 .card {
   background: #191c29;
-  color: rgb(88 199 250 / 0%);
+  color: rgb(88 199 250 / 100%);
   cursor: pointer;
 }
-
-.card:hover {
-  color: rgb(88 199 250 / 100%);
-  transition: color 1s;
-}
-.card:hover:before, .card:hover:after {
-  animation: none;
-  opacity: 0;
-}
-
 
 
 @property --angle {

@@ -25,15 +25,15 @@ const Destination = () => {
           />
         </div>
         <div className="relative flex pt-5 flex-col items-start w-full px-5 mx-auto lg:max-w-screen-xl">
-          <div className="mb-16 text-center lg:text-left lg:my-40  lg:max-w-lg lg:pr-5">
-            <p className="inline-block vibrate-1  mb-4 text-xs font-semibold tracking-wider text-white uppercase rounded-full ">
-              Welcome to Fancy Noamd
-            </p>
-            <h2 className="mb-5   vibrate-1 text-4xl font-bold tracking-tight text-white leading-none ">
-              Discover Your
-              <br className="hidden md:block vibrate-1" />
-              Favorite Place With Us
-            </h2>
+          <div className="mb-9 text-center lg:text-left lg:my-40  lg:max-w-lg lg:pr-5">
+            <h4 className="text-center mt-5 lg:text-6xl text-4xl font-bold tracking-tight text-white leading-none ">
+              <span className="mr-5">Discover</span>
+              <span className="mr-5">Your</span>
+              <span className="mr-5">Favorite</span>
+              <span className="mr-5">Place</span>
+              <span className="mr-5">With</span>
+              <span>Us</span>
+            </h4>
           </div>
         </div>
       </div>

@@ -118,7 +118,7 @@ const Booking = () => {
                 name="postcode"
               />
               <span className="absolute uppercase pointer-events-none left-0  leading-3 text-gray-400 font-semibold ">
-                Postcode/Zip
+                Post/Zip
               </span>
               <i className="absolute left-0 bottom-0 w-full bg-white overflow-hidden h-1"></i>
             </div>
@@ -160,7 +160,7 @@ const Booking = () => {
             </div>
             <div className=" flex-grow relative inputBox">
               <DatePicker
-                placeholderText="Check-in-date"
+                placeholderText="Check-out-date"
                 name="checkIn"
                 className="bg-transparent text-white border-none outline-none w-full shadow-none px-2 pb-2 leading-3 uppercase  left-0  font-semibold "
                 selected={endDate}
