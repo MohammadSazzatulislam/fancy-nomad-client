@@ -1,53 +1,37 @@
 import React, { useContext, useState } from "react";
 import { UserAuthContext } from "../../Context/AuthContext/AuthContext";
-import { useNavigate,  Link } from 'react-router-dom';
+import { useNavigate, Link, useLocation } from "react-router-dom";
 import { FaGoogle, FaGithub } from "react-icons/fa";
-import './SignUp.css';
+import { useForm } from "react-hook-form";
+import "./SignUp.css";
 
 const SignUp = () => {
-  const [userInfo, setUserInfo] = useState({
-    name: "",
-    email: "",
-    password: "",
-  });
-
-   const navigate = useNavigate();
+  const [signError, setSignError] = useState("");
 
   const { signUpNewUser } = useContext(UserAuthContext);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
 
-    signUpNewUser(userInfo.email, userInfo.password)
-      .then(result => {
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = (data) => {
+    console.log(data);
+
+    signUpNewUser(data.email, data.password)
+      .then((result) => {
         const user = result.user;
-        setUserInfo({
-          name: '',
-          email: '',
-          password:''
-        })
-        navigate('/')
         console.log(user);
+        if (user.uid) {
+          navigate(from, { replace: true });
+        }
       })
-      .catch(error => {
-      console.error(error)
-    })
-
-  };
-
-  const handleNameChange = (e) => {
-    const name = e.target.value;
-    setUserInfo({ ...userInfo, name: name });
-  };
-
-  const handleEmailChange = (e) => {
-    const email = e.target.value;
-    setUserInfo({ ...userInfo, email: email });
-  };
-
-  const handlePasswordChange = (e) => {
-    const password = e.target.value;
-    setUserInfo({ ...userInfo, password: password });
+      .catch((error) => setSignError(error.message));
   };
 
   return (
@@ -74,10 +58,11 @@ const SignUp = () => {
                 <h3 className="lg:text-5xl textGradient  md:text-4xl text-3xl font-bold uppercase leading-8 my-3 text-center ">
                   Sign Up
                 </h3>
-                <form>
+                <form onSubmit={handleSubmit(onSubmit)}>
                   <div className="flex gap-2 my-7 justify-center items-center">
                     <div className=" flex-grow relative inputBox">
                       <input
+                        {...register("firstName", { required: true })}
                         className="bg-transparent text-white border-none outline-none w-full shadow-none px-2 pb-2 leading-3 text-md"
                         required
                         type="text"
@@ -90,6 +75,7 @@ const SignUp = () => {
                     </div>
                     <div className="flex-grow relative inputBox">
                       <input
+                        {...register("lastName", { required: true })}
                         className="bg-transparent text-white border-none outline-none w-full shadow-none px-2 pb-2 leading-3 text-md"
                         required
                         type="text"
@@ -101,8 +87,19 @@ const SignUp = () => {
                       <i className="absolute left-0 bottom-0 w-full bg-white overflow-hidden h-1"></i>
                     </div>
                   </div>
+                  {errors.firstName && (
+                    <span className="text-red-500">
+                      {errors.firstName?.message}
+                    </span>
+                  )}
+                  {errors.lastName && (
+                    <span className="text-red-500">
+                      {errors.lastName?.message}
+                    </span>
+                  )}
                   <div className=" mb-7 flex-grow relative inputBox">
                     <input
+                      {...register("email", { required: true })}
                       className="bg-transparent text-white border-none outline-none w-full shadow-none px-2 pb-2 leading-3 text-md"
                       required
                       type="email"
@@ -113,8 +110,14 @@ const SignUp = () => {
                     </span>
                     <i className="absolute left-0 bottom-0 w-full bg-white overflow-hidden h-1"></i>
                   </div>
+                  {errors.email && (
+                    <span className="text-red-500">
+                      {errors.email?.message}
+                    </span>
+                  )}
                   <div className=" mb-7 flex-grow relative inputBox">
                     <input
+                      {...register("password", { required: true })}
                       className="bg-transparent text-white border-none outline-none w-full shadow-none px-2 pb-2 leading-3 text-md"
                       required
                       type="password"
@@ -125,6 +128,14 @@ const SignUp = () => {
                     </span>
                     <i className="absolute left-0 bottom-0 w-full bg-white overflow-hidden h-1"></i>
                   </div>
+                  {errors.email && (
+                    <spna className="text-red-500">
+                      {errors.password?.message}
+                    </spna>
+                  )}
+                  {signError && (
+                    <span className="text-red-500">{signError}</span>
+                  )}
                   <button
                     type="submit"
                     className=" w-full uppercase font-semibold tracking-wide py-2 bg-blue-500 hover:bg-blue-700 outline-none  rounded-sm shadow-xl "

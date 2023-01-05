@@ -1,45 +1,35 @@
 import React, { useContext, useState } from "react";
 import { UserAuthContext } from "../../Context/AuthContext/AuthContext";
-import { useNavigate ,Link } from "react-router-dom";
-import './Login.css';
+import { useNavigate, Link, useLocation } from "react-router-dom";
+import "./Login.css";
 import { FaGoogle, FaGithub } from "react-icons/fa";
+import { useForm } from "react-hook-form";
 
 const LogIn = () => {
-  const [userInfo, setUserInfo] = useState({
-    email: "",
-    password: "",
-  });
-
-  const navigate = useNavigate();
-
+  const [logInError, setLogInError] = useState("");
   const { logInUser } = useContext(UserAuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = (data) => {
+    console.log(data);
 
-    logInUser(userInfo.email, userInfo.password)
+    logInUser(data.email, data.password)
       .then((result) => {
         const user = result.user;
-        setUserInfo({
-          email: "",
-          password: "",
-        });
-        navigate("/");
         console.log(user);
+        if (user.uid) {
+          navigate(from, { replace: true });
+        }
       })
-      .catch((error) => {
-        console.error(error);
-      });
-  };
-
-  const handleEmailChange = (e) => {
-    const email = e.target.value;
-    setUserInfo({ ...userInfo, email: email });
-  };
-
-  const handlePasswordChange = (e) => {
-    const password = e.target.value;
-    setUserInfo({ ...userInfo, password: password });
+      .catch((error) => setLogInError(error.message));
   };
 
   return (
@@ -65,9 +55,10 @@ const LogIn = () => {
               <h3 className="lg:text-5xl textGradient  md:text-4xl text-3xl font-bold uppercase leading-8 my-3 text-center ">
                 Log In
               </h3>
-              <form>
+              <form onSubmit={handleSubmit(onSubmit)}>
                 <div className=" my-7 flex-grow relative inputBox">
                   <input
+                    {...register("email", { required: true })}
                     className="bg-transparent text-white border-none outline-none w-full shadow-none px-2 pb-2 leading-3 text-md"
                     required
                     type="email"
@@ -78,8 +69,14 @@ const LogIn = () => {
                   </span>
                   <i className="absolute left-0 bottom-0 w-full bg-white overflow-hidden h-1"></i>
                 </div>
+                {errors.email && (
+                  <span className="text-red-500">
+                    {errors.email?.message}
+                  </span>
+                )}
                 <div className=" mb-7 flex-grow relative inputBox">
                   <input
+                    {...register("password", { required: true })}
                     className="bg-transparent text-white border-none outline-none w-full shadow-none px-2 pb-2 leading-3 text-md"
                     required
                     type="password"
@@ -90,6 +87,14 @@ const LogIn = () => {
                   </span>
                   <i className="absolute left-0 bottom-0 w-full bg-white overflow-hidden h-1"></i>
                 </div>
+                {errors.email && (
+                  <span className="text-red-500">
+                    {errors.password?.message}
+                  </span>
+                )}
+                {logInError && (
+                  <span className="text-red-500">{logInError}</span>
+                )}
                 <h1 className="text-white underline text-end font-medium mb-3">
                   Forgot Password
                 </h1>
