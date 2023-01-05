@@ -7,29 +7,53 @@ import { useForm } from "react-hook-form";
 
 const LogIn = () => {
   const [logInError, setLogInError] = useState("");
-  const { logInUser } = useContext(UserAuthContext);
+  const { logInUser, userPasswordReset, googleLogin, gitbutLogIn } =
+    useContext(UserAuthContext);
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
+  const [resetEmail, setResetEmail] = useState("");
 
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    console.log(data);
-
+    setResetEmail(data?.email);
     logInUser(data.email, data.password)
       .then((result) => {
         const user = result.user;
-        console.log(user);
         if (user.uid) {
           navigate(from, { replace: true });
         }
       })
       .catch((error) => setLogInError(error.message));
+  };
+  const handleResetPassword = () => {
+    userPasswordReset(resetEmail)
+      .then(() => {})
+      .catch((error) => console.log(error.message));
+  };
+  const handleGoogleLogin = () => {
+    googleLogin()
+      .then((result) => {
+        const user = result.user;
+        if (user.uid) {
+          navigate(from, { replace: true });
+        }
+      })
+      .catch((error) => console.log(error.message));
+  };
+  const handleGithubLogin = () => {
+    gitbutLogIn()
+      .then((result) => {
+        const user = result.user;
+        if (user.uid) {
+          navigate(from, { replace: true });
+        }
+      })
+      .catch((error) => console.log(error.message));
   };
 
   return (
@@ -70,9 +94,7 @@ const LogIn = () => {
                   <i className="absolute left-0 bottom-0 w-full bg-white overflow-hidden h-1"></i>
                 </div>
                 {errors.email && (
-                  <span className="text-red-500">
-                    {errors.email?.message}
-                  </span>
+                  <span className="text-red-500">{errors.email?.message}</span>
                 )}
                 <div className=" mb-7 flex-grow relative inputBox">
                   <input
@@ -95,7 +117,10 @@ const LogIn = () => {
                 {logInError && (
                   <span className="text-red-500">{logInError}</span>
                 )}
-                <h1 className="text-white underline text-end font-medium mb-3">
+                <h1
+                  onClick={handleResetPassword}
+                  className="text-white underline cursor-pointer text-end font-medium mb-3"
+                >
                   Forgot Password
                 </h1>
                 <button
@@ -114,8 +139,14 @@ const LogIn = () => {
               <div className=" mt-7">
                 <div className="divider">OR</div>
                 <div className="flex justify-center items-center gap-5">
-                  <FaGoogle className="w-12 h-12"></FaGoogle>
-                  <FaGithub className="w-12 h-12"></FaGithub>
+                  <FaGoogle
+                    onClick={handleGoogleLogin}
+                    className="w-12 h-12 cursor-pointer"
+                  ></FaGoogle>
+                  <FaGithub
+                    onClick={handleGithubLogin}
+                    className="w-12 h-12 cursor-pointer"
+                  ></FaGithub>
                 </div>
               </div>
             </div>

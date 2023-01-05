@@ -1,53 +1,91 @@
-import React, { createContext, useEffect, useState } from 'react';
-import app from '../../firebase/firebase.config';
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from 'firebase/auth';
+import React, { createContext, useEffect, useState } from "react";
+import app from "../../firebase/firebase.config";
+import {
+  createUserWithEmailAndPassword,
+  getAuth,
+  GithubAuthProvider,
+  GoogleAuthProvider,
+  onAuthStateChanged,
+  sendPasswordResetEmail,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+  signOut,
+  updateProfile,
+} from "firebase/auth";
 
 const auth = getAuth(app);
+const googleProvider = new GoogleAuthProvider();
+const githubProvider = new GithubAuthProvider();
 
-
-export const UserAuthContext = createContext()
+export const UserAuthContext = createContext();
 
 const AuthContext = ({ children }) => {
-    const [user, setUser] = useState(null);
+  const [user, setUser] = useState(null);
 
+  // sign up new user
+  const signUpNewUser = (email, password) => {
+    return createUserWithEmailAndPassword(auth, email, password);
+  };
 
-    // sign up new user 
-    const signUpNewUser = (email, password) => {
-        return createUserWithEmailAndPassword(auth, email, password)
+  //log in user
+  const logInUser = (email, password) => {
+    return signInWithEmailAndPassword(auth, email, password);
+  };
+
+  // update user name
+  const updateName = (name) => {
+    return updateProfile(auth.currentUser, { displayName: name });
+  };
+
+  // reset user Password
+  const userPasswordReset = (email) => {
+    return sendPasswordResetEmail(auth, email);
+  };
+
+  // google login
+  const googleLogin = () => {
+    return signInWithPopup(auth, googleProvider);
+  };
+
+  // github Login 
+    const gitbutLogIn = () => {
+        return signInWithPopup(auth, githubProvider);
     }
 
-    //log in user 
-    const logInUser =(email, password) =>{
-        return signInWithEmailAndPassword(auth, email, password)
-    }
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+    });
+    return () => unsubscribe();
+  }, []);
 
-    useEffect(() => {
-        const unsubscribe = onAuthStateChanged(auth, currentUser => {
-            setUser(currentUser)
-        })
-        return ()=> unsubscribe()
-    }, [])
-    
-    // sign out user
-    const userSignOut = () => {
-        signOut(auth)
-          .then(() => {
-            // Sign-out successful.
-          })
-          .catch((error) => {
-            // An error happened.
-          });
-    }
-    
+  // sign out user
+  const userSignOut = () => {
+    signOut(auth)
+      .then(() => {
+        // Sign-out successful.
+      })
+      .catch((error) => {
+        // An error happened.
+      });
+  };
 
+  const userInfo = {
+    user,
+    signUpNewUser,
+    logInUser,
+    userSignOut,
+    updateName,
+    userPasswordReset,
+    googleLogin,
+    gitbutLogIn,
+  };
 
-    const userInfo = { user, signUpNewUser, logInUser, userSignOut };
-
-    return (
-        <UserAuthContext.Provider value={userInfo}>
-            {children}
-        </UserAuthContext.Provider>
-    );
+  return (
+    <UserAuthContext.Provider value={userInfo}>
+      {children}
+    </UserAuthContext.Provider>
+  );
 };
 
 export default AuthContext;

@@ -7,9 +7,8 @@ import "./SignUp.css";
 
 const SignUp = () => {
   const [signError, setSignError] = useState("");
-
-  const { signUpNewUser } = useContext(UserAuthContext);
-
+  const { signUpNewUser, updateName, googleLogin, gitbutLogIn } =
+    useContext(UserAuthContext);
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
@@ -17,21 +16,39 @@ const SignUp = () => {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    console.log(data);
-
+    const name = data.firstName + " " + data.lastName;
     signUpNewUser(data.email, data.password)
       .then((result) => {
         const user = result.user;
-        console.log(user);
         if (user.uid) {
+          updateName(name);
           navigate(from, { replace: true });
         }
       })
       .catch((error) => setSignError(error.message));
+  };
+  const handleGoogleLogin = () => {
+    googleLogin()
+      .then((result) => {
+        const user = result.user;
+        if (user.uid) {
+          navigate(from, { replace: true });
+        }
+      })
+      .catch((error) => console.log(error.message));
+  };
+  const handleGithubLogin = () => {
+    gitbutLogIn()
+      .then((result) => {
+        const user = result.user;
+        if (user.uid) {
+          navigate(from, { replace: true });
+        }
+      })
+      .catch((error) => console.log(error.message));
   };
 
   return (
@@ -152,8 +169,14 @@ const SignUp = () => {
                 <div className=" mt-7">
                   <div className="divider">OR</div>
                   <div className="flex justify-center items-center gap-5">
-                    <FaGoogle className="w-12 h-12"></FaGoogle>
-                    <FaGithub className="w-12 h-12"></FaGithub>
+                    <FaGoogle
+                      onClick={handleGoogleLogin}
+                      className="w-12 h-12 cursor-pointer"
+                    ></FaGoogle>
+                    <FaGithub
+                      onClick={handleGithubLogin}
+                      className="w-12 h-12 cursor-pointer"
+                    ></FaGithub>
                   </div>
                 </div>
               </div>
