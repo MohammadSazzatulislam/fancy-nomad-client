@@ -4,6 +4,7 @@ import { useNavigate, Link, useLocation } from "react-router-dom";
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { useForm } from "react-hook-form";
 import "./SignUp.css";
+import toast from "react-hot-toast";
 
 const SignUp = () => {
   const [signError, setSignError] = useState("");
@@ -25,6 +26,7 @@ const SignUp = () => {
         const user = result.user;
         if (user.uid) {
           updateName(name);
+           toast.success("Successfully Sign Up");
           navigate(from, { replace: true });
         }
       })
@@ -35,6 +37,7 @@ const SignUp = () => {
       .then((result) => {
         const user = result.user;
         if (user.uid) {
+          toast.success("Successfully Log In")
           navigate(from, { replace: true });
         }
       })
@@ -45,6 +48,7 @@ const SignUp = () => {
       .then((result) => {
         const user = result.user;
         if (user.uid) {
+          toast.success("Successfully Log In");
           navigate(from, { replace: true });
         }
       })

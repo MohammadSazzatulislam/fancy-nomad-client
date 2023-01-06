@@ -12,6 +12,7 @@ import {
   signOut,
   updateProfile,
 } from "firebase/auth";
+import toast from "react-hot-toast";
 
 const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
@@ -47,10 +48,10 @@ const AuthContext = ({ children }) => {
     return signInWithPopup(auth, googleProvider);
   };
 
-  // github Login 
-    const gitbutLogIn = () => {
-        return signInWithPopup(auth, githubProvider);
-    }
+  // github Login
+  const gitbutLogIn = () => {
+    return signInWithPopup(auth, githubProvider);
+  };
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -62,12 +63,8 @@ const AuthContext = ({ children }) => {
   // sign out user
   const userSignOut = () => {
     signOut(auth)
-      .then(() => {
-        // Sign-out successful.
-      })
-      .catch((error) => {
-        // An error happened.
-      });
+      .then(() => toast.success("Successfully Log Out"))
+      .catch((error) => console.log(error.messages));
   };
 
   const userInfo = {

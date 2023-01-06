@@ -23,12 +23,22 @@ const Header = () => {
                 </h2>
               </Link>
               <div className="md:hidden flex items-center gap-2">
-                <Link
-                  to="/login"
-                  className="px-4 py-2 text-white bg-gray-600 rounded-md shadow hover:bg-gray-800"
-                >
-                  Log In
-                </Link>
+                {user?.uid ? (
+                  <Link to="/">
+                    <button
+                      onClick={handleSignOut}
+                      className="px-4 py-2 text-white bg-gray-600 rounded-md shadow hover:bg-gray-800"
+                    >
+                      Log Out
+                    </button>
+                  </Link>
+                ) : (
+                  <Link to="/Login">
+                    <button className="px-4 py-2 text-white bg-gray-600 rounded-md shadow hover:bg-gray-800">
+                      Log In
+                    </button>
+                  </Link>
+                )}
                 <button
                   className="p-2 text-gray-700 rounded-md outline-none"
                   onClick={() => setNavbar(!navbar)}

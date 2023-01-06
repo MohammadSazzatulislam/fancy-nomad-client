@@ -4,6 +4,7 @@ import { useNavigate, Link, useLocation } from "react-router-dom";
 import "./Login.css";
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 
 const LogIn = () => {
   const [logInError, setLogInError] = useState("");
@@ -24,7 +25,8 @@ const LogIn = () => {
     logInUser(data.email, data.password)
       .then((result) => {
         const user = result.user;
-        if (user.uid) {
+        if (user.uid) {         
+         toast.success("Successfully Log In");
           navigate(from, { replace: true });
         }
       })
@@ -32,7 +34,7 @@ const LogIn = () => {
   };
   const handleResetPassword = () => {
     userPasswordReset(resetEmail)
-      .then(() => {})
+      .then(() => toast.success(" Please Check your Email"))
       .catch((error) => console.log(error.message));
   };
   const handleGoogleLogin = () => {
@@ -40,6 +42,7 @@ const LogIn = () => {
       .then((result) => {
         const user = result.user;
         if (user.uid) {
+         toast.success("Successfully Log In");
           navigate(from, { replace: true });
         }
       })
@@ -50,6 +53,7 @@ const LogIn = () => {
       .then((result) => {
         const user = result.user;
         if (user.uid) {
+         toast.success("Successfully Log In");
           navigate(from, { replace: true });
         }
       })
