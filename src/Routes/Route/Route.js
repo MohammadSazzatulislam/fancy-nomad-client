@@ -1,5 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Booking from "../../Component/Booking/Booking";
+import MyProfile from "../../Component/MyProfile/MyProfile/MyProfile";
+import UpDateProfile from "../../Component/MyProfile/UpDateProfile/UpDateProfile";
 import Main from "../../Layout/Main/Main";
 import Blog from "../../Pages/Blog/Blog";
 import Contact from "../../Pages/Contact/Contact";
@@ -43,6 +45,14 @@ export const router = createBrowserRouter([
         path: "/booking",
         element: <Booking></Booking>,
       },
+      {
+        path: "/myProfile",
+        element: <MyProfile></MyProfile>,
+      },
+      {
+        path: '/upDateProfile',
+        element: <UpDateProfile></UpDateProfile>,
+      }
     ],
   },
 ]);

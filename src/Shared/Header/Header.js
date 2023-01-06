@@ -1,7 +1,8 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { UserAuthContext } from "../../Context/AuthContext/AuthContext";
-import './Header.css';
+import "./Header.css";
+import { FaUser } from "react-icons/fa";
 
 const Header = () => {
   const { user, userSignOut } = useContext(UserAuthContext);
@@ -24,14 +25,74 @@ const Header = () => {
               </Link>
               <div className="md:hidden flex items-center gap-2">
                 {user?.uid ? (
-                  <Link to="/">
-                    <button
-                      onClick={handleSignOut}
-                      className="px-4 py-2 text-white bg-gray-600 rounded-md shadow hover:bg-gray-800"
-                    >
-                      Log Out
-                    </button>
-                  </Link>
+                  <>
+                    <div className="dropdown dropdown-end">
+                      <label tabIndex={0} className="btn btn-ghost btn-circle">
+                        <div className="indicator">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="h-6 w-6 text-white"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="2"
+                              d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                            />
+                          </svg>
+                          <span className="badge badge-sm indicator-item">
+                            8
+                          </span>
+                        </div>
+                      </label>
+                      <div
+                        tabIndex={0}
+                        className="mt-3 card card-compact dropdown-content w-52 rounded-sm "
+                      >
+                        <div className="card-body">
+                          <span className="font-bold text-lg">8 Items</span>
+                          <button className="w-full py-2 bg-blue-500 text-white uppercase hover:bg-blue-700 rounded-sm outline-none">
+                            View cart
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="dropdown dropdown-end">
+                      <label
+                        tabIndex={0}
+                        className="btn btn-ghost btn-circle avatar"
+                      >
+                        {user?.photoURL ? (
+                          <img
+                            className="w-10 rounded-full"
+                            src={user?.photoURL}
+                            alt="userPhoto"
+                          />
+                        ) : (
+                          <FaUser className="w-6 h-6 text-white "></FaUser>
+                        )}
+                      </label>
+                      <ul
+                        tabIndex={0}
+                        className="menu card menu-compact dropdown-content mt-3 p-2 rounded-sm w-52"
+                      >
+                        <li>
+                          <Link to="/myProfile">Profile</Link>
+                        </li>
+                        <li>
+                          <Link>Settings</Link>
+                        </li>
+                        <li>
+                          <Link onClick={handleSignOut} to="/">
+                            Log Out
+                          </Link>
+                        </li>
+                      </ul>
+                    </div>
+                  </>
                 ) : (
                   <Link to="/Login">
                     <button className="px-4 py-2 text-white bg-gray-600 rounded-md shadow hover:bg-gray-800">
@@ -102,16 +163,74 @@ const Header = () => {
               </ul>
             </div>
           </div>
-          <div className="hidden space-x-2 md:inline-block">
+          <div className="hidden  lg:flex items-center space-x-2 md:inline-block">
             {user?.uid ? (
-              <Link to="/">
-                <button
-                  onClick={handleSignOut}
-                  className="px-4 py-2 text-white bg-gray-600 rounded-md shadow hover:bg-gray-800"
-                >
-                  Log Out
-                </button>
-              </Link>
+              <>
+                <div className="dropdown dropdown-end">
+                  <label tabIndex={0} className="btn btn-ghost btn-circle">
+                    <div className="indicator">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-6 w-6 text-white"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                        />
+                      </svg>
+                      <span className="badge badge-sm indicator-item">8</span>
+                    </div>
+                  </label>
+                  <div
+                    tabIndex={0}
+                    className="mt-3 card card-compact dropdown-content w-52 rounded-sm "
+                  >
+                    <div className="card-body">
+                      <span className="font-bold text-lg">8 Items</span>
+                      <button className="w-full py-2 bg-blue-500 text-white uppercase hover:bg-blue-700 rounded-sm outline-none">
+                        View cart
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div className="dropdown dropdown-end">
+                  <label
+                    tabIndex={0}
+                    className="btn btn-ghost btn-circle avatar"
+                  >
+                    {user?.photoURL ? (
+                      <img
+                        className="w-10 rounded-full"
+                        src={user?.photoURL}
+                        alt="userPhoto"
+                      />
+                    ) : (
+                      <FaUser className="w-6 h-6 text-white "></FaUser>
+                    )}
+                  </label>
+                  <ul
+                    tabIndex={0}
+                    className="menu card menu-compact dropdown-content mt-3 p-2 rounded-sm w-52"
+                  >
+                    <li>
+                      <Link to="/myProfile">Profile</Link>
+                    </li>
+                    <li>
+                      <Link>Settings</Link>
+                    </li>
+                    <li>
+                      <Link onClick={handleSignOut} to="/">
+                        Log Out
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+              </>
             ) : (
               <Link to="/Login">
                 <button className="px-4 py-2 text-white bg-gray-600 rounded-md shadow hover:bg-gray-800">
