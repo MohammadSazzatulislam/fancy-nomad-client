@@ -1,6 +1,5 @@
 import React from "react";
 import { FaLocationArrow, FaArrowCircleRight } from "react-icons/fa";
-import { useMotionValue, useTransform, motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import './Placess.css';
 
@@ -38,13 +37,9 @@ const placess = [
 ];
 
 const Placess = () => {
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-  const rotateX = useTransform(y, [-100, 100], [30, -30]);
-  const rotatey = useTransform(x, [-100, 100], [-30, 30]);
 
   return (
-    <div className="py-28 px-5 bg-black">
+    <div className="pt-28 px-5 bg-black">
       <div>
         <h1
           data-aos="fade-down"

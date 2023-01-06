@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  CarouselProvider,
-  Slider,
-  Slide,
-  ButtonBack,
-  ButtonNext,
-} from "pure-react-carousel";
-import "pure-react-carousel/dist/react-carousel.es.css";
+import "./Testmonial.css";
 
 const TestMonial = () => {
   return (
@@ -48,296 +41,160 @@ const TestMonial = () => {
       </div>
 
       <div className="pt-28">
-        <div className="mx-auto  h-[300px] flex justify-center">
-          <div className=" w-full h-[300px] ">
-            {/* Carousel for Small-Sized Screen */}
-            <CarouselProvider
-              className="relative block sm:hidden"
-              naturalSlideWidth={100}
-              isIntrinsicHeight={true}
-              totalSlides={3}
-              visibleSlides={1}
-              step={1}
-              infinite={true}
-            >
-              <div className="js-flickity  h-[300px] flex justify-center items-center">
-                <ButtonBack
-                  role="button"
-                  aria-label="slide backward"
-                  className="w-12 h-12 md:w-14 md:h-14 rounded-full flex justify-center items-center bg-white border border-gray-300 hover:bg-gray-400 absolute z-30 left-0 ml-8 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer"
-                  id="prev"
-                >
-                  <svg
-                    width={8}
-                    height={14}
-                    viewBox="0 0 8 14"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M7 1L1 7L7 13"
-                      stroke="black"
-                      strokeWidth={2}
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </ButtonBack>
-                <Slider>
-                  <Slide index={0}>
-                    <div className="gallery-cell lg:mr-7 mr-6 lg:w-1/2 sm:w-96 w-full h-full">
-                      <div className="relative w-full h-full lg:block hidden">
-                        <img
-                          src="https://i.ibb.co/VSsN4Jt/carousel-2.png"
-                          alt="sitting area"
-                          className="object-center object-cover w-full h-[300px]"
-                        />
-                        <div className="pl-6 pb-6 lg:pl-8 lg:pb-8 absolute left-0 bottom-0">
-                          <h1 className="text-xl leading-5 lg:text-2xl lg:leading-normal font-medium text-white">
-                            Lounge Interior
-                          </h1>
-                        </div>
-                      </div>
-                      <div className="relative w-full h-full lg:hidden">
-                        <img
-                          src="https://i.ibb.co/tMB5CZW/behzad-ghaffarian-nh-Wg-ZNV85-LQ-unsplash-1-3-1.png"
-                          alt="sitting area"
-                          className="object-center object-cover w-full h-[300px]"
-                        />
-                        <div className="pl-6 pb-6 lg:pl-8 lg:pb-8 absolute left-0 bottom-0">
-                          <h1 className="text-xl leading-5 lg:text-2xl lg:leading-normal font-medium text-white">
-                            Lounge Interior
-                          </h1>
-                        </div>
-                      </div>
-                    </div>
-                  </Slide>
-                  <Slide index={1}>
-                    <div className="gallery-cell lg:mr-7 mr-6 lg:w-1/2 sm:w-96 w-full h-full">
-                      <div className="relative w-full h-full lg:block hidden">
-                        <img
-                          src="https://i.ibb.co/phw8yGZ/sven-brandsma-Qz6-Zx4-Rjd-D8-unsplash-1.png"
-                          alt="chairs"
-                          className="object-center object-cover w-full h-[300px]"
-                        />
-                        <div className="pl-6 pb-6 lg:pl-8 lg:pb-8 absolute left-0 bottom-0">
-                          <h1 className="text-xl leading-5 lg:text-2xl lg:leading-normal font-medium text-white">
-                            Lounge Interior
-                          </h1>
-                        </div>
-                      </div>
-                      <div className="relative w-full h-full lg:hidden">
-                        <img
-                          src="https://i.ibb.co/g74VYR2/Group-46.png"
-                          alt="chairs"
-                          className="object-center object-cover w-full h-[300px]"
-                        />
-                        <div className="pl-6 pb-6 lg:pl-8 lg:pb-8 absolute left-0 bottom-0">
-                          <h1 className="text-xl leading-5 lg:text-2xl lg:leading-normal font-medium text-white">
-                            Lounge Interior
-                          </h1>
-                        </div>
-                      </div>
-                    </div>
-                  </Slide>
-                  <Slide index={2}>
-                    <div className="gallery-cell lg:mr-7 mr-6 lg:w-1/2 sm:w-96 w-full h-full">
-                      <div className="relative w-full h-full lg:block hidden">
-                        <img
-                          src="https://i.ibb.co/92ZYJyK/behzad-ghaffarian-nh-Wg-ZNV85-LQ-unsplash-1-1.png"
-                          alt="chair"
-                          className="object-center object-cover w-full h-[300px]"
-                        />
-                        <div className="pl-6 pb-6 lg:pl-8 lg:pb-8 absolute left-0 bottom-0">
-                          <h1 className="text-xl leading-5 lg:text-2xl lg:leading-normal font-medium text-white">
-                            Lounge Interior
-                          </h1>
-                        </div>
-                      </div>
-                      <div className="relative w-full h-full lg:hidden">
-                        <img
-                          src="https://i.ibb.co/372ryYP/sven-brandsma-Qz6-Zx4-Rjd-D8-unsplash-3-1.png"
-                          alt="chair"
-                          className="object-center object-cover w-full h-[300px]"
-                        />
-                        <div className="pl-6 pb-6 lg:pl-8 lg:pb-8 absolute left-0 bottom-0">
-                          <h1 className="text-xl leading-5 lg:text-2xl lg:leading-normal font-medium text-white">
-                            Lounge Interior
-                          </h1>
-                        </div>
-                      </div>
-                    </div>
-                  </Slide>
-                </Slider>
-                <ButtonNext
-                  role="button"
-                  aria-label="slide forward"
-                  className="w-12 h-12 md:w-14 md:h-14 rounded-full flex justify-center items-center bg-white border border-gray-300 hover:bg-gray-400 absolute z-30 right-0 mr-8 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800"
-                  id="next"
-                >
-                  <svg
-                    width={8}
-                    height={14}
-                    viewBox="0 0 8 14"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M1 1L7 7L1 13"
-                      stroke="black"
-                      strokeWidth={2}
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </ButtonNext>
-              </div>
-            </CarouselProvider>
+        <div class=" mx-auto w-full overflow-hidden relative">
+          <div class="w-full h-full absolute">
+            <div
+              class="w-1/4 h-full absolute z-50 left-0"
+              style={{
+                background:
+                  "linear-gradient(to right, #edf2f7 0%, rgba(255, 255, 255, 0) 100% ",
+              }}
+            ></div>
+            <div
+              class="w-1/4 h-full absolute z-50 right-0"
+              style={{
+                background:
+                  "linear-gradient(to left, #edf2f7 0%, rgba(255, 255, 255, 0) 100%",
+              }}
+            ></div>
+          </div>
 
-            {/* Carousel for Medium and Large-Sized Screen */}
-            <CarouselProvider
-              className="relative hidden sm:block"
-              naturalSlideWidth={100}
-              isIntrinsicHeight={true}
-              totalSlides={3}
-              visibleSlides={1}
-              step={1}
-              infinite={true}
-              currentSlide={1}
+          <div
+            class="carousel-items flex items-center justify-center"
+            style={{
+              width: "fit-content",
+              animation: "carouselAnim 10s infinite alternate linear",
+            }}
+          >
+            <div
+              class="carousel-focus flex items-center flex-col relative bg-white mx-5 my-10 px-4 py-3 rounded-lg shadow-lg"
+              style={{ width: "270px" }}
             >
-              <div className="js-flickity  h-[300px] flex justify-center items-center">
-                <ButtonBack
-                  role="button"
-                  aria-label="slide backward"
-                  className="w-12 h-12 md:w-14 md:h-14 rounded-full flex justify-center items-center bg-white border border-gray-300 hover:bg-gray-400 absolute z-30 left-0 ml-8 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer"
-                  id="prev"
-                >
-                  <svg
-                    width={8}
-                    height={14}
-                    viewBox="0 0 8 14"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M7 1L1 7L7 13"
-                      stroke="black"
-                      strokeWidth={2}
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </ButtonBack>
-                <Slider className="carousel__sliderLarge">
-                  <Slide className="carousel__inner-slideLarge" index={0}>
-                    <div className="gallery-cell w-full h-full">
-                      <div className="relative w-full h-full lg:block hidden">
-                        <img
-                          src="https://i.ibb.co/VSsN4Jt/carousel-2.png"
-                          alt="sitting area"
-                          className="object-center object-cover w-full h-[300px]"
-                        />
-                        <div className="pl-6 pb-6 lg:pl-8 lg:pb-8 absolute left-0 bottom-0">
-                          <h1 className="text-xl leading-5 lg:text-2xl lg:leading-normal font-medium text-white">
-                            Lounge Interior
-                          </h1>
-                        </div>
-                      </div>
-                      <div className="relative w-full h-full lg:hidden">
-                        <img
-                          src="https://i.ibb.co/tMB5CZW/behzad-ghaffarian-nh-Wg-ZNV85-LQ-unsplash-1-3-1.png"
-                          alt="sitting area"
-                          className="object-center object-cover w-full h-[300px]"
-                        />
-                        <div className="pl-6 pb-6 lg:pl-8 lg:pb-8 absolute left-0 bottom-0">
-                          <h1 className="text-xl leading-5 lg:text-2xl lg:leading-normal font-medium text-white">
-                            Lounge Interior
-                          </h1>
-                        </div>
-                      </div>
-                    </div>
-                  </Slide>
-                  <Slide className="carousel__inner-slideLarge" index={1}>
-                    <div className="gallery-cell w-full h-full">
-                      <div className="relative w-full h-full lg:block hidden">
-                        <img
-                          src="https://i.ibb.co/phw8yGZ/sven-brandsma-Qz6-Zx4-Rjd-D8-unsplash-1.png"
-                          alt="chairs"
-                          className="object-center object-cover w-full h-[300px]"
-                        />
-                        <div className="pl-6 pb-6 lg:pl-8 lg:pb-8 absolute left-0 bottom-0">
-                          <h1 className="text-xl leading-5 lg:text-2xl lg:leading-normal font-medium text-white">
-                            Lounge Interior
-                          </h1>
-                        </div>
-                      </div>
-                      <div className="relative w-full h-full lg:hidden">
-                        <img
-                          src="https://i.ibb.co/g74VYR2/Group-46.png"
-                          alt="chairs"
-                          className="object-center object-cover w-full h-[300px]"
-                        />
-                        <div className="pl-6 pb-6 lg:pl-8 lg:pb-8 absolute left-0 bottom-0">
-                          <h1 className="text-xl leading-5 lg:text-2xl lg:leading-normal font-medium text-white">
-                            Lounge Interior
-                          </h1>
-                        </div>
-                      </div>
-                    </div>
-                  </Slide>
-                  <Slide className="carousel__inner-slideLarge" index={2}>
-                    <div className="gallery-cell w-full h-full">
-                      <div className="relative w-full h-full lg:block hidden">
-                        <img
-                          src="https://i.ibb.co/92ZYJyK/behzad-ghaffarian-nh-Wg-ZNV85-LQ-unsplash-1-1.png"
-                          alt="chair"
-                          className="object-center object-cover w-full h-[300px]"
-                        />
-                        <div className="pl-6 pb-6 lg:pl-8 lg:pb-8 absolute left-0 bottom-0">
-                          <h1 className="text-xl leading-5 lg:text-2xl lg:leading-normal font-medium text-white">
-                            Lounge Interior
-                          </h1>
-                        </div>
-                      </div>
-                      <div className="relative w-full h-full lg:hidden">
-                        <img
-                          src="https://i.ibb.co/372ryYP/sven-brandsma-Qz6-Zx4-Rjd-D8-unsplash-3-1.png"
-                          alt="chair"
-                          className="object-center object-cover w-full h-[300px]"
-                        />
-                        <div className="pl-6 pb-6 lg:pl-8 lg:pb-8 absolute left-0 bottom-0">
-                          <h1 className="text-xl leading-5 lg:text-2xl lg:leading-normal font-medium text-white">
-                            Lounge Interior
-                          </h1>
-                        </div>
-                      </div>
-                    </div>
-                  </Slide>
-                </Slider>
-                <ButtonNext
-                  role="button"
-                  aria-label="slide forward"
-                  className="w-12 h-12 md:w-14 md:h-14 rounded-full flex justify-center items-center bg-white border border-gray-300 hover:bg-gray-400 absolute z-30 right-0 mr-8 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800"
-                  id="next"
-                >
-                  <svg
-                    width={8}
-                    height={14}
-                    viewBox="0 0 8 14"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M1 1L7 7L1 13"
-                      stroke="black"
-                      strokeWidth={2}
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </ButtonNext>
-              </div>
-            </CarouselProvider>
+              <span class="text-teal-400 font-bold text-xl mb-3">
+                Kabir Sing
+              </span>
+              <img
+                class="h-16 w-16 rounded-full shadow-2xl"
+                src="https://pbs.twimg.com/profile_images/830533062807191552/TbkWKnnv_400x400.jpg"
+                alt="Img"
+              />
+              <p class="mt-3 text-gray-600 text-center">
+                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod,
+                quibusdam!"
+              </p>
+            </div>
+
+            <div
+              class="carousel-focus flex items-center flex-col relative bg-white mx-5 my-10 px-4 py-3 rounded-lg shadow-lg"
+              style={{ width: "270px" }}
+            >
+              <p class="text-teal-400 font-bold text-xl mb-3">Alex</p>
+              <img
+                class="h-16 w-16 rounded-full shadow-2xl"
+                src="https://pbs.twimg.com/profile_images/830533062807191552/TbkWKnnv_400x400.jpg"
+                alt="Img"
+              />
+              <p class="mt-3 text-gray-600 text-center">
+                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod,
+                quibusdam!"
+              </p>
+            </div>
+
+            <div
+              class="carousel-focus flex items-center flex-col relative bg-white mx-5 my-10 px-4 py-3 rounded-lg shadow-lg"
+              style={{ width: "270px" }}
+            >
+              <p class="text-teal-400 font-bold text-xl mb-3">Kamrul Islam</p>
+              <img
+                class="h-16 w-16 rounded-full shadow-2xl"
+                src="https://pbs.twimg.com/profile_images/830533062807191552/TbkWKnnv_400x400.jpg"
+                alt="Img"
+              />
+              <p class="mt-3 text-gray-600 text-center">
+                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod,
+                quibusdam!"
+              </p>
+            </div>
+
+            <div
+              class="carousel-focus flex items-center flex-col relative bg-white mx-5 my-10 px-4 py-3 rounded-lg shadow-lg"
+              style={{ width: "270px" }}
+            >
+              <p class="text-teal-400 font-bold text-xl mb-3">David Albert</p>
+              <img
+                class="h-16 w-16 rounded-full shadow-2xl"
+                src="https://pbs.twimg.com/profile_images/830533062807191552/TbkWKnnv_400x400.jpg"
+                alt="Img"
+              />
+              <p class="mt-3 text-gray-600 text-center">
+                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod,
+                quibusdam!"
+              </p>
+            </div>
+
+            <div
+              class="carousel-focus flex items-center flex-col relative bg-white mx-5 my-10 px-4 py-3 rounded-lg shadow-lg"
+              style={{ width: "270px" }}
+            >
+              <p class="text-teal-400 font-bold text-xl mb-3">Sujit Raihan</p>
+              <img
+                class="h-16 w-16 rounded-full shadow-2xl"
+                src="https://pbs.twimg.com/profile_images/830533062807191552/TbkWKnnv_400x400.jpg"
+                alt="Img"
+              />
+              <p class="mt-3 text-gray-600 text-center">
+                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod,
+                quibusdam!"
+              </p>
+            </div>
+
+            <div
+              class="carousel-focus flex items-center flex-col relative bg-white mx-5 my-10 px-4 py-3 rounded-lg shadow-lg"
+              style={{ width: "270px" }}
+            >
+              <p class="text-teal-400 font-bold text-xl mb-3">janefar</p>
+              <img
+                class="h-16 w-16 rounded-full shadow-2xl"
+                src="https://pbs.twimg.com/profile_images/830533062807191552/TbkWKnnv_400x400.jpg"
+                alt="Img"
+              />
+              <p class="mt-3 text-gray-600 text-center">
+                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod,
+                quibusdam!"
+              </p>
+            </div>
+
+            <div
+              class="carousel-focus flex items-center flex-col relative bg-white mx-5 my-10 px-4 py-3 rounded-lg shadow-lg"
+              style={{ width: "270px" }}
+            >
+              <p class="text-teal-400 font-bold text-xl mb-3">Sajida Rahaman</p>
+              <img
+                class="h-16 w-16 rounded-full shadow-2xl"
+                src="https://pbs.twimg.com/profile_images/830533062807191552/TbkWKnnv_400x400.jpg"
+                alt="Img"
+              />
+              <p class="mt-3 text-gray-600 text-center">
+                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod,
+                quibusdam!"
+              </p>
+            </div>
+
+            <div
+              class="carousel-focus flex items-center flex-col relative bg-white mx-5 my-10 px-4 py-3 rounded-lg shadow-lg"
+              style={{ width: "270px" }}
+            >
+              <p class="text-teal-400 font-bold text-xl mb-3">Sujon kumar</p>
+              <img
+                class="h-16 w-16 rounded-full shadow-2xl"
+                src="https://pbs.twimg.com/profile_images/830533062807191552/TbkWKnnv_400x400.jpg"
+                alt="Img"
+              />
+              <p class="mt-3 text-gray-600 text-center">
+                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod,
+                quibusdam!"
+              </p>
+            </div>
           </div>
         </div>
       </div>

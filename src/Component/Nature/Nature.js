@@ -4,7 +4,7 @@ import "./Nature.css";
 
 const Nature = () => {
   return (
-    <div className="my-28 px-5 ">
+    <div className="mt-28 px-5 ">
       <div className="container mx-auto" >
         <ParticleBacground></ParticleBacground>
       </div>
