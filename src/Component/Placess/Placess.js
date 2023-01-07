@@ -1,43 +1,49 @@
 import React from "react";
 import { FaLocationArrow, FaArrowCircleRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import './Placess.css';
+import "./Placess.css";
 
 const placess = [
   {
     id: 1,
-    title: "Cox's Buzzer",
+    title: "Cox's Bazar",
     destination: "Chattogram",
+    img: "https://i.ibb.co/TwS8BFB/places-1.jpg",
+    
   },
   {
     id: 2,
-    title: "Cox's Buzzer",
-    destination: "Chattogram",
+    title: "Sundarban",
+    destination: "Khulna",
+    img: "https://i.ibb.co/QpkFv8d/places-2.jpg",
   },
   {
     id: 3,
-    title: "Cox's Buzzer",
+    title: "Rangamati",
     destination: "Chattogram",
+    img: "https://i.ibb.co/nkfx2Cy/places-3.jpg",
   },
   {
     id: 4,
-    title: "Cox's Buzzer",
+    title: "Bandarban",
     destination: "Chattogram",
+    img: "https://i.ibb.co/j8gQGF4/places-4.jpg",
   },
   {
     id: 5,
-    title: "Cox's Buzzer",
+    title: "Sajek Valley",
     destination: "Chattogram",
+    img: "https://i.ibb.co/KjpbCpj/places-5.jpg",
   },
   {
     id: 6,
-    title: "Cox's Buzzer",
+    title: "Patenga beach ",
     destination: "Chattogram",
+    img: "https://i.ibb.co/P6y1tnC/places-6.jpg",
   },
 ];
 
 const Placess = () => {
-
   return (
     <div className="pt-28 px-5 bg-black">
       <div>
@@ -68,11 +74,7 @@ const Placess = () => {
             key={p.id}
             className="w-full card lg:w-96 md:w-80 border  rounded overflow-hidden shadow-lg"
           >
-            <img
-              className="w-full"
-              src="https://images.unsplash.com/photo-1590603740183-980e7f6920eb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Y294cyUyMGJhemFyfGVufDB8fDB8fA%3D%3D&w=1000&q=80"
-              alt="Mountain"
-            />
+            <img className="w-full" src={p.img} alt="Mountain" />
             <div className="px-2 py-3 gap-1 flex justify-center items-center">
               <FaLocationArrow className="w-5 h-5"></FaLocationArrow>
               <p className="font-bold text-xl">{p.title}</p>
