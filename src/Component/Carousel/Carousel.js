@@ -12,7 +12,7 @@ const Carousel = () => {
   const [newsCards, setNewsCards] = useState([]);
 
   useEffect(() => {
-    fetch("https://fancy-nomad-server.vercel.app/newsCard")
+    fetch("http://localhost:5000/slider")
       .then((res) => res.json())
       .then((data) => setNewsCards(data));
   }, []);
@@ -35,9 +35,9 @@ const Carousel = () => {
         modules={[EffectCoverflow, Pagination]}
         className="mySwiper h-fit "
       >
-        {newsCards.map((news, i) => (
-          <SwiperSlide key={i}>
-            <BookingCard key={news.id} news={news}></BookingCard>
+        {newsCards.map((news) => (
+          <SwiperSlide key={news._id}>
+            <BookingCard  news={news}></BookingCard>
           </SwiperSlide>
         ))}
       </Swiper>

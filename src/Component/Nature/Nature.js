@@ -1,29 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ParticleBacground from "../ParticleBacground/ParticleBacground";
 import "./Nature.css";
 
-const nature = [
-  {
-    title: "  Mountain",
-    details:
-      "in the broadest sense, is the physical world or universe. 'Nature' can refer to the phenomena of the physical world, and also to life in general",
-    img: "https://i.ibb.co/sFVKWgZ/nature-1.jpg",
-  },
-  {
-    title: "  Mountain",
-    details:
-      "in the broadest sense, is the physical world or universe. 'Nature' can refer to the phenomena of the physical world, and also to life in general",
-    img: "https://i.ibb.co/bdCwGcD/nature-2.jpg",
-  },
-  {
-    title: "  Mountain",
-    details:
-      "in the broadest sense, is the physical world or universe. 'Nature' can refer to the phenomena of the physical world, and also to life in general",
-    img: "https://i.ibb.co/FXgqBG8/nature-3.jpg",
-  },
-];
+
 
 const Nature = () => {
+  const [natureData , setNatureData ] = useState([])
+
+  useEffect(() => {
+    fetch("http://localhost:5000/nature")
+      .then((res) => res.json())
+      .then((data) => setNatureData(data));
+  },[])
+
+
   return (
     <div className="mt-28 px-5 ">
       <div className="container mx-auto">
@@ -62,8 +52,8 @@ const Nature = () => {
         </p>
       </div>
       <div className="mt-28 flex flex-wrap gap-5 justify-center items-center">
-        {nature.map((n) => (
-          <div className="w-full text-white bg-gradient-to-r from-blue-900 to-blue-500 lg:w-96 md:w-80 border  rounded overflow-hidden shadow-lg">
+        {natureData.map((n) => (
+          <div key={n._id} className="w-full text-white bg-gradient-to-r from-blue-900 to-blue-500 lg:w-96 md:w-80 border  rounded overflow-hidden shadow-lg">
             <div className="hover:scale-110 ease-linear overflow-hidden duration-500">
               <img
                 className="w-full overflow-hidden "
@@ -80,7 +70,7 @@ const Nature = () => {
                   data-aos-duration="500"
                   className="font-bold text-xl mb-2"
                 >
-                  {n.title}
+                  {n.titles}
                 </p>
                 <div className="flex items-center ">
                   <div className="p-5 bg-gray-200 bg-opacity-40 rounded-full"></div>
@@ -94,7 +84,7 @@ const Nature = () => {
                 data-aos-duration="500"
                 className="text-white"
               >
-               {n.details}
+                {n.details}
               </p>
             </div>
           </div>
