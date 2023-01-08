@@ -5,6 +5,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import AuthContext from "./Context/AuthContext/AuthContext";
 import { Toaster } from "react-hot-toast";
+import BackToTopButton from "./Shared/BackToTopButton/BackToTopButton";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -12,6 +13,7 @@ root.render(
     <AuthContext>
       <Toaster />
       <App />
+      <BackToTopButton></BackToTopButton>
     </AuthContext>
   </React.StrictMode>
 );
