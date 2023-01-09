@@ -3,10 +3,13 @@ import image from "../../images/bookingImg.jpg";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "./Booking.css";
+import { useLoaderData } from "react-router-dom";
 
 const Booking = () => {
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
+
+  const { packImg, packTitle, price } = useLoaderData();
 
   return (
     <div
@@ -18,16 +21,12 @@ const Booking = () => {
       className="p-5 bg-gray-200"
     >
       <div className="w-full  mx-auto text-white">
-        <img
-          className="w-full h-72 rounded-sm  "
-          src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/345053324.jpg?k=be9e4c63abaa59ca9dae9284911bfc36f3d23188a0e6e25cdba77d77925e130d&o=&hp=1"
-          alt=""
-        />
+        <img className="w-full h-72 rounded-sm  " src={packImg} alt="" />
         <h1 className="lg:text-5xl textGradient  md:text-4xl text-3xl font-bold uppercase leading-8 my-4 ">
-          Sea Pearl Beach Resort & Spa Cox's Bazar
+          {packTitle}
         </h1>
         <div className="flex items-center mb-5  ">
-          <p className="text-xl font-bold  textGradient">Price : $200</p>
+          <p className="text-xl font-bold  textGradient">Price : {price}</p>
           <span className="font-semibold  text-base textGradient">/night</span>
         </div>
         <form>

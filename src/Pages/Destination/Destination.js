@@ -1,11 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import PhotoGallery from "../../Component/PhotoGallery/PhotoGallery";
 import TestMonial from "../../Component/Testmonial/TestMonial";
 import Services from "../../Component/Services/Services";
 import TourPackages from "../../Component/TourPackages/TourPackages";
-import './Destination.css';
+import "./Destination.css";
+import { useLoaderData } from "react-router-dom";
 
 const Destination = () => {
+  const { name, bannerImg, imageGallery } = useLoaderData();
+  const [packages, setPackages] = useState([])
+
+  useEffect(() => {
+    fetch(`http://localhost:5000/pacaages/${name}`)
+      .then((res) => res.json())
+      .then((data) => setPackages(data));
+  }, [name])
+
   return (
     <div className="bg-white">
       <div className="relative flex gradient flex-col-reverse  lg:pt-0 lg:flex-col lg:pb-0">
@@ -20,7 +30,7 @@ const Destination = () => {
           </svg>
           <img
             className="object-cover w-full h-full  rounded shadow-lg lg:rounded-none lg:shadow-none md:h-96 lg:h-full "
-            src="https://wallpaperaccess.com/full/902481.jpg"
+            src={bannerImg}
             alt=""
           />
         </div>
@@ -37,8 +47,8 @@ const Destination = () => {
           </div>
         </div>
       </div>
-      <PhotoGallery></PhotoGallery>
-      <TourPackages></TourPackages>
+      <PhotoGallery imageGallery={imageGallery}></PhotoGallery>
+      <TourPackages packages={packages}></TourPackages>
       <Services></Services>
       <TestMonial></TestMonial>
     </div>

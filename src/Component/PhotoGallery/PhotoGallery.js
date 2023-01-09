@@ -1,34 +1,7 @@
 import React from "react";
 import "./PhotoGallery.css";
 
-const tourGallery = [
-  {
-    img: "https://i.ibb.co/1Rf8xXL/tour-Gallery-1.jpg",
-  },
-  {
-    img: "https://i.ibb.co/X3cFMmX/tour-Gallery-2.jpg",
-  },
-  {
-    img: "https://i.ibb.co/3ccdCVY/tour-Gallery-3.jpg",
-  },
-  {
-    img: "https://i.ibb.co/6rbStkZ/tour-Gallery-4.jpg",
-  },
-  {
-    img: "https://i.ibb.co/ggqHQZc/tour-Gallery-5.jpg",
-  },
-  {
-    img: "https://i.ibb.co/R239cYR/tour-Gallery-6.jpg",
-  },
-  {
-    img: "https://i.ibb.co/rM5Sv79/tour-Gallery-7.jpg",
-  },
-  {
-    img: "https://i.ibb.co/t8wZqBW/tour-Gallery-8.jpg",
-  },
-];
-
-const PhotoGallery = () => {
+const PhotoGallery = ({ imageGallery }) => {
   return (
     <div
       style={{
@@ -67,9 +40,9 @@ const PhotoGallery = () => {
       </div>
       <div className=" px-5 pt-28 mx-auto items-center ">
         <div className="grid  grid-cols-2 grid-rows-4 grid-flow-col gap-5">
-          {tourGallery.map((t) => (
+          {imageGallery.map((t) => (
             <>
-              <div className="w-full geeks">
+              <div key={t._id} className="w-full geeks">
                 <img
                   src={t.img}
                   alt=""

@@ -5,14 +5,13 @@ import { Link } from "react-router-dom";
 import { useEffect } from "react";
 
 const Placess = () => {
-
-  const [places, setPlaces] = useState([])
+  const [places, setPlaces] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:5000/places")
       .then((res) => res.json())
       .then((data) => setPlaces(data));
-  },[])
+  }, []);
 
   return (
     <div className="pt-28 px-5 bg-black">
@@ -49,7 +48,7 @@ const Placess = () => {
               <FaLocationArrow className="w-5 h-5"></FaLocationArrow>
               <p className="font-bold text-xl">{p.title}</p>
               <p className="font-bold text-xl">{p.destination}</p>
-              <Link to={`/destination`}>
+              <Link to={`/destination/${p._id}`}>
                 <FaArrowCircleRight className="w-7 h-7 m-3 cursor-pointer"></FaArrowCircleRight>
               </Link>
             </div>

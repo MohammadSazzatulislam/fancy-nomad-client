@@ -22,7 +22,10 @@ export const router = createBrowserRouter([
         element: <Home></Home>,
       },
       {
-        path: "/destination",
+        path: "/destination/:id",
+        loader: ({ params }) => {
+          return fetch(`http://localhost:5000/places/${params.id}`);
+        },
         element: <Destination></Destination>,
       },
       {
@@ -42,7 +45,10 @@ export const router = createBrowserRouter([
         element: <LogIn></LogIn>,
       },
       {
-        path: "/booking",
+        path: "/booking/:id",
+        loader: ({ params }) => {
+          return fetch(`http://localhost:5000/singlePackages/${params.id}}`);
+        },
         element: <Booking></Booking>,
       },
       {
@@ -50,9 +56,9 @@ export const router = createBrowserRouter([
         element: <MyProfile></MyProfile>,
       },
       {
-        path: '/upDateProfile',
+        path: "/upDateProfile",
         element: <UpDateProfile></UpDateProfile>,
-      }
+      },
     ],
   },
 ]);
