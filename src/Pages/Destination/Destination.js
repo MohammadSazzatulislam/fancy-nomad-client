@@ -5,17 +5,21 @@ import Services from "../../Component/Services/Services";
 import TourPackages from "../../Component/TourPackages/TourPackages";
 import "./Destination.css";
 import { useLoaderData } from "react-router-dom";
+import Loading from "../../Shared/Loading/Loading";
 
 const Destination = () => {
   const { name, bannerImg, imageGallery } = useLoaderData();
-  const [packages, setPackages] = useState([])
+  const [packages, setPackages] = useState([]);
 
   useEffect(() => {
     fetch(`http://localhost:5000/packages/${name}`)
       .then((res) => res.json())
       .then((data) => setPackages(data));
-  }, [name])
+  }, [name]);
 
+  if (!packages) {
+    return <Loading></Loading>;
+  }
 
   return (
     <div className="bg-white">

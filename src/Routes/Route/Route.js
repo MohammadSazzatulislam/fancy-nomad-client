@@ -3,13 +3,15 @@ import Booking from "../../Component/Booking/Booking";
 import MyProfile from "../../Component/MyProfile/MyProfile/MyProfile";
 import UpDateProfile from "../../Component/MyProfile/UpDateProfile/UpDateProfile";
 import Main from "../../Layout/Main/Main";
+import AboutUs from "../../Pages/AboutUs/AboutUs";
 import Blog from "../../Pages/Blog/Blog";
-import Contact from "../../Pages/Contact/Contact";
 import Destination from "../../Pages/Destination/Destination";
+import Faq from "../../Pages/Faq/Faq";
 import Home from "../../Pages/Home/Home";
 import ErrorPage from "../../Shared/ErrorPage/ErrorPage";
 import LogIn from "../../Shared/LogIn/LogIn";
 import SignUp from "../../Shared/SignUp/SignUp";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 export const router = createBrowserRouter([
   {
@@ -33,8 +35,12 @@ export const router = createBrowserRouter([
         element: <Blog></Blog>,
       },
       {
-        path: "/contact",
-        element: <Contact></Contact>,
+        path: "/faq",
+        element: <Faq></Faq>,
+      },
+      {
+        path: "/about",
+        element: <AboutUs></AboutUs>,
       },
       {
         path: "/signup",
@@ -49,7 +55,11 @@ export const router = createBrowserRouter([
         loader: ({ params }) => {
           return fetch(`http://localhost:5000/singlePackages/${params.id}`);
         },
-        element: <Booking></Booking>,
+        element: (
+          <PrivateRoute>
+            <Booking></Booking>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/myProfile",

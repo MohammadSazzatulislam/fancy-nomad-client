@@ -3,6 +3,7 @@ import { FaLocationArrow, FaArrowCircleRight } from "react-icons/fa";
 import "./Placess.css";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
+import Loading from "../../Shared/Loading/Loading";
 
 const Placess = () => {
   const [places, setPlaces] = useState([]);
@@ -12,6 +13,10 @@ const Placess = () => {
       .then((res) => res.json())
       .then((data) => setPlaces(data));
   }, []);
+
+  if (!places) {
+    return <Loading></Loading>;
+  }
 
   return (
     <div className="pt-28 px-5 bg-black">

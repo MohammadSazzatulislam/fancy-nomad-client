@@ -145,21 +145,32 @@ const Header = () => {
             >
               <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
                 <Link to="/">
-                  <li className="text-white hover:text-indigo-200">Home</li>
-                </Link>
-                <Link to="/destination">
-                  <li className="text-white hover:text-indigo-200">
-                    Destination
+                  <li className="text-white text-md font-semibold hover:text-indigo-200">
+                    Home
                   </li>
                 </Link>
                 <Link to="/blog">
-                  <li className="text-white hover:text-indigo-200">Blog</li>
-                </Link>
-                <Link to="/contact">
-                  <li className="text-white hover:text-indigo-200">
-                    Contact US
+                  <li className="text-white text-md font-semibold hover:text-indigo-200">
+                    Blog
                   </li>
                 </Link>
+                <Link to="/about">
+                  <li className="text-white text-md font-semibold hover:text-indigo-200">
+                    About Us
+                  </li>
+                </Link>
+                <Link to="/faq">
+                  <li className="text-white text-md font-semibold hover:text-indigo-200">
+                    Faq
+                  </li>
+                </Link>
+                {user?.uid && (
+                  <Link to="/dashboard">
+                    <li className="text-white text-md font-semibold hover:text-indigo-200">
+                      DashBoard
+                    </li>
+                  </Link>
+                )}
               </ul>
             </div>
           </div>

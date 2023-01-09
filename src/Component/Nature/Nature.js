@@ -1,19 +1,20 @@
 import React, { useEffect, useState } from "react";
+import Loading from "../../Shared/Loading/Loading";
 import ParticleBacground from "../ParticleBacground/ParticleBacground";
 import "./Nature.css";
 
-
-
 const Nature = () => {
-  const [natureData , setNatureData ] = useState([])
+  const [natureData, setNatureData] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:5000/nature")
       .then((res) => res.json())
       .then((data) => setNatureData(data));
-  },[])
+  }, []);
 
-
+  if (!natureData) {
+    return <Loading></Loading>;
+  }
   return (
     <div className="mt-28 px-5 ">
       <div className="container mx-auto">
@@ -53,7 +54,10 @@ const Nature = () => {
       </div>
       <div className="mt-28 flex flex-wrap gap-5 justify-center items-center">
         {natureData.map((n) => (
-          <div key={n._id} className="w-full text-white bg-gradient-to-r from-blue-900 to-blue-500 lg:w-96 md:w-80 border  rounded overflow-hidden shadow-lg">
+          <div
+            key={n._id}
+            className="w-full text-white bg-gradient-to-r from-blue-900 to-blue-500 lg:w-96 md:w-80 border  rounded overflow-hidden shadow-lg"
+          >
             <div className="hover:scale-110 ease-linear overflow-hidden duration-500">
               <img
                 className="w-full overflow-hidden "
