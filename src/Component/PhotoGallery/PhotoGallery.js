@@ -41,15 +41,13 @@ const PhotoGallery = ({ imageGallery }) => {
       <div className=" px-5 pt-28 mx-auto items-center ">
         <div className="grid  grid-cols-2 grid-rows-4 grid-flow-col gap-5">
           {imageGallery.map((t) => (
-            <>
-              <div key={t._id} className="w-full geeks">
-                <img
-                  src={t.img}
-                  alt=""
-                  className="inset-0 h-52 w-full object-cover object-center rounded  "
-                />
-              </div>
-            </>
+            <div key={t._id} className="w-full geeks">
+              <img
+                src={t.img}
+                alt=""
+                className="inset-0 h-52 w-full object-cover object-center rounded  "
+              />
+            </div>
           ))}
         </div>
       </div>

@@ -6,10 +6,11 @@ import "./Booking.css";
 import { useLoaderData } from "react-router-dom";
 
 const Booking = () => {
+  const { packImg, packTitle, price } = useLoaderData();
+
+
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
-
-  const { packImg, packTitle, price } = useLoaderData();
 
   return (
     <div

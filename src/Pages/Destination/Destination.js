@@ -11,10 +11,11 @@ const Destination = () => {
   const [packages, setPackages] = useState([])
 
   useEffect(() => {
-    fetch(`http://localhost:5000/pacaages/${name}`)
+    fetch(`http://localhost:5000/packages/${name}`)
       .then((res) => res.json())
       .then((data) => setPackages(data));
   }, [name])
+
 
   return (
     <div className="bg-white">

@@ -47,7 +47,7 @@ export const router = createBrowserRouter([
       {
         path: "/booking/:id",
         loader: ({ params }) => {
-          return fetch(`http://localhost:5000/singlePackages/${params.id}}`);
+          return fetch(`http://localhost:5000/singlePackages/${params.id}`);
         },
         element: <Booking></Booking>,
       },
