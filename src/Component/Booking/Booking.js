@@ -1,249 +1,241 @@
-import React, { useState } from "react";
-import image from "../../images/bookingImg.jpg";
-import DatePicker from "react-datepicker";
+import React from "react";
 import "react-datepicker/dist/react-datepicker.css";
 import "./Booking.css";
 import { useLoaderData } from "react-router-dom";
 import { useContext } from "react";
 import { UserAuthContext } from "../../Context/AuthContext/AuthContext";
 import { useForm } from "react-hook-form";
+import CustomDatepicker from "../CustomDatePicker/CustomDatePicker";
 
 const Booking = () => {
   const { packImg, packTitle, price } = useLoaderData();
   const { user } = useContext(UserAuthContext);
-  const [startDate, setStartDate] = useState(new Date());
-  const [endDate, setEndDate] = useState(new Date());
+
 
   const {
     register,
     handleSubmit,
+    control,
     formState: { errors },
-  } = useForm();
+  } = useForm({ mode: "all" });
 
   const onSubmit = (data) => {
     const bookingPackage = {
       userName: data.firstName + " " + data.lastName,
       email: user?.email,
       number: data.number,
-      location: data.address,
+      address: data.address,
       city: data.city,
-      post: data.postcode,
+      postCode: data.postcode,
       country: data.country,
       nationality: data.nationality,
-      checkInDate: data.checkIn,
-      checkOutDate: data.checkOut,
+      checkInDate: data.chackIn,
+      checkOutDate: data.chackOut,
       rooms: data.rooms,
       adults: data.adults,
       children: data.children,
+      packageName: packTitle,
+      packagePrice: price,
     };
 
     console.log(bookingPackage);
   };
 
   return (
-    <div
-      style={{
-        backgroundImage: `url(${image})`,
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-      }}
-      className="p-5 bg-gray-200"
-    >
-      <div className="w-full  mx-auto text-white">
+    <div className="p-5 bg-white">
+      <div className="w-full  mx-auto">
         <img className="w-full h-72 rounded-sm  " src={packImg} alt="" />
         <h1 className="lg:text-5xl textGradient  md:text-4xl text-3xl font-bold uppercase leading-8 my-4 ">
           {packTitle}
         </h1>
         <div className="flex items-center mb-5  ">
-          <p className="text-xl font-bold  textGradient">Price : {price}</p>
-          <span className="font-semibold  text-base textGradient">/night</span>
+          <p className="text-xl font-bold text-gray-500 ">Price : {price}</p>
+          <span className="font-semibold text-gray-500 text-base ">/night</span>
         </div>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="flex gap-2 my-7 justify-center items-center">
-            <div className=" flex-grow relative inputBox">
+            <div className=" flex-grow relative ">
+              <span className=" uppercase pointer-events-none left-0  leading-3 text-gray-400 font-semibold ">
+                First name
+              </span>
               <input
                 {...register("firstName", { required: true })}
-                className="bg-transparent text-white border-none outline-none w-full shadow-none px-2 pb-2 leading-3 text-md"
+                className=" border border-blue-500 rounded-xl outline-none w-full shadow-2xl leading-3 text-md p-2 "
                 type="text"
                 name="firstName"
               />
-              <span className="absolute uppercase pointer-events-none left-0  leading-3 text-gray-400 font-semibold ">
-                First name
-              </span>
-              <i className="absolute left-0 bottom-0 w-full bg-white overflow-hidden h-1"></i>
             </div>
-            <div className="flex-grow relative inputBox">
+            <div className="flex-grow relative ">
+              <span className=" uppercase pointer-events-none left-0  leading-3 text-gray-400 font-semibold ">
+                Last name
+              </span>
               <input
                 {...register("lastName", { required: true })}
-                className="bg-transparent text-white border-none outline-none w-full shadow-none px-2 pb-2 leading-3 text-md"
+                className=" border border-blue-500 rounded-xl outline-none w-full shadow-2xl leading-3 text-md p-2"
                 type="text"
                 name="lastName"
               />
-              <span className="absolute uppercase pointer-events-none left-0  leading-3 text-gray-400 font-semibold ">
-                Last name
-              </span>
-              <i className="absolute left-0 bottom-0 w-full bg-white overflow-hidden h-1"></i>
             </div>
           </div>
           <div className="flex gap-2 my-7 justify-center items-center ">
-            <div className=" flex-grow relative inputBox">
+            <div className=" flex-grow relative ">
+              <span className=" uppercase pointer-events-none left-0  leading-3 text-gray-400 font-semibold ">
+                Phone/Mobile Number
+              </span>
               <input
                 {...register("number", { required: true })}
-                className="bg-transparent text-white border-none outline-none w-full shadow-none px-2 pb-2 leading-3 text-md"
+                className="border border-blue-500 rounded-xl outline-none w-full shadow-2xl leading-3 text-md p-2"
                 type="number"
                 name="number"
               />
-              <span className="absolute uppercase pointer-events-none left-0  leading-3 text-gray-400 font-semibold ">
-                Phone/Mobile Number
-              </span>
-              <i className="absolute left-0 bottom-0 w-full bg-white overflow-hidden h-1"></i>
             </div>
-            <div className=" flex-grow relative inputBox">
+            <div className=" flex-grow relative  ">
+              <span className=" uppercase pointer-events-none left-0  leading-3 text-gray-400 font-semibold ">
+                Email
+              </span>
               <input
                 defaultValue={user?.email}
                 readOnly
-                className="bg-transparent text-white border-none outline-none w-full shadow-none px-2 pb-2 leading-3 text-md"
+                disabled
+                className="border border-blue-500 rounded-xl outline-none w-full shadow-2xl leading-3 text-md p-2"
                 type="email"
                 name="email"
               />
-              <span className="absolute uppercase pointer-events-none left-0  leading-3 text-gray-400 font-semibold ">
-                Email
-              </span>
-              <i className="absolute left-0 bottom-0 w-full bg-white overflow-hidden h-1"></i>
             </div>
           </div>
-          <div className="my-7 relative inputBox ">
+          <div className="my-7 relative  ">
+            <span className=" uppercase pointer-events-none left-0  leading-3 text-gray-400 font-semibold ">
+              address
+            </span>
             <textarea
               {...register("address", { required: true })}
               type="text"
-              className="bg-transparent text-white border-none outline-none w-full shadow-none px-2 pb-2 leading-3 text-md"
+              className="border border-blue-500 rounded-xl outline-none w-full shadow-2xl leading-3 text-md p-2"
               name="address"
               cols="10"
               rows="5"
             ></textarea>
-            <span className="absolute uppercase pointer-events-none left-0  leading-3 text-gray-400 font-semibold ">
-              address
-            </span>
-            <i className="absolute left-0 bottom-0 w-full bg-white overflow-hidden h-1"></i>
           </div>
           <div className="flex my-7 justify-center items-center gap-2">
-            <div className=" flex-grow relative inputBox">
+            <div className=" flex-grow relative ">
+              <span className=" uppercase pointer-events-none left-0  leading-3 text-gray-400 font-semibold ">
+                city/town
+              </span>
               <input
                 {...register("city", { required: true })}
-                className="bg-transparent text-white border-none outline-none w-full shadow-none px-2 pb-2 leading-3 text-md"
+                className="border border-blue-500 rounded-xl outline-none w-full shadow-2xl leading-3 text-md p-2"
                 type="text"
                 name="city"
               />
-              <span className="absolute uppercase pointer-events-none left-0  leading-3 text-gray-400 font-semibold ">
-                city/town
-              </span>
-              <i className="absolute left-0 bottom-0 w-full bg-white overflow-hidden h-1"></i>
             </div>
-            <div className=" flex-grow relative inputBox">
+            <div className=" flex-grow relative ">
+              <span className=" uppercase pointer-events-none left-0  leading-3 text-gray-400 font-semibold ">
+                Post/Zip
+              </span>
               <input
                 {...register("postcode", { required: true })}
-                className="bg-transparent text-white border-none outline-none w-full shadow-none px-2 pb-2 leading-3 text-md"
+                className="border border-blue-500 rounded-xl outline-none w-full shadow-2xl leading-3 text-md p-2"
                 type="number"
                 name="postcode"
               />
-              <span className="absolute uppercase pointer-events-none left-0  leading-3 text-gray-400 font-semibold ">
-                Post/Zip
-              </span>
-              <i className="absolute left-0 bottom-0 w-full bg-white overflow-hidden h-1"></i>
             </div>
-            <div className=" flex-grow relative inputBox">
+            <div className=" flex-grow relative ">
+              <span className=" uppercase pointer-events-none left-0  leading-3 text-gray-400 font-semibold ">
+                country
+              </span>
               <input
                 {...register("country", { required: true })}
-                className="bg-transparent text-white border-none outline-none w-full shadow-none px-2 pb-2 leading-3 text-md"
+                className="border border-blue-500 rounded-xl outline-none w-full shadow-2xl leading-3 text-md p-2"
                 type="text"
                 name="country"
               />
-              <span className="absolute uppercase pointer-events-none left-0  leading-3 text-gray-400 font-semibold ">
-                country
-              </span>
-              <i className="absolute left-0 bottom-0 w-full bg-white overflow-hidden h-1"></i>
             </div>
-            <div className=" flex-grow relative inputBox">
+            <div className=" flex-grow relative ">
+              <span className=" uppercase pointer-events-none left-0  leading-3 text-gray-400 font-semibold ">
+                nationality
+              </span>
               <input
                 {...register("nationality", { required: true })}
-                className="bg-transparent text-white border-none outline-none w-full shadow-none px-2 pb-2 leading-3 text-md"
+                className="border border-blue-500 rounded-xl outline-none w-full shadow-2xl leading-3 text-md p-2"
                 type="text"
                 name="nationality"
               />
-              <span className="absolute uppercase pointer-events-none left-0  leading-3 text-gray-400 font-semibold ">
-                nationality
-              </span>
-              <i className="absolute left-0 bottom-0 w-full bg-white overflow-hidden h-1"></i>
             </div>
           </div>
           <div className="flex gap-2 my-7 justify-center items-center">
-            <div className=" flex-grow relative inputBox">
-              <DatePicker
-                {...register("checkIn", { required: true })}
-                placeholderText="Check-in-date"
-                name="checkIn"
-                className="bg-transparent text-white border-none outline-none w-full shadow-none px-2 pb-2 leading-3 uppercase  left-0  font-semibold "
-                selected={startDate}
-                onChange={(date) => setStartDate(date)}
+            <div className=" flex-grow relative ">
+              <span className=" uppercase pointer-events-none left-0  leading-3 text-gray-400 font-semibold ">
+                Chack In Date
+              </span>
+              <CustomDatepicker             
+                name="chackIn"
+                control={control}
+                render={({ field: { ref, ...rest } }) => (
+                  <input
+                    {...register("chackIn")}
+                    className="border border-blue-500 rounded-xl outline-none w-full shadow-2xl leading-3 text-md p-2"
+                    type="date"
+                    {...rest}
+                  />
+                )}
               />
-              <i className="absolute left-0 bottom-0 w-full bg-white overflow-hidden h-1"></i>
             </div>
-            <div className=" flex-grow relative inputBox">
-              <DatePicker
-                {...register("checkOut", { required: true })}
-                placeholderText="Check-out-date"
-                name="checkOut"
-                className="bg-transparent text-white border-none outline-none w-full shadow-none px-2 pb-2 leading-3 uppercase  left-0  font-semibold "
-                selected={endDate}
-                onChange={(date) => setEndDate(date)}
+            <div className=" flex-grow relative  ">
+              <span className=" uppercase pointer-events-none left-0  leading-3 text-gray-400 font-semibold ">
+                Chack Out Date
+              </span>
+              <CustomDatepicker
+                name="chackOut"
+                control={control}
+                render={({ field: { ref, ...rest } }) => (
+                  <input
+                    {...register("chackOut")}
+                    className="border border-blue-500 rounded-xl outline-none w-full shadow-2xl leading-3 text-md p-2"
+                    type="date"
+                    {...rest}
+                  />
+                )}
               />
-              <i className="absolute left-0 bottom-0 w-full bg-white overflow-hidden h-1"></i>
             </div>
           </div>
-          <div className="my-7 flex-grow relative inputBox">
+          <div className="my-7 flex-grow relative ">
+            <span className=" uppercase pointer-events-none left-0  leading-3 text-gray-400 font-semibold ">
+              Number Of rooms
+            </span>
             <input
               {...register("rooms", { required: true })}
-              className="bg-transparent text-white border-none outline-none w-full shadow-none px-2 pb-2 leading-3 text-md"
+              className="border border-blue-500 rounded-xl outline-none w-full shadow-2xl leading-3 text-md p-2"
               type="number"
               name="rooms"
             />
-            <span className="absolute uppercase pointer-events-none left-0  leading-3 text-gray-400 font-semibold ">
-              Number Of rooms
-            </span>
-            <i className="absolute left-0 bottom-0 w-full bg-white overflow-hidden h-1"></i>
           </div>
-          <div className="my-7 flex-grow relative inputBox">
+          <div className="my-7 flex-grow relative ">
+            <span className=" uppercase pointer-events-none left-0  leading-3 text-gray-400 font-semibold ">
+              number of adults
+            </span>
             <input
               {...register("adults", { required: true })}
-              className="bg-transparent text-white border-none outline-none w-full shadow-none px-2 pb-2 leading-3 text-md"
+              className="border border-blue-500 rounded-xl outline-none w-full shadow-2xl leading-3 text-md p-2"
               type="number"
               name="adults"
             />
-            <span className="absolute uppercase pointer-events-none left-0  leading-3 text-gray-400 font-semibold ">
-              number of adults
-            </span>
-            <i className="absolute left-0 bottom-0 w-full bg-white overflow-hidden h-1"></i>
           </div>
-          <div className="my-7 flex-grow relative inputBox">
+          <div className="my-7 flex-grow relative ">
+            <span className=" uppercase pointer-events-none left-0  leading-3 text-gray-400 font-semibold ">
+              Number Of children
+            </span>
             <input
               {...register("children", { required: true })}
-              className="bg-transparent text-white border-none outline-none w-full shadow-none px-2 pb-2 leading-3 text-md"
+              className="border border-blue-500 rounded-xl outline-none w-full shadow-2xl leading-3 text-md p-2"
               type="number"
               name="children"
             />
-            <span className="absolute uppercase pointer-events-none left-0  leading-3 text-gray-400 font-semibold ">
-              Number Of children
-            </span>
-            <i className="absolute left-0 bottom-0 w-full bg-white overflow-hidden h-1"></i>
           </div>
-          <div className="mt-4 mb-2 ">
-            <button
-              type="submit"
-              className="bg-blue-500 hover:bg-blue-700 text-white font-semibold px-3 py-2 w-full outline-none rounded-sm"
-            >
-              Booked
-            </button>
-          </div>
+          <input
+            className="mt-4 mb-2 bg-blue-500 hover:bg-blue-700 text-white font-semibold px-3 py-2 w-full outline-none rounded-xl"
+            type="submit"
+            value="Booked"
+          />
         </form>
       </div>
     </div>
