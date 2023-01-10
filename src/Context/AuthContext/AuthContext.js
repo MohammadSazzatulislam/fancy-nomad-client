@@ -22,39 +22,47 @@ export const UserAuthContext = createContext();
 
 const AuthContext = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   // sign up new user
   const signUpNewUser = (email, password) => {
+    setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
   //log in user
   const logInUser = (email, password) => {
+    setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
 
   // update user name
   const updateName = (name) => {
+    setLoading(true);
     return updateProfile(auth.currentUser, { displayName: name });
   };
 
   // reset user Password
   const userPasswordReset = (email) => {
+    setLoading(true);
     return sendPasswordResetEmail(auth, email);
   };
 
   // google login
   const googleLogin = () => {
+    setLoading(true);
     return signInWithPopup(auth, googleProvider);
   };
 
   // github Login
   const gitbutLogIn = () => {
+    setLoading(true);
     return signInWithPopup(auth, githubProvider);
   };
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setLoading(false);
       setUser(currentUser);
     });
     return () => unsubscribe();
@@ -63,7 +71,10 @@ const AuthContext = ({ children }) => {
   // sign out user
   const userSignOut = () => {
     signOut(auth)
-      .then(() => toast.success("Successfully Log Out"))
+      .then(() => {
+        toast.success("Successfully Log Out");
+        localStorage.removeItem('fancy-nomad')
+      } )
       .catch((error) => console.log(error.messages));
   };
 
@@ -76,6 +87,7 @@ const AuthContext = ({ children }) => {
     userPasswordReset,
     googleLogin,
     gitbutLogIn,
+    loading,
   };
 
   return (

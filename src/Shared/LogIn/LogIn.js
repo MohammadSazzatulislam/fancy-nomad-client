@@ -25,12 +25,44 @@ const LogIn = () => {
     logInUser(data.email, data.password)
       .then((result) => {
         const user = result.user;
-        if (user.uid) {         
-         toast.success("Successfully Log In");
+        if (user?.uid) {          
+          jwtToken(user?.email);
+          toast.success("Successfully Log In");
           navigate(from, { replace: true });
         }
       })
       .catch((error) => setLogInError(error.message));
+  };
+
+  const users = (email, name) => {
+    const usersCollection = {
+      name: name,
+      email: email,
+    };
+    fetch(`http://localhost:5000/users`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(usersCollection),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data) {
+           jwtToken(email);         
+        }
+      });
+  };
+  const jwtToken = (email) => {
+    fetch(`http://localhost:5000/jwt/${email}`)
+      .then((res) => res.json())
+      .then((data) => {
+        if(data.token){
+          localStorage.setItem("fancy-nomad", data.token);
+          toast.success("Successfully Log In");
+          navigate(from, { replace: true });
+        }
+      });
   };
   const handleResetPassword = () => {
     userPasswordReset(resetEmail)
@@ -41,9 +73,8 @@ const LogIn = () => {
     googleLogin()
       .then((result) => {
         const user = result.user;
-        if (user.uid) {
-         toast.success("Successfully Log In");
-          navigate(from, { replace: true });
+        if (user?.uid) {
+          users(user?.email, user?.displayName);         
         }
       })
       .catch((error) => console.log(error.message));
@@ -52,9 +83,8 @@ const LogIn = () => {
     gitbutLogIn()
       .then((result) => {
         const user = result.user;
-        if (user.uid) {
-         toast.success("Successfully Log In");
-          navigate(from, { replace: true });
+        if (user?.uid) {
+          users(user?.email, user?.displayName);
         }
       })
       .catch((error) => console.log(error.message));

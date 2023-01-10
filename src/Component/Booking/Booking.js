@@ -6,11 +6,12 @@ import { useContext } from "react";
 import { UserAuthContext } from "../../Context/AuthContext/AuthContext";
 import { useForm } from "react-hook-form";
 import CustomDatepicker from "../CustomDatePicker/CustomDatePicker";
+import Loading from "../../Shared/Loading/Loading";
+import toast from "react-hot-toast";
 
 const Booking = () => {
   const { packImg, packTitle, price } = useLoaderData();
   const { user } = useContext(UserAuthContext);
-
 
   const {
     register,
@@ -38,8 +39,26 @@ const Booking = () => {
       packagePrice: price,
     };
 
-    console.log(bookingPackage);
+    fetch(`http://localhost:5000/bookingPackages`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(bookingPackage),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.acknowledged) {
+         toast.success("Successfully booking");
+        } else {
+           toast.error(data.message);
+        }
+      });
   };
+
+  if (!packTitle) {
+    return <Loading></Loading>;
+  }
 
   return (
     <div className="p-5 bg-white">
@@ -167,7 +186,7 @@ const Booking = () => {
               <span className=" uppercase pointer-events-none left-0  leading-3 text-gray-400 font-semibold ">
                 Chack In Date
               </span>
-              <CustomDatepicker             
+              <CustomDatepicker
                 name="chackIn"
                 control={control}
                 render={({ field: { ref, ...rest } }) => (
