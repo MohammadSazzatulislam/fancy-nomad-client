@@ -1,7 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
 import Booking from "../../Component/Booking/Booking";
+import MyBooking from "../../Component/MyBooking/MyBooking";
 import MyProfile from "../../Component/MyProfile/MyProfile/MyProfile";
 import UpDateProfile from "../../Component/MyProfile/UpDateProfile/UpDateProfile";
+import MyWishlist from "../../Component/MyWishlist/MyWishlist";
+import DashBoardLayOut from "../../Layout/DashboardLayOut/DashBoardLayOut";
 import Main from "../../Layout/Main/Main";
 import AboutUs from "../../Pages/AboutUs/AboutUs";
 import Blog from "../../Pages/Blog/Blog";
@@ -68,6 +71,21 @@ export const router = createBrowserRouter([
       {
         path: "/upDateProfile",
         element: <UpDateProfile></UpDateProfile>,
+      },
+    ],
+  },
+  {
+    path: "/dashboard",
+    errorElement: <ErrorPage></ErrorPage>,
+    element: <DashBoardLayOut></DashBoardLayOut>,
+    children: [
+      {
+        path: "/dashboard",
+        element: <MyBooking></MyBooking>,
+      },
+      {
+        path: "/dashboard/wishlist",
+        element: <MyWishlist></MyWishlist>,
       },
     ],
   },

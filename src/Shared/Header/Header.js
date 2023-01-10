@@ -3,10 +3,18 @@ import { Link } from "react-router-dom";
 import { UserAuthContext } from "../../Context/AuthContext/AuthContext";
 import "./Header.css";
 import { FaUser } from "react-icons/fa";
+import { useEffect } from "react";
 
 const Header = () => {
   const { user, userSignOut } = useContext(UserAuthContext);
   const [navbar, setNavbar] = useState(false);
+  const [booked, setBooked] = useState([])
+
+  useEffect(() => {
+    fetch(`http://localhost:5000/wishList/${user?.email}`)
+      .then((res) => res.json())
+      .then((data) => setBooked(data));
+  }, [user]);
 
   const handleSignOut = () => {
     userSignOut();
@@ -44,7 +52,7 @@ const Header = () => {
                             />
                           </svg>
                           <span className="badge badge-sm indicator-item">
-                            8
+                            {booked?.length}
                           </span>
                         </div>
                       </label>
@@ -194,7 +202,9 @@ const Header = () => {
                           d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
                         />
                       </svg>
-                      <span className="badge badge-sm indicator-item">8</span>
+                      <span className="badge badge-sm indicator-item">
+                        {booked?.length}
+                      </span>
                     </div>
                   </label>
                   <div
