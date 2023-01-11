@@ -11,7 +11,7 @@ const Header = () => {
   const [booked, setBooked] = useState([])
 
   useEffect(() => {
-    fetch(`http://localhost:5000/wishList/${user?.email}`)
+    fetch(`http://localhost:5000/myBooking/${user?.email}`)
       .then((res) => res.json())
       .then((data) => setBooked(data));
   }, [user]);

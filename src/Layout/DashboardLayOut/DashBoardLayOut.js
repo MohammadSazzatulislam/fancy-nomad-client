@@ -1,20 +1,10 @@
 import React, { useState } from "react";
-import { FaShare, FaShoppingCart, FaDollarSign } from "react-icons/fa";
+import { FaShoppingCart, FaDollarSign } from "react-icons/fa";
 import { Outlet, Link } from "react-router-dom";
 import Header from "../../Shared/Header/Header";
 import "./DashBoardLayOut.css";
 
 const DashBoardLayOut = () => {
-  const [toggle, setToggle] = useState(false);
-
-  const handleToggle = () => {
-    if (toggle === false) {
-      setToggle(true);
-    } else {
-      setToggle(false);
-    }
-  };
-
   return (
     <div className="bg-white">
       <Header></Header>
@@ -65,26 +55,28 @@ const DashBoardLayOut = () => {
           data-dev-hint="sidebar; px-0 for frameless; px-2 for visually inset the navigation"
         >
           <nav data-dev-hint="main navigation">
-            <ul>
+            <ul className="   p-5 ">
               <Link
                 to="/dashboard"
-                class="flex items-center transition duration-200 hover:bg-gray-700 hover:text-white"
+                class="flex gap-2 mb-4 text-md font-semibold items-center transition duration-200 hover:bg-gray-700"
               >
-                My Booking
+                <FaShoppingCart className="w-6-h-6"></FaShoppingCart>
+                <span>My Booking</span>
               </Link>
               <Link
                 to="/dashboard/wishlist"
-                class="flex items-center transition duration-200 hover:bg-gray-700 hover:text-white"
+                class="flex gap-2 text-md font-semibold items-center transition duration-200 hover:bg-gray-700"
               >
-                My Wishlist
+                <FaDollarSign className="w-6-h-6"></FaDollarSign>
+                <span>My Wishlist</span>
               </Link>
             </ul>
           </nav>
         </aside>
 
-        <main id="content" class="flex-1 p-6 lg:px-8">
+        <main id="content" class="flex-1 p-5 overflow-x-auto ">
           <div>
-            <div class="p-5 w-full h-screen  mx-auto ">
+            <div class="w-full h-screen lg:pt-5 md:pt-5 mx-auto ">
               <Outlet></Outlet>
             </div>
           </div>
