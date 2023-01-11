@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Booking from "../../Component/Booking/Booking";
+import BookingUpdate from "../../Component/BookingUpdate/BookingUpdate";
 import MyBooking from "../../Component/MyBooking/MyBooking";
 import MyProfile from "../../Component/MyProfile/MyProfile/MyProfile";
 import UpDateProfile from "../../Component/MyProfile/UpDateProfile/UpDateProfile";
@@ -86,6 +87,12 @@ export const router = createBrowserRouter([
       {
         path: "/dashboard/wishlist",
         element: <MyWishlist></MyWishlist>,
+      },
+      {
+        path: "/dashboard/bookingUpdate/:id",
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/myBookingUpdate/${params.id}`),
+        element: <BookingUpdate></BookingUpdate>,
       },
     ],
   },
