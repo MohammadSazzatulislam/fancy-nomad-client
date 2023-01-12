@@ -5,6 +5,7 @@ import MyBooking from "../../Component/MyBooking/MyBooking";
 import MyProfile from "../../Component/MyProfile/MyProfile/MyProfile";
 import UpDateProfile from "../../Component/MyProfile/UpDateProfile/UpDateProfile";
 import MyWishlist from "../../Component/MyWishlist/MyWishlist";
+import Payment from "../../Component/Payment/Payment";
 import DashBoardLayOut from "../../Layout/DashboardLayOut/DashBoardLayOut";
 import Main from "../../Layout/Main/Main";
 import AboutUs from "../../Pages/AboutUs/AboutUs";
@@ -93,6 +94,12 @@ export const router = createBrowserRouter([
         loader: ({ params }) =>
           fetch(`http://localhost:5000/myBookingUpdate/${params.id}`),
         element: <BookingUpdate></BookingUpdate>,
+      },
+      {
+        path: "/dashboard/payment/:id",
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/myBookings/${params.id}`),
+        element: <Payment></Payment>,
       },
     ],
   },

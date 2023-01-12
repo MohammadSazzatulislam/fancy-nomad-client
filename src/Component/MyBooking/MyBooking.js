@@ -38,7 +38,7 @@ const MyBooking = () => {
   }
 
   return (
-    <div>
+    <div className="py-10">
       <div className="w-full ">
         <h1 className="text-xl mb-2 font-semibold lg:text-3xl md:text-2xl">
           My Booking

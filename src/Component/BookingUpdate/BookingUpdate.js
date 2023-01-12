@@ -75,7 +75,7 @@ const BookingUpdate = () => {
   };
 
   return (
-    <div className="py-5 bg-white">
+    <div className="py-16 bg-white">
       <div className="w-full  mx-auto">
         <img className="w-full h-72 rounded-sm  " src={packImg} alt="" />
         <h1 className="lg:text-5xl textGradient  md:text-4xl text-3xl font-bold uppercase leading-8 my-4 ">
