@@ -3,18 +3,28 @@ import { Link } from "react-router-dom";
 import { UserAuthContext } from "../../Context/AuthContext/AuthContext";
 import "./Header.css";
 import { FaUser } from "react-icons/fa";
-import { useEffect } from "react";
+import { useQuery } from "react-query";
+import Loading from "../Loading/Loading";
 
 const Header = () => {
-  const { user, userSignOut } = useContext(UserAuthContext);
+  const { user, userSignOut, updateWishList } = useContext(UserAuthContext);
   const [navbar, setNavbar] = useState(false);
-  const [booked, setBooked] = useState([])
 
-  useEffect(() => {
-    fetch(`http://localhost:5000/myBooking/${user?.email}`)
-      .then((res) => res.json())
-      .then((data) => setBooked(data));
-  }, [user]);
+  const { isLoading, data, refetch } = useQuery({
+    queryKey: ["data"],
+    queryFn: () =>
+      fetch(`http://localhost:5000/myBooking/${user?.email}`).then((res) =>
+        res.json()
+      ),
+  });
+
+  if (isLoading) {
+    return <Loading></Loading>;
+  }
+
+  if (updateWishList === true || user) {
+    refetch();
+  }
 
   const handleSignOut = () => {
     userSignOut();
@@ -52,7 +62,7 @@ const Header = () => {
                             />
                           </svg>
                           <span className="badge badge-sm indicator-item">
-                            {booked?.length}
+                            {data?.length}
                           </span>
                         </div>
                       </label>
@@ -203,7 +213,7 @@ const Header = () => {
                         />
                       </svg>
                       <span className="badge badge-sm indicator-item">
-                        {booked?.length}
+                        {data?.length}
                       </span>
                     </div>
                   </label>

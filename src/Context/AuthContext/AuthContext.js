@@ -23,6 +23,7 @@ export const UserAuthContext = createContext();
 const AuthContext = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [updateWishList, setUpdateWishList] = useState(false);
 
   // sign up new user
   const signUpNewUser = (email, password) => {
@@ -73,8 +74,8 @@ const AuthContext = ({ children }) => {
     signOut(auth)
       .then(() => {
         toast.success("Successfully Log Out");
-        localStorage.removeItem('fancy-nomad')
-      } )
+        localStorage.removeItem("fancy-nomad");
+      })
       .catch((error) => console.log(error.messages));
   };
 
@@ -88,6 +89,8 @@ const AuthContext = ({ children }) => {
     googleLogin,
     gitbutLogIn,
     loading,
+    updateWishList,
+    setUpdateWishList,
   };
 
   return (

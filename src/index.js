@@ -6,13 +6,17 @@ import reportWebVitals from "./reportWebVitals";
 import AuthContext from "./Context/AuthContext/AuthContext";
 import { Toaster } from "react-hot-toast";
 import BackToTopButton from "./Shared/BackToTopButton/BackToTopButton";
+import { QueryClient, QueryClientProvider } from "react-query";
 
+const queryClient = new QueryClient();
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <AuthContext>
       <Toaster />
-      <App />
+      <QueryClientProvider client={queryClient}>
+        <App />
+      </QueryClientProvider>
       <BackToTopButton></BackToTopButton>
     </AuthContext>
   </React.StrictMode>

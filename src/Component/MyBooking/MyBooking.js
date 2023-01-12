@@ -1,34 +1,41 @@
 import React, { useContext } from "react";
-import { useEffect } from "react";
-import { useState } from "react";
 import { UserAuthContext } from "../../Context/AuthContext/AuthContext";
 import { FaUser, FaEdit, FaTrashAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import toast from "react-hot-toast";
+import { useQuery } from "react-query";
+import Loading from "../../Shared/Loading/Loading";
 
 const MyBooking = () => {
-  const [myOrder, setMyOrder] = useState([]);
   const { user } = useContext(UserAuthContext);
+  const {
+    isLoading,
+    data = [],
+    refetch,
+  } = useQuery({
+    queryKey: ["data"],
+    queryFn: () =>
+      fetch(`http://localhost:5000/myBooking/${user?.email}`).then((res) =>
+        res.json()
+      ),
+  });
 
-  useEffect(() => {
-    fetch(`http://localhost:5000/myBooking/${user?.email}`)
+  const handleDelete = (id) => {
+    fetch(`http://localhost:5000/myBooking/${id}`, {
+      method: "DELETE",
+    })
       .then((res) => res.json())
       .then((data) => {
-        setMyOrder(data);
+        if (data.acknowledged) {
+          toast.success("Successfully Delete");
+          refetch();
+        }
       });
-  }, [user]);
+  };
 
-    const handleDelete = (id) => {
-      fetch(`http://localhost:5000/myBooking/${id}`, {
-        method: "DELETE",
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.acknowledged) {
-            toast.success("Successfully Delete");
-          }
-        });
-    };
+  if (isLoading) {
+    return <Loading></Loading>;
+  }
 
   return (
     <div>
@@ -37,7 +44,7 @@ const MyBooking = () => {
           My Booking
         </h1>
       </div>
-      {myOrder.length ? (
+      {data.length ? (
         <>
           <div className="w-full ">
             <div className="bg-white  shadow-2xl overflow-y-auto">
@@ -62,7 +69,7 @@ const MyBooking = () => {
                   </tr>
                 </thead>
                 <tbody className="w-full overflow-x-auto overflow-y-auto">
-                  {myOrder?.map((order) => (
+                  {data?.map((order) => (
                     <>
                       <tr
                         key={order._id}
@@ -152,7 +159,7 @@ const MyBooking = () => {
                             <Link to={`/dashboard/bookingUpdate/${order._id}`}>
                               <FaEdit className="w-5 h-5 "></FaEdit>
                             </Link>
-                            <Link onClick={()=> handleDelete(order._id)}>
+                            <Link onClick={() => handleDelete(order._id)}>
                               <FaTrashAlt className="w-5 h-5 text-red-500"></FaTrashAlt>
                             </Link>
                           </div>

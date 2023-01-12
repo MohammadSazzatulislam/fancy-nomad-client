@@ -11,7 +11,7 @@ import toast from "react-hot-toast";
 
 const Booking = () => {
   const { packImg, packTitle, price } = useLoaderData();
-  const { user } = useContext(UserAuthContext);
+  const { user, setUpdateWishList } = useContext(UserAuthContext);
 
   const {
     register,
@@ -52,6 +52,7 @@ const Booking = () => {
       .then((data) => {
         if (data.acknowledged) {
           toast.success("Successfully booking");
+          setUpdateWishList(true);
         } else {
           toast.error(data.message);
         }

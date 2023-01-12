@@ -1,10 +1,14 @@
-import React from "react";
-import { useLoaderData } from "react-router-dom";
+import React, { useContext } from "react";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import CustomDatepicker from "../CustomDatePicker/CustomDatePicker";
+import toast from "react-hot-toast";
+import { UserAuthContext } from "../../Context/AuthContext/AuthContext";
 
 const BookingUpdate = () => {
+  const { user } = useContext(UserAuthContext);
   const {
+    _id,
     firstName,
     lastName,
     email,
@@ -24,6 +28,8 @@ const BookingUpdate = () => {
     packImg,
   } = useLoaderData();
 
+ const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
@@ -32,7 +38,40 @@ const BookingUpdate = () => {
   } = useForm({ mode: "all" });
 
   const onSubmit = (data) => {
-    console.log(data);
+    const bookingPackage = {
+      firstName: data.firstName,
+      lastName: data.lastName,
+      email: user?.email,
+      number: data.number,
+      address: data.address,
+      city: data.city,
+      postCode: data.postcode,
+      country: data.country,
+      nationality: data.nationality,
+      checkInDate: data.chackIn,
+      checkOutDate: data.chackOut,
+      rooms: data.rooms,
+      adults: data.adults,
+      children: data.children,
+      packageName,
+      packagePrice,
+      packImg,
+    };
+
+    fetch(`http://localhost:5000/packageUpdate/${_id}`, {
+      method: "PATCH",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(bookingPackage),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data) {
+          toast.success("Successfully update");
+          navigate("/dashboard");
+        }
+      });
   };
 
   return (
@@ -173,6 +212,7 @@ const BookingUpdate = () => {
               </span>
               <CustomDatepicker
                 name="chackIn"
+                defaultValue={checkInDate}
                 control={control}
                 render={({ field: { ref, ...rest } }) => (
                   <input
@@ -191,6 +231,7 @@ const BookingUpdate = () => {
               </span>
               <CustomDatepicker
                 name="chackOut"
+                defaultValue={checkOutDate}
                 control={control}
                 render={({ field: { ref, ...rest } }) => (
                   <input
