@@ -3,15 +3,7 @@ import { Link } from "react-router-dom";
 
 const TourPackages = ({ packages }) => {
   return (
-    <div
-      style={{
-        backgroundImage:
-          "url('https://i.ytimg.com/vi/M6CLYXkfiWE/maxresdefault.jpg')",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-      }}
-      className="pt-28 px-5"
-    >
+    <div className="pt-28 bg-black px-5">
       <div>
         <h1
           data-aos="fade-down"

@@ -11,11 +11,12 @@ const Destination = () => {
   const { name, bannerImg, imageGallery } = useLoaderData();
   const [packages, setPackages] = useState([]);
 
-  useEffect(() => {
+  useEffect(() => { 
     fetch(`http://localhost:5000/packages/${name}`)
       .then((res) => res.json())
       .then((data) => setPackages(data));
   }, [name]);
+  
 
   if (!packages) {
     return <Loading></Loading>;

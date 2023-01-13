@@ -4,13 +4,8 @@ import { FaDollarSign, FaBed, FaBook, FaHotdog } from "react-icons/fa";
 const Services = () => {
   return (
     <div
-      style={{
-        backgroundImage:
-          "url('https://wallpapers.com/images/hd/moving-light-animated-yr7qspbtdmz9g7ao.jpg')",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-      }}
-      className="pt-28 px-5"
+      
+      className="pt-28 bg-black px-5"
     >
       <div>
         <h1

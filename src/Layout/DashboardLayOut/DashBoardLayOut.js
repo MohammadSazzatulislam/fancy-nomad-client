@@ -1,5 +1,9 @@
 import React from "react";
-import { FaShoppingCart, FaDollarSign } from "react-icons/fa";
+import {
+  FaShoppingCart,
+  FaDollarSign,
+  FaAngleDoubleRight,
+} from "react-icons/fa";
 import { Outlet, Link } from "react-router-dom";
 import Header from "../../Shared/Header/Header";
 
@@ -12,9 +16,9 @@ const DashBoardLayOut = () => {
         <div className=" drawer-content p-5">
           <label
             htmlFor="my-drawer-2"
-            className=" absolute right-5 btn  btn-primary drawer-button lg:hidden"
+            className=" absolute right-8 lg:hidden"
           >
-            Open drawer
+            <FaAngleDoubleRight className="w-7 h-7"></FaAngleDoubleRight>
           </label>
           <Outlet></Outlet>
         </div>

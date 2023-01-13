@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "react-datepicker/dist/react-datepicker.css";
 import "./Booking.css";
 import { useLoaderData } from "react-router-dom";
@@ -12,13 +12,16 @@ import toast from "react-hot-toast";
 const Booking = () => {
   const { packImg, packTitle, price } = useLoaderData();
   const { user, setUpdateWishList } = useContext(UserAuthContext);
+  const [roomCounter, setRoomCounter] = useState(0);
+  const [adultsCounter, setAdultsCounter] = useState(0);
+  const [childrenCounter, setChildrenCounter] = useState(0);
 
   const {
     register,
     handleSubmit,
     control,
     formState: { errors },
-  } = useForm({ mode: "all" });
+  } = useForm();
 
   const onSubmit = (data) => {
     const bookingPackage = {
@@ -33,9 +36,9 @@ const Booking = () => {
       nationality: data.nationality,
       checkInDate: data.chackIn,
       checkOutDate: data.chackOut,
-      rooms: data.rooms,
-      adults: data.adults,
-      children: data.children,
+      rooms: roomCounter,
+      adults: adultsCounter,
+      children: childrenCounter,
       packageName: packTitle,
       packagePrice: price,
       packImg,
@@ -62,6 +65,31 @@ const Booking = () => {
   if (!packTitle) {
     return <Loading></Loading>;
   }
+
+  //increase counter
+  const handleRoomIncr = () => {
+    setRoomCounter((count) => count + 1);
+  };
+  //decrease counter
+  const handleRoomDecr = () => {
+    setRoomCounter((count) => count - 1);
+  };
+  //increase counter
+  const handleAdultsIncr = () => {
+    setAdultsCounter((count) => count + 1);
+  };
+  //decrease counter
+  const handleAdultsDecr = () => {
+    setAdultsCounter((count) => count - 1);
+  };
+  //increase counter
+  const handleChildrenIncr = () => {
+    setChildrenCounter((count) => count + 1);
+  };
+  //decrease counter
+  const handleChildrenDecr = () => {
+    setChildrenCounter((count) => count - 1);
+  };
 
   return (
     <div className="p-5 bg-white">
@@ -220,38 +248,121 @@ const Booking = () => {
               />
             </div>
           </div>
-          <div className="my-7 flex-grow relative ">
-            <span className=" uppercase pointer-events-none left-0  leading-3 text-gray-400 font-semibold ">
-              Number Of rooms
-            </span>
-            <input
-              {...register("rooms", { required: true })}
-              className="border border-blue-500 rounded-xl outline-none w-full shadow-2xl leading-3 text-md p-2"
-              type="number"
-              name="rooms"
-            />
-          </div>
-          <div className="my-7 flex-grow relative ">
-            <span className=" uppercase pointer-events-none left-0  leading-3 text-gray-400 font-semibold ">
-              number of adults
-            </span>
-            <input
-              {...register("adults", { required: true })}
-              className="border border-blue-500 rounded-xl outline-none w-full shadow-2xl leading-3 text-md p-2"
-              type="number"
-              name="adults"
-            />
-          </div>
-          <div className="my-7 flex-grow relative ">
-            <span className=" uppercase pointer-events-none left-0  leading-3 text-gray-400 font-semibold ">
-              Number Of children
-            </span>
-            <input
-              {...register("children", { required: true })}
-              className="border border-blue-500 rounded-xl outline-none w-full shadow-2xl leading-3 text-md p-2"
-              type="number"
-              name="children"
-            />
+          <div className="my-7 flex-grow flex flex-wrap gap-4 justify-center items-center md:justify-around lg:justify-around  relative ">
+            <div className="flex border p-1 rounded-xl border-blue-500 justify-start items-center gap-2">
+              <span className=" uppercase pointer-events-none left-0  leading-3 text-gray-400 font-semibold ">
+                Room
+              </span>
+              <div className="flex gap-x-3 items-center">
+                {roomCounter === 0 ? (
+                  <span
+                    className="px-2 py-1 cursor-pointer bg-blue-300 hover:bg-blue-400 text-white rounded border border-blue-500"
+                    disabled
+                  >
+                    -
+                  </span>
+                ) : (
+                  <span
+                    className="px-2 cursor-pointer  bg-blue-300 hover:bg-blue-400 text-lg text-white py-0 rounded border border-blue-500"
+                    onClick={handleRoomDecr}
+                  >
+                    -
+                  </span>
+                )}
+                <span className="font-semibold">{roomCounter}</span>
+                {roomCounter === 30 ? (
+                  <span
+                    className="px-2  cursor-pointer bg-blue-300 hover:bg-blue-400 text-lg text-white py-0 rounded border border-blue-500"
+                    disabled
+                  >
+                    +
+                  </span>
+                ) : (
+                  <span
+                    className="px-2 cursor-pointer bg-blue-300 hover:bg-blue-400 text-lg text-white py-0 rounded border border-blue-500"
+                    onClick={handleRoomIncr}
+                  >
+                    +
+                  </span>
+                )}
+              </div>
+            </div>
+            <div className="flex  border p-1 rounded-xl border-blue-500 justify-start items-center gap-2">
+              <span className=" uppercase pointer-events-none left-0  leading-3 text-gray-400 font-semibold ">
+                Adults
+              </span>
+              <div className="flex gap-x-3 items-center">
+                {adultsCounter === 0 ? (
+                  <span
+                    className="px-2 cursor-pointer bg-blue-300 hover:bg-blue-400 text-lg text-white py-0 rounded border border-blue-500"
+                    disabled
+                  >
+                    -
+                  </span>
+                ) : (
+                  <span
+                    className="px-2 cursor-pointer bg-blue-300 hover:bg-blue-400 text-lg text-white py-0 rounded border border-blue-500"
+                    onClick={handleAdultsDecr}
+                  >
+                    -
+                  </span>
+                )}
+                <span className="font-semibold">{adultsCounter}</span>
+                {adultsCounter === 30 ? (
+                  <span
+                    className="px-2 cursor-pointer bg-blue-300 hover:bg-blue-400 text-lg text-white py-0 rounded border border-blue-500"
+                    disabled
+                  >
+                    +
+                  </span>
+                ) : (
+                  <span
+                    className="px-2 cursor-pointer bg-blue-300 hover:bg-blue-400 text-lg text-white py-0 rounded border border-blue-500"
+                    onClick={handleAdultsIncr}
+                  >
+                    +
+                  </span>
+                )}
+              </div>
+            </div>
+            <div className="flex  border p-1 rounded-xl border-blue-500 justify-start items-center gap-2">
+              <span className=" uppercase pointer-events-none left-0  leading-3 text-gray-400 font-semibold ">
+                children
+              </span>
+              <div className="flex gap-x-3 items-center">
+                {childrenCounter === 0 ? (
+                  <span
+                    className="px-2 cursor-pointer bg-blue-300 hover:bg-blue-400 text-lg text-white py-0 rounded border border-blue-500"
+                    disabled
+                  >
+                    -
+                  </span>
+                ) : (
+                  <span
+                    className="px-2 cursor-pointer bg-blue-300 hover:bg-blue-400 text-lg text-white py-0 rounded border border-blue-500"
+                    onClick={handleChildrenDecr}
+                  >
+                    -
+                  </span>
+                )}
+                <span className="font-semibold">{childrenCounter}</span>
+                {childrenCounter === 10 ? (
+                  <span
+                    className="px-2 cursor-pointer bg-blue-300 hover:bg-blue-400 text-lg text-white py-0 rounded border border-blue-500"
+                    disabled
+                  >
+                    +
+                  </span>
+                ) : (
+                  <span
+                    className="px-2 cursor-pointer bg-blue-300 hover:bg-blue-400 text-lg text-white py-0 rounded border border-blue-500"
+                    onClick={handleChildrenIncr}
+                  >
+                    +
+                  </span>
+                )}
+              </div>
+            </div>
           </div>
           <input
             className="mt-4 mb-2 bg-blue-500 hover:bg-blue-700 text-white font-semibold px-3 py-2 w-full outline-none rounded-xl"

@@ -3,15 +3,7 @@ import "./Testmonial.css";
 
 const TestMonial = () => {
   return (
-    <div
-      style={{
-        backgroundImage:
-          "url('https://images.pond5.com/purple-glitter-sparkles-animation-black-footage-109137184_iconl.jpeg')",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-      }}
-      className="px-5 py-28"
-    >
+    <div className="px-5 bg-black py-28">
       <div className="text-center">
         <h1
           data-aos="fade-zoom-in"
@@ -41,24 +33,7 @@ const TestMonial = () => {
       </div>
 
       <div className="pt-28">
-        <div className=" mx-auto w-full overflow-hidden relative">
-          <div className="w-full h-full absolute">
-            <div
-              className="w-1/4 h-full absolute z-50 left-0"
-              style={{
-                background:
-                  "linear-gradient(to right, #edf2f7 0%, rgba(255, 255, 255, 0) 100% ",
-              }}
-            ></div>
-            <div
-              className="w-1/4 h-full absolute z-50 right-0"
-              style={{
-                background:
-                  "linear-gradient(to left, #edf2f7 0%, rgba(255, 255, 255, 0) 100%",
-              }}
-            ></div>
-          </div>
-
+        <div className=" mx-auto w-full overflow-hidden relative">    
           <div
             className="carousel-items flex items-center justify-center"
             style={{

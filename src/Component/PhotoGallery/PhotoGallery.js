@@ -3,14 +3,7 @@ import "./PhotoGallery.css";
 
 const PhotoGallery = ({ imageGallery }) => {
   return (
-    <div
-      style={{
-        backgroundImage:
-          "url('https://i.pinimg.com/originals/11/0b/4d/110b4d5488eb1b683a2024918d7668ce.jpg')",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-      }}
-    >
+    <div className="bg-black">
       <div className="pt-28 text-center">
         <h1
           data-aos="fade-zoom-in"
