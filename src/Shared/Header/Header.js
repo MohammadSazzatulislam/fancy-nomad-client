@@ -15,7 +15,7 @@ const Header = () => {
     queryKey: ["data"],
     queryFn: () =>
       axios
-        .get(`http://localhost:5000/myBooking/${user?.email}`)
+        .get(`https://fancy-nomad-server.vercel.app/myBooking/${user?.email}`)
         .then((res) => res.json()),
   });
 

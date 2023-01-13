@@ -44,7 +44,7 @@ const Booking = () => {
       packImg,
     };
 
-    fetch(`http://localhost:5000/bookingPackages`, {
+    fetch(`https://fancy-nomad-server.vercel.app/bookingPackages`, {
       method: "POST",
       headers: {
         "content-type": "application/json",

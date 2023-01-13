@@ -14,7 +14,7 @@ const Destination = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/packages/${name}`)
+      .get(`https://fancy-nomad-server.vercel.app/packages/${name}`)
       .then((res) => setPackages(res.data));
   }, [name]);
 

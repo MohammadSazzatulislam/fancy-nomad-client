@@ -27,7 +27,7 @@ const SignUp = () => {
         if (user.uid) {
           updateName(name)
             .then(() => {
-              users(user?.email, user?.displayName);                         
+              users(user?.email, user?.displayName);
             })
             .catch((error) => {});
         }
@@ -39,7 +39,7 @@ const SignUp = () => {
       name: name,
       email: email,
     };
-    fetch(`http://localhost:5000/users`, {
+    fetch(`https://fancy-nomad-server.vercel.app/users`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -49,19 +49,19 @@ const SignUp = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data) {
-          jwtToken(email);       
+          jwtToken(email);
         }
       });
   };
   const jwtToken = (email) => {
-    fetch(`http://localhost:5000/jwt/${email}`)
+    fetch(`https://fancy-nomad-server.vercel.app/jwt/${email}`)
       .then((res) => res.json())
       .then((data) => {
-        if(data.token){
+        if (data.token) {
           localStorage.setItem("fancy-nomad", data.token);
           toast.success("Successfully Sign Up");
           navigate(from, { replace: true });
-        }        
+        }
       });
   };
   const handleGoogleLogin = () => {
@@ -69,7 +69,7 @@ const SignUp = () => {
       .then((result) => {
         const user = result.user;
         if (user?.uid) {
-          users(user?.email, user?.displayName);         
+          users(user?.email, user?.displayName);
         }
       })
       .catch((error) => console.log(error.message));
@@ -79,7 +79,7 @@ const SignUp = () => {
       .then((result) => {
         const user = result.user;
         if (user?.uid) {
-          users(user?.email, user?.displayName);         
+          users(user?.email, user?.displayName);
         }
       })
       .catch((error) => console.log(error.message));

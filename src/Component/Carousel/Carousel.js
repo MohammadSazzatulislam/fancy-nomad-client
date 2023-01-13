@@ -14,7 +14,7 @@ const Carousel = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/slider")
+      .get("https://fancy-nomad-server.vercel.app/slider")
       .then((res) => setNewsCards(res.data));
   }, []);
 

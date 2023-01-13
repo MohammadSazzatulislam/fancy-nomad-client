@@ -65,7 +65,7 @@ const BookingUpdate = () => {
       packImg,
     };
 
-    fetch(`http://localhost:5000/packageUpdate/${_id}`, {
+    fetch(`https://fancy-nomad-server.vercel.app/packageUpdate/${_id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",

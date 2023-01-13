@@ -9,7 +9,7 @@ const Nature = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/nature")
+      .get("https://fancy-nomad-server.vercel.app/nature")
       .then((res) => setNatureData(res.data));
   }, []);
 

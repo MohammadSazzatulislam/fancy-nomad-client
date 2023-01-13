@@ -11,7 +11,7 @@ const Placess = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/places")
+      .get("https://fancy-nomad-server.vercel.app/places")
       .then((res) => setPlaces(res.data));
   }, []);
 

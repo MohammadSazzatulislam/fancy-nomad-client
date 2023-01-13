@@ -16,13 +16,13 @@ const MyBooking = () => {
   } = useQuery({
     queryKey: ["data"],
     queryFn: () =>
-     axios.get(`http://localhost:5000/myBooking/${user?.email}`).then((res) =>
-        res.json()
-      ),
+      axios
+        .get(`https://fancy-nomad-server.vercel.app/myBooking/${user?.email}`)
+        .then((res) => res.json()),
   });
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/myBooking/${id}`, {
+    fetch(`https://fancy-nomad-server.vercel.app/myBooking/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

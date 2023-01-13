@@ -31,7 +31,9 @@ export const router = createBrowserRouter([
       {
         path: "/destination/:id",
         loader: ({ params }) => {
-          return fetch(`http://localhost:5000/places/${params.id}`);
+          return fetch(
+            `https://fancy-nomad-server.vercel.app/places/${params.id}`
+          );
         },
         element: <Destination></Destination>,
       },
@@ -58,7 +60,9 @@ export const router = createBrowserRouter([
       {
         path: "/booking/:id",
         loader: ({ params }) => {
-          return fetch(`http://localhost:5000/singlePackages/${params.id}`);
+          return fetch(
+            `https://fancy-nomad-server.vercel.app/singlePackages/${params.id}`
+          );
         },
         element: (
           <PrivateRoute>
@@ -92,13 +96,17 @@ export const router = createBrowserRouter([
       {
         path: "/dashboard/bookingUpdate/:id",
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/myBookingUpdate/${params.id}`),
+          fetch(
+            `https://fancy-nomad-server.vercel.app/myBookingUpdate/${params.id}`
+          ),
         element: <BookingUpdate></BookingUpdate>,
       },
       {
         path: "/dashboard/payment/:id",
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/myBookings/${params.id}`),
+          fetch(
+            `https://fancy-nomad-server.vercel.app/myBookings/${params.id}`
+          ),
         element: <Payment></Payment>,
       },
     ],
