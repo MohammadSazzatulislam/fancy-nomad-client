@@ -6,17 +6,17 @@ import TourPackages from "../../Component/TourPackages/TourPackages";
 import "./Destination.css";
 import { useLoaderData } from "react-router-dom";
 import Loading from "../../Shared/Loading/Loading";
+import axios from "axios";
 
 const Destination = () => {
   const { name, bannerImg, imageGallery } = useLoaderData();
   const [packages, setPackages] = useState([]);
 
-  useEffect(() => { 
-    fetch(`http://localhost:5000/packages/${name}`)
-      .then((res) => res.json())
-      .then((data) => setPackages(data));
+  useEffect(() => {
+    axios
+      .get(`http://localhost:5000/packages/${name}`)
+      .then((res) => setPackages(res.data));
   }, [name]);
-  
 
   if (!packages) {
     return <Loading></Loading>;

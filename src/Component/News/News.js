@@ -1,21 +1,22 @@
 import React from "react";
 import Carousel from "../Carousel/Carousel";
 import bgvideo from "../../video/v.mp4";
+import './News.css';
 
 const News = () => {
   return (
     <div className=" relative  mx-auto w-full h-screen ">
       <div className="relative">
         <video
-          className="w-full h-screen object-cover overflow-hidden "
+          className="w-full opacity-100 h-screen object-cover overflow-hidden "
           src={bgvideo}
           autoPlay
           loop
           muted
         ></video>
         <div className="absolute lg:top-8 md:top-3 top-0 lg:px-5 md:px-5 px-5 py-5">
-          <p className="lg:text-6xl md:text-4xl text-3xl font-semibold uppercase leading-8 text-white">
-            COX'S BUZZER
+          <p className="lg:text-6xl md:text-4xl text-3xl font-semibold uppercase gradient-text leading-8 text-white">
+            COX'S BAZAR
           </p>
           <p className=" text-md  leading-5 text-white w-full lg:max-w-lg md:max-w-md mt-3 ">
             The beach in Cox's Bazar has a gentle slope and with an unbroken

@@ -7,14 +7,15 @@ import "./Carousel.css";
 import { EffectCoverflow, Pagination } from "swiper";
 import BookingCard from "../BookingCard/BookingCard";
 import { useState } from "react";
+import axios from "axios";
 
 const Carousel = () => {
   const [newsCards, setNewsCards] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/slider")
-      .then((res) => res.json())
-      .then((data) => setNewsCards(data));
+    axios
+      .get("http://localhost:5000/slider")
+      .then((res) => setNewsCards(res.data));
   }, []);
 
   return (
@@ -37,7 +38,7 @@ const Carousel = () => {
       >
         {newsCards.map((news) => (
           <SwiperSlide key={news._id}>
-            <BookingCard  news={news}></BookingCard>
+            <BookingCard news={news}></BookingCard>
           </SwiperSlide>
         ))}
       </Swiper>

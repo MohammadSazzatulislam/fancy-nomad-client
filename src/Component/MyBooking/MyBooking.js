@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import toast from "react-hot-toast";
 import { useQuery } from "react-query";
 import Loading from "../../Shared/Loading/Loading";
+import axios from "axios";
 
 const MyBooking = () => {
   const { user } = useContext(UserAuthContext);
@@ -15,7 +16,7 @@ const MyBooking = () => {
   } = useQuery({
     queryKey: ["data"],
     queryFn: () =>
-      fetch(`http://localhost:5000/myBooking/${user?.email}`).then((res) =>
+     axios.get(`http://localhost:5000/myBooking/${user?.email}`).then((res) =>
         res.json()
       ),
   });

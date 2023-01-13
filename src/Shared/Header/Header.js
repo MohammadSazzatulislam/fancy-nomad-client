@@ -5,6 +5,7 @@ import "./Header.css";
 import { FaUser } from "react-icons/fa";
 import { useQuery } from "react-query";
 import Loading from "../Loading/Loading";
+import axios from "axios";
 
 const Header = () => {
   const { user, userSignOut, updateWishList } = useContext(UserAuthContext);
@@ -13,9 +14,9 @@ const Header = () => {
   const { isLoading, data, refetch } = useQuery({
     queryKey: ["data"],
     queryFn: () =>
-      fetch(`http://localhost:5000/myBooking/${user?.email}`).then((res) =>
-        res.json()
-      ),
+      axios
+        .get(`http://localhost:5000/myBooking/${user?.email}`)
+        .then((res) => res.json()),
   });
 
   if (isLoading) {
@@ -71,10 +72,14 @@ const Header = () => {
                         className="mt-3 card card-compact dropdown-content w-52 rounded-sm "
                       >
                         <div className="card-body">
-                          <span className="font-bold text-lg">8 Items</span>
-                          <button className="w-full py-2 bg-blue-500 text-white uppercase hover:bg-blue-700 rounded-sm outline-none">
-                            View cart
-                          </button>
+                          <span className="font-bold text-lg">
+                            {data?.length} Items
+                          </span>
+                          <Link to="/dashboard">
+                            <button className="w-full py-2 bg-blue-500 text-white uppercase hover:bg-blue-700 rounded-sm outline-none">
+                              View cart
+                            </button>
+                          </Link>
                         </div>
                       </div>
                     </div>
@@ -222,10 +227,14 @@ const Header = () => {
                     className="mt-3 card card-compact dropdown-content w-52 rounded-sm "
                   >
                     <div className="card-body">
-                      <span className="font-bold text-lg">8 Items</span>
-                      <button className="w-full py-2 bg-blue-500 text-white uppercase hover:bg-blue-700 rounded-sm outline-none">
-                        View cart
-                      </button>
+                      <span className="font-bold text-lg">
+                        {data?.length} Items
+                      </span>
+                      <Link to="/dashboard">
+                        <button className="w-full py-2 bg-blue-500 text-white uppercase hover:bg-blue-700 rounded-sm outline-none">
+                          View cart
+                        </button>
+                      </Link>
                     </div>
                   </div>
                 </div>

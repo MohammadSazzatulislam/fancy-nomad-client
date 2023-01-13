@@ -4,14 +4,15 @@ import "./Placess.css";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import Loading from "../../Shared/Loading/Loading";
+import axios from "axios";
 
 const Placess = () => {
   const [places, setPlaces] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/places")
-      .then((res) => res.json())
-      .then((data) => setPlaces(data));
+    axios
+      .get("http://localhost:5000/places")
+      .then((res) => setPlaces(res.data));
   }, []);
 
   if (!places) {

@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Loading from "../../Shared/Loading/Loading";
 import ParticleBacground from "../ParticleBacground/ParticleBacground";
@@ -7,9 +8,9 @@ const Nature = () => {
   const [natureData, setNatureData] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/nature")
-      .then((res) => res.json())
-      .then((data) => setNatureData(data));
+    axios
+      .get("http://localhost:5000/nature")
+      .then((res) => setNatureData(res.data));
   }, []);
 
   if (!natureData) {
