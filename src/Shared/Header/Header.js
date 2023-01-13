@@ -14,14 +14,10 @@ const Header = () => {
   const { isLoading, data, refetch } = useQuery({
     queryKey: ["data"],
     queryFn: () =>
-      axios
-        .get(`https://fancy-nomad-server.vercel.app/myBooking/${user?.email}`)
-        .then((res) => res.json()),
+      fetch(
+        `https://fancy-nomad-server.vercel.app/myBooking/${user?.email}`
+      ).then((res) => res.json()),
   });
-
-  if (isLoading) {
-    return <Loading></Loading>;
-  }
 
   if (updateWishList === true || user) {
     refetch();

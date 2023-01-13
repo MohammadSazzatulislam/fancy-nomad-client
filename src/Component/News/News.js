@@ -8,7 +8,7 @@ const News = () => {
     <div className=" relative  mx-auto w-full h-screen ">
       <div className="relative">
         <video
-          className="w-full opacity-100 h-screen object-cover overflow-hidden "
+          className="w-full h-screen object-cover overflow-hidden "
           src={bgvideo}
           autoPlay
           loop
