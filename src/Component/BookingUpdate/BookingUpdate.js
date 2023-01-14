@@ -115,7 +115,7 @@ const BookingUpdate = () => {
         </h1>
         <div className="flex items-center mb-5  ">
           <p className="text-xl font-bold text-gray-500 ">
-            Price : {packagePrice}
+            Price : ${packagePrice}
           </p>
           <span className="font-semibold text-gray-500 text-base ">/night</span>
         </div>
@@ -181,7 +181,7 @@ const BookingUpdate = () => {
               {...register("address", { required: true })}
               defaultValue={address}
               type="text"
-              className="border border-blue-500 rounded-xl outline-none w-full shadow-2xl leading-3 text-md p-2"
+              className="border border-blue-500 rounded-xl outline-none w-full shadow leading-3 text-md p-2"
               name="address"
               cols="10"
               rows="5"

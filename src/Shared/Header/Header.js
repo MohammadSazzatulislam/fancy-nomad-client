@@ -4,14 +4,12 @@ import { UserAuthContext } from "../../Context/AuthContext/AuthContext";
 import "./Header.css";
 import { FaUser } from "react-icons/fa";
 import { useQuery } from "react-query";
-import Loading from "../Loading/Loading";
-import axios from "axios";
 
 const Header = () => {
   const { user, userSignOut, updateWishList } = useContext(UserAuthContext);
   const [navbar, setNavbar] = useState(false);
 
-  const { isLoading, data, refetch } = useQuery({
+  const { data, refetch } = useQuery({
     queryKey: ["data"],
     queryFn: () =>
       fetch(
@@ -25,6 +23,11 @@ const Header = () => {
 
   const handleSignOut = () => {
     userSignOut();
+    fetch(`https://fancy-nomad-server.vercel.app/users${user?.email}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {});
   };
 
   return (

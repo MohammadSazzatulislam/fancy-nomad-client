@@ -22,7 +22,7 @@ export const UserAuthContext = createContext();
 
 const AuthContext = ({ children }) => {
   const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [updateWishList, setUpdateWishList] = useState(false);
 
   // sign up new user

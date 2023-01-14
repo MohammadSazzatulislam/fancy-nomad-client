@@ -107,7 +107,7 @@ export const router = createBrowserRouter([
           fetch(
             `https://fancy-nomad-server.vercel.app/myBookings/${params.id}`
           ),
-        element: <Payment></Payment>,
+        element: <PrivateRoute><Payment></Payment></PrivateRoute>,
       },
     ],
   },

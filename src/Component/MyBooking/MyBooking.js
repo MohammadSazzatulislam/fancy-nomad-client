@@ -104,7 +104,7 @@ const MyBooking = () => {
                           <div className="flex flex-col flex-wrap ">
                             <p className="font-medium">{order.packageName}</p>
                             <p className="text-xs leading-3 text-gray-600 pt-2">
-                              Price : {order.packagePrice}
+                              Price : ${order.packagePrice}
                             </p>
                             <div className="flex gap-2">
                               <p className="text-xs leading-3 text-gray-600 pt-2">
@@ -153,7 +153,15 @@ const MyBooking = () => {
                           </div>
                         </td>
                         <td className="p-5 pl-20">
-                          <p className="text-orange-400">un paid</p>
+                          {order.status === true ? (
+                            <p className="text-green-400 italic uppercase font-semibold text-md ">
+                              paid
+                            </p>
+                          ) : (
+                            <p className="text-orange-400 italic uppercase font-semibold text-md">
+                              un paid
+                            </p>
+                          )}
                         </td>
                         <td className=" p-6 pl-20 ">
                           <div className="flex gap-5 justify-center items-center">

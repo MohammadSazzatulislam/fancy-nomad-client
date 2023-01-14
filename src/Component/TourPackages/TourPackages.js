@@ -80,7 +80,7 @@ const TourPackages = ({ packages }) => {
               <div className="flex justify-between items-center ">
                 <div className="flex items-center ">
                   <p className="text-xl font-black text-white">
-                    Price : {p.price}
+                    Price : ${p.price}
                   </p>
                   <span className="font-normal text-white text-base">
                     /night
