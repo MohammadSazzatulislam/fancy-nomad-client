@@ -22,12 +22,7 @@ const Header = () => {
   }
 
   const handleSignOut = () => {
-    userSignOut();
-    fetch(`https://fancy-nomad-server.vercel.app/users${user?.email}`, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then((data) => {});
+    userSignOut();   
   };
 
   return (

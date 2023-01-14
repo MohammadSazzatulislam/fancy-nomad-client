@@ -75,6 +75,11 @@ const AuthContext = ({ children }) => {
       .then(() => {
         toast.success("Successfully Log Out");
         localStorage.removeItem("fancy-nomad");
+        fetch(`https://fancy-nomad-server.vercel.app/users${user?.email}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {});
       })
       .catch((error) => console.log(error.messages));
   };
