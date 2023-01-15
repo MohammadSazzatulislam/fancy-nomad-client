@@ -10,7 +10,6 @@ import DashBoardLayOut from "../../Layout/DashboardLayOut/DashBoardLayOut";
 import Main from "../../Layout/Main/Main";
 import Blog from "../../Pages/Blog/Blog";
 import Destination from "../../Pages/Destination/Destination";
-import Faq from "../../Pages/Faq/Faq";
 import Home from "../../Pages/Home/Home";
 import ErrorPage from "../../Shared/ErrorPage/ErrorPage";
 import LogIn from "../../Shared/LogIn/LogIn";

@@ -68,25 +68,29 @@ const Blog = () => {
       <div className="w-full mx-auto rounded border">
         <img
           alt=""
-          src="https://cdn.tuk.dev/assets/components/111220/blg-17/blog1.png"
+          src="https://drupal8-prod.visitcalifornia.com/sites/drupal8-prod.visitcalifornia.com/files/styles/fluid_1000/public/2021-04/GettyImages-531284657-2000px.jpg?itok=AI2DCjiV"
           className="w-full h-[400px]"
         />
         <div className="m-5 ">
           <h1 className="text-2xl font-semibold leading-7">
-            Beautiful Italy, Travel Blog
+            Beautiful Travel Blog
           </h1>
           <p className="my-2">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. It has survived not only five centuries. Lorem Ipsum is
-            simply dummy text of the printing and typesetting industry.
+            Whether you are a brand new church planter with a dream to change
+            the world or a seasoned ministry veteran with decades of experience,
+            these posts will help you articulate what you've always felt deep
+            within you.
           </p>
           <p className="my-2">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. It has survived not only five centuries.
+            Measuring Your Goals It’s that time of year again. The time when
+            everybody is setting goals…and usually failing at them. One of the
+            biggest mistakes I see people making when they set goals is not
+            measuring them, or not measuring them very well. Typically, if we
+            measure our goals, we only have one way of…
           </p>
           <p className="my-2">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry.
+            In 2023, we have an audacious goal. If you’ve been reading our blog,
+            then you’ve heard about the world reach NewBreed currently has.
           </p>
         </div>
       </div>
