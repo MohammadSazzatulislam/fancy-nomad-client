@@ -8,7 +8,6 @@ import MyWishlist from "../../Component/MyWishlist/MyWishlist";
 import Payment from "../../Component/Payment/Payment";
 import DashBoardLayOut from "../../Layout/DashboardLayOut/DashBoardLayOut";
 import Main from "../../Layout/Main/Main";
-import AboutUs from "../../Pages/AboutUs/AboutUs";
 import Blog from "../../Pages/Blog/Blog";
 import Destination from "../../Pages/Destination/Destination";
 import Faq from "../../Pages/Faq/Faq";
@@ -17,6 +16,7 @@ import ErrorPage from "../../Shared/ErrorPage/ErrorPage";
 import LogIn from "../../Shared/LogIn/LogIn";
 import SignUp from "../../Shared/SignUp/SignUp";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import Contact from "../../Pages/Contact/Contact";
 
 export const router = createBrowserRouter([
   {
@@ -42,12 +42,8 @@ export const router = createBrowserRouter([
         element: <Blog></Blog>,
       },
       {
-        path: "/faq",
-        element: <Faq></Faq>,
-      },
-      {
-        path: "/about",
-        element: <AboutUs></AboutUs>,
+        path: "/contact",
+        element: <Contact></Contact>,
       },
       {
         path: "/signup",
@@ -83,15 +79,27 @@ export const router = createBrowserRouter([
   {
     path: "/dashboard",
     errorElement: <ErrorPage></ErrorPage>,
-    element: <DashBoardLayOut></DashBoardLayOut>,
+    element: (
+      <PrivateRoute>
+        <DashBoardLayOut></DashBoardLayOut>
+      </PrivateRoute>
+    ),
     children: [
       {
         path: "/dashboard",
-        element: <MyBooking></MyBooking>,
+        element: (
+          <PrivateRoute>
+            <MyBooking></MyBooking>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/dashboard/wishlist",
-        element: <MyWishlist></MyWishlist>,
+        element: (
+          <PrivateRoute>
+            <MyWishlist></MyWishlist>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/dashboard/bookingUpdate/:id",
@@ -99,7 +107,11 @@ export const router = createBrowserRouter([
           fetch(
             `https://fancy-nomad-server.vercel.app/myBookingUpdate/${params.id}`
           ),
-        element: <BookingUpdate></BookingUpdate>,
+        element: (
+          <PrivateRoute>
+            <BookingUpdate></BookingUpdate>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/dashboard/payment/:id",
@@ -107,7 +119,11 @@ export const router = createBrowserRouter([
           fetch(
             `https://fancy-nomad-server.vercel.app/myBookings/${params.id}`
           ),
-        element: <PrivateRoute><Payment></Payment></PrivateRoute>,
+        element: (
+          <PrivateRoute>
+            <Payment></Payment>
+          </PrivateRoute>
+        ),
       },
     ],
   },

@@ -1,6 +1,7 @@
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import Loading from "../../Shared/Loading/Loading";
 
 const CheckOutForm = ({ packagePrice, firstName, lastName, email, id }) => {
   const [cardError, setCardError] = useState("");
@@ -19,6 +20,9 @@ const CheckOutForm = ({ packagePrice, firstName, lastName, email, id }) => {
       .then((res) => res.json())
       .then((data) => setClientSecret(data.clientSecret));
   }, [packagePrice]);
+
+
+
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -87,40 +91,43 @@ const CheckOutForm = ({ packagePrice, firstName, lastName, email, id }) => {
     }
   };
 
-  return (
-    <form onSubmit={handleSubmit}>
-      <CardElement
-        options={{
-          style: {
-            base: {
-              fontSize: "16px",
-              color: "#424770",
-              "::placeholder": {
-                color: "#aab7c4",
+  if (!clientSecret) {
+    <Loading></Loading>
+  }
+    return (
+      <form onSubmit={handleSubmit}>
+        <CardElement
+          options={{
+            style: {
+              base: {
+                fontSize: "16px",
+                color: "#424770",
+                "::placeholder": {
+                  color: "#aab7c4",
+                },
+              },
+              invalid: {
+                color: "#9e2146",
               },
             },
-            invalid: {
-              color: "#9e2146",
-            },
-          },
-        }}
-      />
-      <button
-        className="px-3 py-1 bg-blue-400 hover:bg-blue-700 uppercase text-semibold text-white rounded-sm outline-none mt-5"
-        type="submit"
-        disabled={!stripe || !clientSecret || processing}
-      >
-        Pay
-      </button>
-      <small className="text-red-500 block mt-3">{cardError}</small>
-      {transactionId && (
-        <p className="text-green-500 block mt-3">
-          <strong className="text-black">TransactionId</strong> :{" "}
-          {transactionId}
-        </p>
-      )}
-    </form>
-  );
+          }}
+        />
+        <button
+          className="px-3 py-1 bg-blue-400 hover:bg-blue-700 uppercase text-semibold text-white rounded-sm outline-none mt-5"
+          type="submit"
+          disabled={!stripe || !clientSecret || processing}
+        >
+          Pay
+        </button>
+        <small className="text-red-500 block mt-3">{cardError}</small>
+        {transactionId && (
+          <p className="text-green-500 block mt-3">
+            <strong className="text-black">TransactionId</strong> :{" "}
+            {transactionId}
+          </p>
+        )}
+      </form>
+    );
 };
 
 export default CheckOutForm;
