@@ -35,7 +35,7 @@ const Destination = () => {
             <path d="M50 0H100L50 100H0L50 0Z" />
           </svg>
           <img
-            className="object-cover w-full h-full  rounded shadow-lg lg:rounded-none lg:shadow-none md:h-96 lg:h-full "
+            className="object-cover w-full h-full mx-auto md:px-5 lg:p-0 rounded shadow-lg lg:rounded-none lg:shadow-none md:h-96 lg:h-full "
             src={bannerImg}
             alt=""
           />

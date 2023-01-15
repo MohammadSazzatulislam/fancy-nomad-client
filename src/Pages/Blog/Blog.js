@@ -1,18 +1,26 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { FaUser } from "react-icons/fa";
 import { UserAuthContext } from "../../Context/AuthContext/AuthContext";
-import { useQuery } from "react-query";
-import Loading from "../../Shared/Loading/Loading";
 import toast from "react-hot-toast";
 import { useForm } from "react-hook-form";
 
 const Blog = () => {
   const { user } = useContext(UserAuthContext);
+  const [updateComment, setUpdateComment] = useState(false);
+  const [deleteComment, setDeleteComment] = useState(false);
+  const [usersComment, setUsersComment] = useState([]);
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
+
+  useEffect(() => {
+    fetch("https://fancy-nomad-server.vercel.app/userComment")
+      .then((res) => res.json())
+      .then((data) => setUsersComment(data));
+  }, [updateComment, deleteComment]);
+
   const onSubmit = (data) => {
     const comment = {
       name: data.name,
@@ -30,18 +38,11 @@ const Blog = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data) {
+          setUpdateComment(true);
           toast.success("Successfully add comment");
         }
       });
   };
-
-  const { data, refetch } = useQuery({
-    queryKey: ["data"],
-    queryFn: () =>
-      fetch("https://fancy-nomad-server.vercel.app/userComment").then((res) =>
-        res.json()
-      ),
-  });
 
   const handleDeleteComment = (id) => {
     fetch(`https://fancy-nomad-server.vercel.app/userComment/${id}`, {
@@ -50,18 +51,11 @@ const Blog = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data) {
+          setDeleteComment(true)
           toast.success("Successfully Delete comment");
         }
       });
   };
-
-  if (data.length) {
-    refetch();
-  }
-
-  if (!data) {
-    return <Loading></Loading>;
-  }
 
   return (
     <div className="bg-black text-white p-5 ">
@@ -96,16 +90,16 @@ const Blog = () => {
       </div>
       <div className="py-28">
         <h1 className="font-semibold text-xl mb-10">
-          Comment - {data?.length}
+          Comment - {usersComment?.length}
         </h1>
         {/* coment section  */}
-        <div className="flex gap-5 flex-wrap">
-          {data?.length ? (
+        <div className="flex gap-5 mb-10 w-full flex-wrap">
+          {usersComment?.length ? (
             <>
-              {data?.map((comment) => (
+              {usersComment?.map((comment) => (
                 <div
                   key={comment._id}
-                  className="flex gap-3 mb-10 items-center"
+                  className="flex w-full gap-3 py-3 items-center border-b"
                 >
                   {user?.photoURL ? (
                     <img
@@ -116,18 +110,20 @@ const Blog = () => {
                   ) : (
                     <FaUser className="w-16 h-16 p-1 text-white border rounded-full "></FaUser>
                   )}
-                  <div>
-                    <div className="flex justify-between items-center">
+                  <div className="w-full">
+                    <div className="flex w-full justify-between items-center">
                       <h1 className="text-semibold">{comment.name}</h1>
 
-                      <p
-                        onClick={() => handleDeleteComment(comment._id)}
-                        className="italic text-md font-semibold text-gray-400"
-                      >
-                        Cancle
-                      </p>
+                      {comment.email && (
+                        <p
+                          onClick={() => handleDeleteComment(comment._id)}
+                          className="italic text-md font-semibold cursor-pointer text-gray-400"
+                        >
+                          Cancle
+                        </p>
+                      )}
                     </div>
-                    <p className="text-gray-400">{comment.massage}</p>
+                    <p className="text-gray-400">{comment.message}</p>
                   </div>
                 </div>
               ))}
@@ -159,6 +155,7 @@ const Blog = () => {
               </div>
               <div className="flex-grow relative inputBox">
                 <input
+                  defaultValue={user?.email}
                   {...register("email", { required: true })}
                   className="bg-transparent text-white border-none outline-none w-full shadow-none px-2 pb-2 leading-3 text-md"
                   required
