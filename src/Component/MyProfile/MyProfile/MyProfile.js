@@ -2,11 +2,13 @@ import React, { useContext } from "react";
 import { FaUser, FaEdit } from "react-icons/fa";
 import { UserAuthContext } from "../../../Context/AuthContext/AuthContext";
 import { Link } from "react-router-dom";
+import ScrollToTopOnMount from "../../ScrollToTop/ScrollToTop";
 
 const MyProfile = () => {
   const { user } = useContext(UserAuthContext);
   return (
     <div className="p-5 bg-black ">
+      <ScrollToTopOnMount></ScrollToTopOnMount>
       <div className="w-full h-96 justify-center items-center flex-col flex">
         <div className="lg:w-[600px] w-full  p-5 text-white  card rounded-sm ">
           <div className="w-full mb-3 flex justify-between items-start">

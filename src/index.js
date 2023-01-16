@@ -7,7 +7,6 @@ import AuthContext from "./Context/AuthContext/AuthContext";
 import { Toaster } from "react-hot-toast";
 import BackToTopButton from "./Shared/BackToTopButton/BackToTopButton";
 import { QueryClient, QueryClientProvider } from "react-query";
-import ScrollToTop from "./Component/ScrollToTop/ScrollToTop";
 
 const queryClient = new QueryClient();
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -17,7 +16,6 @@ root.render(
       <Toaster />
       <QueryClientProvider client={queryClient}>
         <App />
-        <ScrollToTop></ScrollToTop>
       </QueryClientProvider>
       <BackToTopButton></BackToTopButton>
     </AuthContext>

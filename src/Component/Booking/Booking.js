@@ -8,6 +8,7 @@ import { useForm } from "react-hook-form";
 import CustomDatepicker from "../CustomDatePicker/CustomDatePicker";
 import Loading from "../../Shared/Loading/Loading";
 import toast from "react-hot-toast";
+import ScrollToTopOnMount from "../ScrollToTop/ScrollToTop";
 
 const Booking = () => {
   const { packImg, packTitle, price } = useLoaderData();
@@ -93,6 +94,7 @@ const Booking = () => {
 
   return (
     <div className="p-5 bg-white">
+      <ScrollToTopOnMount></ScrollToTopOnMount>
       <div className="w-full  mx-auto">
         <img className="w-full h-72 rounded-sm  " src={packImg} alt="" />
         <h1 className="lg:text-5xl textGradient  md:text-4xl text-3xl font-bold uppercase leading-8 my-4 ">

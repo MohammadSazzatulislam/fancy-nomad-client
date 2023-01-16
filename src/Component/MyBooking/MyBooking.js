@@ -6,6 +6,7 @@ import toast from "react-hot-toast";
 import { useQuery } from "react-query";
 import Loading from "../../Shared/Loading/Loading";
 import axios from "axios";
+import ScrollToTopOnMount from "../ScrollToTop/ScrollToTop";
 
 const MyBooking = () => {
   const { user } = useContext(UserAuthContext);
@@ -40,6 +41,7 @@ const MyBooking = () => {
 
   return (
     <div className="py-10">
+      <ScrollToTopOnMount></ScrollToTopOnMount>
       <div className="w-full ">
         <h1 className="text-xl mb-2 font-semibold lg:text-3xl md:text-2xl">
           My Booking

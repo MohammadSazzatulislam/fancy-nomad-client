@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { UserAuthContext } from "../../Context/AuthContext/AuthContext";
 import Loading from "../../Shared/Loading/Loading";
+import ScrollToTopOnMount from "../ScrollToTop/ScrollToTop";
 
 const MyWishlist = () => {
   const [myOrder, setMyOrder] = useState([]);
@@ -26,6 +27,7 @@ const MyWishlist = () => {
   }
   return (
     <div className="py-16">
+      <ScrollToTopOnMount></ScrollToTopOnMount>
       <div className="w-full ">
         <h1 className="text-xl mb-2 font-semibold lg:text-3xl md:text-2xl">
           My Wishlist

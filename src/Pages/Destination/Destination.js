@@ -7,6 +7,7 @@ import "./Destination.css";
 import { useLoaderData } from "react-router-dom";
 import Loading from "../../Shared/Loading/Loading";
 import axios from "axios";
+import ScrollToTopOnMount from "../../Component/ScrollToTop/ScrollToTop";
 
 const Destination = () => {
   const { name, bannerImg, imageGallery } = useLoaderData();
@@ -24,6 +25,7 @@ const Destination = () => {
 
   return (
     <div className="bg-white">
+      <ScrollToTopOnMount></ScrollToTopOnMount>
       <div className="relative flex gradient flex-col-reverse  lg:pt-0 lg:flex-col lg:pb-0">
         <div className="inset-y-0 top-0 px-5 right-0 z-0 w-full mx-auto md:px-0 lg:pr-0 lg:mb-0 lg:mx-0 lg:w-7/12 lg:max-w-full lg:absolute xl:px-0 ">
           <svg

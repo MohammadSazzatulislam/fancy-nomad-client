@@ -1,10 +1,12 @@
 import React from "react";
 import "./ErrorPage.css";
 import { Link } from "react-router-dom";
+import ScrollToTopOnMount from "../../Component/ScrollToTop/ScrollToTop";
 
 const ErrorPage = () => {
   return (
     <div className="p-5 bg-gray-200 h-screen overflow-hidden w-full ">
+      <ScrollToTopOnMount></ScrollToTopOnMount>
       <div className="wrapper  ">
         <div className=" w-full mt-5 flex justify-center items-center overflow-hidden">
           <Link to="/">

@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import CustomDatepicker from "../CustomDatePicker/CustomDatePicker";
 import toast from "react-hot-toast";
 import { UserAuthContext } from "../../Context/AuthContext/AuthContext";
+import ScrollToTopOnMount from "../ScrollToTop/ScrollToTop";
 
 const BookingUpdate = () => {
   const { user } = useContext(UserAuthContext);
@@ -108,6 +109,7 @@ const BookingUpdate = () => {
 
   return (
     <div className="py-16 bg-white">
+      <ScrollToTopOnMount></ScrollToTopOnMount>
       <div className="w-full  mx-auto">
         <img className="w-full h-72 rounded-sm  " src={packImg} alt="" />
         <h1 className="lg:text-5xl textGradient  md:text-4xl text-3xl font-bold uppercase leading-8 my-4 ">

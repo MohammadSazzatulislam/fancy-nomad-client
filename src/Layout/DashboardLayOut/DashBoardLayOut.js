@@ -5,11 +5,13 @@ import {
   FaAngleDoubleRight,
 } from "react-icons/fa";
 import { Outlet, Link } from "react-router-dom";
+import ScrollToTopOnMount from "../../Component/ScrollToTop/ScrollToTop";
 import Header from "../../Shared/Header/Header";
 
 const DashBoardLayOut = () => {
   return (
     <div className="bg-white ">
+      <ScrollToTopOnMount></ScrollToTopOnMount>
       <Header></Header>
       <div className="drawer drawer-mobile relative">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />

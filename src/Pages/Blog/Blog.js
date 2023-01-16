@@ -3,6 +3,7 @@ import { FaUser } from "react-icons/fa";
 import { UserAuthContext } from "../../Context/AuthContext/AuthContext";
 import toast from "react-hot-toast";
 import { useForm } from "react-hook-form";
+import ScrollToTopOnMount from "../../Component/ScrollToTop/ScrollToTop";
 
 const Blog = () => {
   const { user } = useContext(UserAuthContext);
@@ -59,6 +60,7 @@ const Blog = () => {
 
   return (
     <div className="bg-black text-white p-5 ">
+      <ScrollToTopOnMount></ScrollToTopOnMount>
       <div className="w-full mx-auto rounded border">
         <img
           alt=""

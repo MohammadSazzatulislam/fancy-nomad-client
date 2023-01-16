@@ -1,11 +1,13 @@
 import React from "react";
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
+import ScrollToTopOnMount from "../../Component/ScrollToTop/ScrollToTop";
 import "./Contact.css";
 
 const Contact = () => {
   const position = [22.356852, 91.78318];
   return (
     <div className="pb-28 pt-5 px-5 bg-black text-white ">
+      <ScrollToTopOnMount></ScrollToTopOnMount>
       <div className="relative w-full   ">
         <img
           className="w-full rounded h-[350px]"

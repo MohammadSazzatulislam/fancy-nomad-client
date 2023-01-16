@@ -5,6 +5,7 @@ import "./Login.css";
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
+import ScrollToTopOnMount from "../../Component/ScrollToTop/ScrollToTop";
 
 const LogIn = () => {
   const [logInError, setLogInError] = useState("");
@@ -92,6 +93,7 @@ const LogIn = () => {
 
   return (
     <div>
+      <ScrollToTopOnMount></ScrollToTopOnMount>
       <div className="relative">
         <img
           src="https://wallpaperset.com/w/full/2/b/0/221375.jpg"
